@@ -44,7 +44,7 @@
       arm_target_device_name="M251KG6AE"
       arm_target_loader_applicable_loaders="Flash"
       arm_target_loader_default_loader="Flash"
-      c_user_include_directories="$(TargetsDir)/M251/CMSIS/StdDriver/inc;$(TargetsDir)/M251/CMSIS/Device/Include;$(ProjectDir)/app/inc;$(ProjectDir)/yss/inc"
+      c_user_include_directories="$(TargetsDir)/M251/CMSIS/StdDriver/inc;$(TargetsDir)/M251/CMSIS/Device/Include;$(ProjectDir)/app/inc;$(ProjectDir)/../yss/inc;$(ProjectDir)/../common"
       debug_register_definition_file="$(DeviceRegisterDefinitionFile)"
       gcc_cplusplus_language_standard="gnu++11"
       gcc_entry_point="Reset_Handler"
@@ -68,6 +68,12 @@
       filter=""
       path="app"
       recurse="Yes" />
+    <folder
+      Name="common"
+      exclude=""
+      filter=""
+      path="../common"
+      recurse="Yes" />
     <folder Name="Script Files">
       <file file_name="$(TargetsDir)/M251/Scripts/M251_Target.js">
         <configuration Name="Common" file_type="Reset Script" />
@@ -84,7 +90,7 @@
       Name="yss OS Source Files"
       exclude=""
       filter="*.c;*.cpp;*.h;*.s;*.md;LICENSE"
-      path="yss"
+      path="../yss"
       recurse="Yes">
       <configuration Name="Common" filter="*.c;*.cpp;*.h;*.s;*.md;LICENSE" />
     </folder>

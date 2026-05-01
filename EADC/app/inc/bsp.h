@@ -1,19 +1,16 @@
 /*
- * Copyright (c) 2026 Yoon-Ki Hong
+ * Copyright (c) 2024 Yoon-Ki Hong
  *
  * This file is subject to the terms and conditions of the MIT License.
  * See the file "LICENSE" in the main directory of this archive for more details.
  */
 
-#ifndef DEV_LED__H_
-#define DEV_LED__H_
+#ifndef BSP__H_
+#define BSP__H_
 
-namespace Led 
-{
-	void initialize(void);	
+#include <stdint.h>
 
-	void red(bool on);}
-
+void initializeBoard(void);
 
 #endif
 
