@@ -8,6 +8,7 @@
 #include <yss.h>
 #include <bsp.h>
 #include <yss/debug.h>
+#include <page.h>
 
 int main(void)
 {
@@ -16,6 +17,12 @@ int main(void)
 
 	// 보드 초기화
 	initializeBoard();
+
+	pageDisplayLogoId = page.add(pageDisplayLogo);
+
+	page.play(pageDisplayLogoId);
+
+	thread::delay(5000);
 
 	while(1)
 	{

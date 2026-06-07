@@ -1,0 +1,19 @@
+////////////////////////////////////////////////////////////////////////////////////////
+//
+// yssBmpMaker를 사용해 생성된 코드 입니다.
+//
+// Home Page : http://cafe.naver.com/yssoperatingsystem
+//
+////////////////////////////////////////////////////////////////////////////////////////
+
+// RGB565 (Little Endian) 설정으로 출력된 파일입니다.
+
+#ifndef YSS_NUVOTONLOGO_BMP__H_
+#define YSS_NUVOTONLOGO_BMP__H_
+
+#include <TurtleShipTypes.h>
+
+extern const bitmap_t NuvotonLogo;
+
+#endif
+
