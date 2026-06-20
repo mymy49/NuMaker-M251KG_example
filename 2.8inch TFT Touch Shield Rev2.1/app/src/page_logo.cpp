@@ -16,7 +16,7 @@ void pageDisplayLogo(void*)
 	brush.setFont(Font_Ubuntu_14_B);
 
 	brush.clear();
-	brush.drawString(Brush::ALIGN_CENTER_MID, "NuMaker-M433SE V1.0");
+	brush.drawString(Brush::ALIGN_CENTER_MID, "NuMaker-M251KG V1.1");
 	lcd.drawBitmap({0, 100}, brush.getBitmap());
 
 	brush.clear();

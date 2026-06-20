@@ -14,5 +14,9 @@ extern int16_t pageDisplayLogoId;
 
 void pageDisplayLogo(void*);
 
+extern int16_t pageDisplayMainId;
+
+void pageDisplayMain(void*);
+
 #endif
 

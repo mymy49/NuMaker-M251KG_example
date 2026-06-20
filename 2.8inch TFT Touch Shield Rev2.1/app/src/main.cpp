@@ -19,10 +19,13 @@ int main(void)
 	initializeBoard();
 
 	pageDisplayLogoId = page.add(pageDisplayLogo);
+	pageDisplayMainId = page.add(pageDisplayMain);
 
-	page.play(pageDisplayLogoId);
+	page.play(pageDisplayLogoId, 1024);
 
 	thread::delay(5000);
+
+	page.play(pageDisplayMainId);
 
 	while(1)
 	{

@@ -28,7 +28,7 @@
 #define MAX_THREAD			16
 
 // 쓰레드의 스택을 0xAA 패턴으로 채우기 (true, false)
-#define FILL_THREAD_STACK	false
+#define FILL_THREAD_STACK	true
 
 // ####################### GUI 설정 #######################
 // GUI library Enable (true, false)
