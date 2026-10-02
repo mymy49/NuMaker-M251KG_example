@@ -13,7 +13,7 @@ Touch_LCD_Shield_for_Arduino_2_8_inch lcd;
 
 FrameBufferRgb565LE brush;
 
-DisplayPageManager page(8);
+TaskManager page(8);
 
 
 void initializeBoard(void)

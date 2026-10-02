@@ -10,7 +10,7 @@
 
 #include <stdint.h>
 #include <2.8inch_TFT_Touch_Shield_Rev2.1/Touch_LCD_Shield_for_Arduino_2_8_inch.h>
-#include <util/DisplayPageManager.h>
+#include <util/TaskManager.h>
 
 void initializeBoard(void);
 
@@ -18,7 +18,7 @@ extern Touch_LCD_Shield_for_Arduino_2_8_inch lcd;
 
 extern FrameBufferRgb565LE brush;
 
-extern DisplayPageManager page;
+extern TaskManager page;
 
 #endif
 

@@ -18,10 +18,10 @@ int main(void)
 	// 보드 초기화
 	initializeBoard();
 
-	pageDisplayLogoId = page.add(pageDisplayLogo);
-	pageDisplayMainId = page.add(pageDisplayMain);
+	pageDisplayLogoId = page.add(pageDisplayLogo, 1024);
+	pageDisplayMainId = page.add(pageDisplayMain, 1024);
 
-	page.play(pageDisplayLogoId, 1024);
+	page.play(pageDisplayLogoId);
 
 	thread::delay(5000);
 
