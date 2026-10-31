@@ -15,6 +15,9 @@ FrameBufferRgb565LE brush;
 
 TaskManager page(8);
 
+XPT2046 touch;
+
+TouchEventDispatcher dispatcher(10, 2048);
 
 void initializeBoard(void)
 {
@@ -31,6 +34,20 @@ void initializeBoard(void)
 	spi0.enableClock();
 	spi0.initialize(spi0Config);
 	spi0.enableInterrupt();
+
+	// CRC32
+	Crc::config_t crcConfig = 
+	{
+		Crc::CRC_MODE_CRC32,	//mode_t mode;
+		Crc::CRC_DAT_LEN_8BIT,	//datalen_t datalen;
+		0xFFFFFFFF,				//uint32_t seed;
+		false,					//bool writeBitOrderReverse;
+		false					//bool checksumBitOrderReverse;
+	};
+
+	crc.enableClock();
+	crc.initialize(crcConfig);
+	crc.enableInterrupt();
 
 	// LCD
 	gpioA.setAsOutput(3); // CS
@@ -53,5 +70,21 @@ void initializeBoard(void)
 	lcd.setFrameBuffer(brush);
 	lcd.setBackgroundColor({0xFF, 0xFF, 0xFF});
 	lcd.clear();
+
+	// Touch
+	gpioC.setAsOutput(3); // CS
+	gpioC.setAsOutput(5); // IRQ
+
+	XPT2046::config_t touchConfig = 
+	{
+		spi0,			//Spi &spi;
+		{&gpioC, 3},	//pin_t chipSelect;
+		{0, 0},			//pin_t busy;
+		{&gpioC, 5},	//pin_t isr;
+	};
+
+	touch.initialize(touchConfig);
+
+	dispatcher.setPointerDevice(touch);
 }
 

@@ -5,6 +5,8 @@
 
 int16_t pageDisplayLogoId;
 
+
+
 void pageDisplayLogo(void*)
 {
 	lcd.lock();
@@ -39,7 +41,7 @@ void pageDisplayLogo(void*)
 	lcd.drawBitmap({20, 200}, brush.getBitmap());
 
 	lcd.unlock();
-		
+
 	while(true)
 	{
 		thread::delay(250);

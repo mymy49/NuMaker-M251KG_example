@@ -36,7 +36,7 @@
       arm_endian="Little"
       arm_fp_abi="Soft"
       arm_fpu_type="None"
-      arm_linker_heap_size="16384"
+      arm_linker_heap_size="20480"
       arm_linker_process_stack_size="1024"
       arm_linker_stack_size="1024"
       arm_simulator_memory_simulation_parameter="ROM;0x00000000;0x00020000;RAM;0x20000000;0x00010000"

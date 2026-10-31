@@ -4,3 +4,10 @@
 [submodule "module/2.8inch_TFT_Touch_Shield_Rev2.1"]
 	path = module/2.8inch_TFT_Touch_Shield_Rev2.1
 	url = https://github.com/mymy49/2.8inch_TFT_Touch_Shield_Rev2.1
+[submodule "module/ValueDisplay"]
+	path = module/ValueDisplay
+	url = https://github.com/mymy49/ValueDisplay
+
+[submodule "module/Lpf"]
+	path = module/Lpf
+	url = https://github.com/mymy49/Lpf
