@@ -103,7 +103,7 @@ void pageDisplayTouchCalibration(void*)
 	lcd.drawBitmap({15, 140}, brush.getBitmap());
 
 	brush.clear();
-	brush.drawString(Brush::ALIGN_CENTER_MID, "While Complete.");
+	brush.drawString(Brush::ALIGN_CENTER_MID, "Until Complete.");
 	lcd.drawBitmap({15, 165}, brush.getBitmap());
 
 	brush.setSize(35,35);

@@ -37,7 +37,7 @@ void pageDisplayLogo(void*)
 	brush.setSize(200, 25);
 
 	brush.clear();
-	brush.drawString(Brush::ALIGN_CENTER_MID, "Exameple");
+	brush.drawString(Brush::ALIGN_CENTER_MID, "Example");
 	lcd.drawBitmap({20, 200}, brush.getBitmap());
 
 	lcd.unlock();
@@ -45,15 +45,15 @@ void pageDisplayLogo(void*)
 	while(true)
 	{
 		thread::delay(250);
-		brush.clear();
 		lcd.lock();
+		brush.clear();
 		lcd.drawBitmap({20, 200}, brush.getBitmap());
 		lcd.unlock();
 
 		thread::delay(250);
-		brush.clear();
-		brush.drawString(Brush::ALIGN_CENTER_MID, "Exameple");
 		lcd.lock();
+		brush.clear();
+		brush.drawString(Brush::ALIGN_CENTER_MID, "Example");
 		lcd.drawBitmap({20, 200}, brush.getBitmap());
 		lcd.unlock();
 	}
