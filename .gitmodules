@@ -7,7 +7,9 @@
 [submodule "module/ValueDisplay"]
 	path = module/ValueDisplay
 	url = https://github.com/mymy49/ValueDisplay
-
 [submodule "module/Lpf"]
 	path = module/Lpf
 	url = https://github.com/mymy49/Lpf
+[submodule "module/XPT2046"]
+	path = module/XPT2046
+	url = ../XPT2046
