@@ -27,6 +27,7 @@ int main(void)
 	pageDisplayLogoId = page.add(pageDisplayLogo, 1024);
 	pageDisplayMainId = page.add(pageDisplayMain, 2048);
 	pageDisplayTouchCalibrationId = page.add(pageDisplayTouchCalibration, 2048);
+	pageDisplayDrawingId = page.add(pageDisplayDrawing, 2048);
 
 	page.play(pageDisplayLogoId);
 

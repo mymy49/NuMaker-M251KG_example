@@ -23,7 +23,7 @@ enum step_t
 int16_t pageDisplayTouchCalibrationId;
 
 ElapsedTime gLastUpdateTime;
-Lpf gLpfX(2.f), gLpfY(2.f);
+static Lpf gLpfX(2.f), gLpfY(2.f);
 volatile bool gPushFlag, gUpFlag, gCalibratingFlag, gFirstContactFlag;
 
 void callback_calibrate(PointerDevice::event_t event)
@@ -110,10 +110,10 @@ void pageDisplayTouchCalibration(void*)
 	brush.setBackgroundColor({0x00, 0x00, 0x00});
 	brush.clear();
 	brush.setBrushColor(0x80, 0x80, 0x80);
-	brush.fillCircle({17, 17}, 16);
+	brush.fillCircle({5, 5}, 16);
 	brush.setBrushColor(0xFF, 0x30, 0x30);
-	brush.fillCircle({17, 17}, 5);
-	lcd.drawBitmap({(int16_t)(48 - brush.getSize().getWidth() / 2), (int16_t)(48 - brush.getSize().getHeight() / 2)}, brush.getBitmap());
+	brush.fillCircle({5, 5}, 5);
+	lcd.drawBitmap({0, 0}, brush.getBitmap());
 
 	progressBar.drawBackground();
 	progressBar.drawValue(0);
@@ -164,7 +164,7 @@ void pageDisplayTouchCalibration(void*)
 					brush.setSize(35,35);
 					brush.setBackgroundColor({0x00, 0x00, 0x00});
 					brush.clear();
-					lcd.drawBitmap({(int16_t)(48 - brush.getSize().getWidth() / 2), (int16_t)(48 - brush.getSize().getHeight() / 2)}, brush.getBitmap());
+					lcd.drawBitmap({0, 0}, brush.getBitmap());
 					lcd.unlock();
 				}
 			}
@@ -191,10 +191,10 @@ void pageDisplayTouchCalibration(void*)
 				brush.setBackgroundColor({0x00, 0x00, 0x00});
 				brush.clear();
 				brush.setBrushColor(0x80, 0x80, 0x80);
-				brush.fillCircle({17, 17}, 16);
+				brush.fillCircle({29, 29}, 16);
 				brush.setBrushColor(0xFF, 0x30, 0x30);
-				brush.fillCircle({17, 17}, 5);
-				lcd.drawBitmap({(int16_t)(192 - brush.getSize().getWidth() / 2), (int16_t)(272 - brush.getSize().getHeight() / 2)}, brush.getBitmap());
+				brush.fillCircle({29, 29}, 5);
+				lcd.drawBitmap({(int16_t)(239 - brush.getSize().getWidth()), (int16_t)(319 - brush.getSize().getHeight())}, brush.getBitmap());
 
 				brush.setSize(150, 15);
 				brush.setBackgroundColor(0x00, 0x00, 0x00);
@@ -243,7 +243,7 @@ void pageDisplayTouchCalibration(void*)
 					brush.setSize(35,35);
 					brush.setBackgroundColor({0x00, 0x00, 0x00});
 					brush.clear();
-					lcd.drawBitmap({(int16_t)(192 - brush.getSize().getWidth() / 2), (int16_t)(272 - brush.getSize().getHeight() / 2)}, brush.getBitmap());
+					lcd.drawBitmap({(int16_t)(239 - brush.getSize().getWidth()), (int16_t)(319 - brush.getSize().getHeight())}, brush.getBitmap());
 					lcd.unlock();
 					thread::delay(100);
 				}

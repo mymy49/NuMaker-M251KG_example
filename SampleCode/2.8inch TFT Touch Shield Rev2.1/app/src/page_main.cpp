@@ -11,16 +11,10 @@ static void callback_drawing(PointerDevice::event_t event)
 	switch(event.event)
 	{
 	case PointerDevice::EVENT_TOUCH_DOWN :
-		lcd.lock();
-		lcd.setBrushColor(0x80, 0x80, 0x30);
-		lcd.fillRectangular({20, 20, 90, 90});
-		lcd.unlock();
+		page.play(pageDisplayDrawingId);
 		break;
 
 	case PointerDevice::EVENT_TOUCH_UP :
-		lcd.lock();
-		lcd.drawBitmap({20, 20}, drawing);
-		lcd.unlock();		
 		break;
 	
 	default :	

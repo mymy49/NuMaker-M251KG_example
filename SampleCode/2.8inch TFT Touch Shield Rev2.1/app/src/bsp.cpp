@@ -17,7 +17,7 @@ TaskManager page(8);
 
 XPT2046 touch;
 
-TouchEventDispatcher dispatcher(10, 2048);
+TouchEventDispatcher dispatcher(20, 2048);
 
 void initializeBoard(void)
 {

@@ -13,10 +13,10 @@ void initializeMemory()
 	if(memory.crc32 != calculateCrc32())
 	{
 		memory.touchInitFlag = false;
-		memory.touch.botRightX = 819;
-		memory.touch.botRightY = 819;
-		memory.touch.topLeftX = 3276;
-		memory.touch.topLeftY = 3276;
+		memory.touch.botRightX = 0;
+		memory.touch.botRightY = 0;
+		memory.touch.topLeftX = 4095;
+		memory.touch.topLeftY = 4095;
 		memory.touch.width = 240;
 		memory.touch.height = 320;
 
@@ -34,7 +34,9 @@ uint32_t calculateCrc32()
 
 void updateMemory()
 {
+#if defined(__2p8INCH_TFT_TOUCH_SHIELD_REV2p1__)
 	touch.setCalibrationData(memory.touch);
+#endif
 }
 
 void saveMemory()

@@ -22,5 +22,9 @@ extern int16_t pageDisplayTouchCalibrationId;
 
 void pageDisplayTouchCalibration(void*);
 
+extern int16_t pageDisplayDrawingId;
+
+void pageDisplayDrawing(void*);
+
 #endif
 

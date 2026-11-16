@@ -10,7 +10,7 @@
   <configuration
     Name="Release"
     c_preprocessor_definitions="NDEBUG"
-    gcc_debugging_level="None"
+    gcc_debugging_level="Level 3"
     gcc_omit_frame_pointer="Yes"
     gcc_optimization_level="Level 1"
     hidden="Yes" />
@@ -36,7 +36,7 @@
       arm_endian="Little"
       arm_fp_abi="Soft"
       arm_fpu_type="None"
-      arm_linker_heap_size="16384"
+      arm_linker_heap_size="20480"
       arm_linker_process_stack_size="1024"
       arm_linker_stack_size="1024"
       arm_simulator_memory_simulation_parameter="ROM;0x00000000;0x00020000;RAM;0x20000000;0x00010000"
@@ -44,7 +44,7 @@
       arm_target_device_name="M251KG6AE"
       arm_target_loader_applicable_loaders="Flash"
       arm_target_loader_default_loader="Flash"
-      c_user_include_directories="$(TargetsDir)/M251/CMSIS/StdDriver/inc;$(TargetsDir)/M251/CMSIS/Device/Include;$(ProjectDir)/app/inc;$(ProjectDir)/../yss/inc;$(ProjectDir)/../common"
+      c_user_include_directories="$(TargetsDir)/M251/CMSIS/StdDriver/inc;$(TargetsDir)/M251/CMSIS/Device/Include;$(ProjectDir)/app/inc;$(ProjectDir)/../../yss/inc;$(ProjectDir)/../../common;$(ProjectDir)/../../module;$(ProjectDir)/../../module/2.8inch_TFT_Touch_Shield_Rev2.1/ST7789V/TurtleShip"
       debug_register_definition_file="$(DeviceRegisterDefinitionFile)"
       gcc_cplusplus_language_standard="gnu++11"
       gcc_entry_point="Reset_Handler"
@@ -72,7 +72,13 @@
       Name="common"
       exclude=""
       filter=""
-      path="../common"
+      path="../../common"
+      recurse="Yes" />
+    <folder
+      Name="Module Files"
+      exclude=""
+      filter=""
+      path="../../module"
       recurse="Yes" />
     <folder Name="Script Files">
       <file file_name="$(TargetsDir)/M251/Scripts/M251_Target.js">
@@ -90,7 +96,7 @@
       Name="yss OS Source Files"
       exclude=""
       filter="*.c;*.cpp;*.h;*.s;*.md;LICENSE"
-      path="../yss"
+      path="../../yss"
       recurse="Yes">
       <configuration Name="Common" filter="*.c;*.cpp;*.h;*.s;*.md;LICENSE" />
     </folder>
