@@ -1,3 +1,17 @@
+/*
+ * Copyright (c) 2026 Yoon-Ki Hong
+ *
+ * This file is subject to the terms and conditions of the MIT License.
+ * See the file "LICENSE" in the main directory of this archive for more details.
+ */
+
+/**
+ * @file page_drawing.cpp
+ * @brief Free-hand drawing page application with color palette and low-pass filtering.
+ * @author Yoon-Ki Hong
+ * @date 2026-11-18
+ */
+
 #include <bsp.h>
 #include "../bmp/NuvotonLogo.h"
 #include <../font/Ubuntu_14_B.h>
@@ -76,18 +90,32 @@ void callback_draw(PointerDevice::event_t event);
 
 void callback_exit(PointerDevice::event_t event);
 
+/**
+ * @details Initializes drawing canvas GUI components:
+ *          1. Clears LCD screen with white background.
+ *          2. Initializes palette buttons and sets default color to black (palette index 0).
+ *          3. Renders the exit ("X") button at the right of the palette toolbar.
+ *          4. Registers touch listeners for drawing region, palette buttons, and exit button.
+ *          5. Enters an infinite thread yield loop waiting for touch events.
+ * @see initializePalette, callback_draw, callback_exit, dispatcher
+ * @todo none
+ * @bug none
+ */
 void pageDisplayDrawing(void*)
 {
 	lcd.lock();
 
 	Area area;
 
+	// Clear background to white
 	lcd.setBackgroundColor(0xFF, 0xFF, 0xFF);
 	lcd.clear();
 	
+	// Setup color palette buttons
 	initializePalette();
 	callback_Palette0({0, 0, PointerDevice::EVENT_TOUCH_DOWN});
 	
+	// Create "Exit" button area adjacent to the palette buttons
 	area.setX(gPaletteArea[6].getRightBound());
 	area.setY(gPaletteArea[6].getTopBound());
 	area.setWidth(30);
@@ -97,9 +125,11 @@ void pageDisplayDrawing(void*)
 	brush.setBackgroundColor(0x80, 0x80, 0x80);
 	brush.clear();
 
+	// Render inner button face
 	brush.setBrushColor(0xA0, 0xA0, 0xA0);
 	brush.fillRectangular({3, 3, 30 - 6, 40 - 6});
 	
+	// Draw exit label "X"
 	brush.setFont(Font_Ubuntu_20_B);
 	brush.setBrushColor(0x00, 0x00, 0x00);
 	brush.drawString(Brush::ALIGN_CENTER_MID, "X");
@@ -108,6 +138,7 @@ void pageDisplayDrawing(void*)
 	
 	lcd.unlock();
 
+	// Register touch handlers to event dispatcher
 	dispatcher.clear();
 	dispatcher.add(gPaletteArea[0], callback_Palette0);
 	dispatcher.add(gPaletteArea[1], callback_Palette1);
@@ -132,6 +163,14 @@ void pageDisplayDrawing(void*)
 	}
 }
 
+/**
+ * @details Handles touch drag and down events on the drawing canvas.
+ *          Applies a low-pass filter (Lpf) on X and Y coordinates to smooth jitter.
+ *          Draws lines between successive coordinate points using the currently selected palette color.
+ * @see gLpfX, gLpfY, gPalette, gLastSelectedPalette
+ * @todo none
+ * @bug none
+ */
 void callback_draw(PointerDevice::event_t event)
 {
 	static PointerDevice::event_t lastEvent;
@@ -140,12 +179,14 @@ void callback_draw(PointerDevice::event_t event)
 	switch(event.event)
 	{
 	case PointerDevice::EVENT_TOUCH_DOWN :
+		// Seed the low pass filter with initial touch position
 		lastEvent = event;
 		gLpfX.setCurrentData(event.x);
 		gLpfY.setCurrentData(event.y);
 		break;
 	
 	case PointerDevice::EVENT_TOUCH_DRAG :
+		// Calculate smoothed coordinates
 		x = gLpfX.calculate(event.x);
 		if(x < 0)
 			x = 0;
@@ -157,6 +198,7 @@ void callback_draw(PointerDevice::event_t event)
 		else if(y > 319)
 			y = 319;
 
+		// Draw smooth line segment on LCD canvas
 		lcd.lock();
 		lcd.setBrushColor(gPalette[gLastSelectedPalette]);
 		lcd.drawLine({lastEvent.x, lastEvent.y}, {x, y});
@@ -170,6 +212,12 @@ void callback_draw(PointerDevice::event_t event)
 	}
 }
 
+/**
+ * @details Selects palette color 0 (Black), updates border highlights.
+ * @see drawPalette
+ * @todo none
+ * @bug none
+ */
 void callback_Palette0(PointerDevice::event_t event)
 {
 	if(event.event == PointerDevice::EVENT_TOUCH_DOWN)
@@ -180,6 +228,12 @@ void callback_Palette0(PointerDevice::event_t event)
 	}
 }
 
+/**
+ * @details Selects palette color 1 (White), updates border highlights.
+ * @see drawPalette
+ * @todo none
+ * @bug none
+ */
 void callback_Palette1(PointerDevice::event_t event)
 {
 	if(event.event == PointerDevice::EVENT_TOUCH_DOWN)
@@ -190,6 +244,12 @@ void callback_Palette1(PointerDevice::event_t event)
 	}
 }
 
+/**
+ * @details Selects palette color 2 (Red), updates border highlights.
+ * @see drawPalette
+ * @todo none
+ * @bug none
+ */
 void callback_Palette2(PointerDevice::event_t event)
 {
 	if(event.event == PointerDevice::EVENT_TOUCH_DOWN)
@@ -200,6 +260,12 @@ void callback_Palette2(PointerDevice::event_t event)
 	}
 }
 
+/**
+ * @details Selects palette color 3 (Green), updates border highlights.
+ * @see drawPalette
+ * @todo none
+ * @bug none
+ */
 void callback_Palette3(PointerDevice::event_t event)
 {
 	if(event.event == PointerDevice::EVENT_TOUCH_DOWN)
@@ -210,6 +276,12 @@ void callback_Palette3(PointerDevice::event_t event)
 	}
 }
 
+/**
+ * @details Selects palette color 4 (Blue), updates border highlights.
+ * @see drawPalette
+ * @todo none
+ * @bug none
+ */
 void callback_Palette4(PointerDevice::event_t event)
 {
 	if(event.event == PointerDevice::EVENT_TOUCH_DOWN)
@@ -220,6 +292,12 @@ void callback_Palette4(PointerDevice::event_t event)
 	}
 }
 
+/**
+ * @details Selects palette color 5 (Yellow), updates border highlights.
+ * @see drawPalette
+ * @todo none
+ * @bug none
+ */
 void callback_Palette5(PointerDevice::event_t event)
 {
 	if(event.event == PointerDevice::EVENT_TOUCH_DOWN)
@@ -230,6 +308,12 @@ void callback_Palette5(PointerDevice::event_t event)
 	}
 }
 
+/**
+ * @details Selects palette color 6 (Magenta), updates border highlights.
+ * @see drawPalette
+ * @todo none
+ * @bug none
+ */
 void callback_Palette6(PointerDevice::event_t event)
 {
 	if(event.event == PointerDevice::EVENT_TOUCH_DOWN)
@@ -240,6 +324,12 @@ void callback_Palette6(PointerDevice::event_t event)
 	}
 }
 
+/**
+ * @details Selects palette color 7 (Cyan), updates border highlights.
+ * @see drawPalette
+ * @todo none
+ * @bug none
+ */
 void callback_Palette7(PointerDevice::event_t event)
 {
 	if(event.event == PointerDevice::EVENT_TOUCH_DOWN)
@@ -250,6 +340,12 @@ void callback_Palette7(PointerDevice::event_t event)
 	}
 }
 
+/**
+ * @details Selects palette color 8 (Orange), updates border highlights.
+ * @see drawPalette
+ * @todo none
+ * @bug none
+ */
 void callback_Palette8(PointerDevice::event_t event)
 {
 	if(event.event == PointerDevice::EVENT_TOUCH_DOWN)
@@ -260,6 +356,12 @@ void callback_Palette8(PointerDevice::event_t event)
 	}
 }
 
+/**
+ * @details Selects palette color 9 (Purple), updates border highlights.
+ * @see drawPalette
+ * @todo none
+ * @bug none
+ */
 void callback_Palette9(PointerDevice::event_t event)
 {
 	if(event.event == PointerDevice::EVENT_TOUCH_DOWN)
@@ -270,6 +372,12 @@ void callback_Palette9(PointerDevice::event_t event)
 	}
 }
 
+/**
+ * @details Selects palette color 10 (Pink), updates border highlights.
+ * @see drawPalette
+ * @todo none
+ * @bug none
+ */
 void callback_Palette10(PointerDevice::event_t event)
 {
 	if(event.event == PointerDevice::EVENT_TOUCH_DOWN)
@@ -280,6 +388,12 @@ void callback_Palette10(PointerDevice::event_t event)
 	}
 }
 
+/**
+ * @details Selects palette color 11 (Gold), updates border highlights.
+ * @see drawPalette
+ * @todo none
+ * @bug none
+ */
 void callback_Palette11(PointerDevice::event_t event)
 {
 	if(event.event == PointerDevice::EVENT_TOUCH_DOWN)
@@ -290,6 +404,12 @@ void callback_Palette11(PointerDevice::event_t event)
 	}
 }
 
+/**
+ * @details Selects palette color 12 (Silver), updates border highlights.
+ * @see drawPalette
+ * @todo none
+ * @bug none
+ */
 void callback_Palette12(PointerDevice::event_t event)
 {
 	if(event.event == PointerDevice::EVENT_TOUCH_DOWN)
@@ -300,6 +420,12 @@ void callback_Palette12(PointerDevice::event_t event)
 	}
 }
 
+/**
+ * @details Selects palette color 13 (Navy), updates border highlights.
+ * @see drawPalette
+ * @todo none
+ * @bug none
+ */
 void callback_Palette13(PointerDevice::event_t event)
 {
 	if(event.event == PointerDevice::EVENT_TOUCH_DOWN)
@@ -310,6 +436,12 @@ void callback_Palette13(PointerDevice::event_t event)
 	}
 }
 
+/**
+ * @details Selects palette color 14 if defined, updates border highlights.
+ * @see drawPalette
+ * @todo none
+ * @bug none
+ */
 void callback_Palette14(PointerDevice::event_t event)
 {
 	if(event.event == PointerDevice::EVENT_TOUCH_DOWN)
@@ -320,6 +452,13 @@ void callback_Palette14(PointerDevice::event_t event)
 	}
 }
 
+/**
+ * @details Callback invoked when the Exit button is touched. Switches the current
+ *          page back to the main menu page.
+ * @see page, pageDisplayMainId
+ * @todo none
+ * @bug none
+ */
 void callback_exit(PointerDevice::event_t event)
 {
 	if(event.event == PointerDevice::EVENT_TOUCH_DOWN)
@@ -328,6 +467,13 @@ void callback_exit(PointerDevice::event_t event)
 	}
 }
 
+/**
+ * @details Calculates screen positions for two rows of palette buttons (7 items each)
+ *          and renders the initial color swatches on the LCD.
+ * @see drawPaletteTop, drawPaletteBot, gPaletteArea
+ * @todo none
+ * @bug none
+ */
 void initializePalette()
 {
 	Area area;
@@ -337,6 +483,7 @@ void initializePalette()
 	brush.setSize(area);
 	brush.setBackgroundColor({0x80, 0x80, 0x80});
 	
+	// Top row of palette buttons (indices 0 to 6)
 	area.setY(319-40);
 	area.setX(0);
 
@@ -347,6 +494,7 @@ void initializePalette()
 		area.addX(area.getWidth());
 	}
 
+	// Bottom row of palette buttons (indices 7 to 13)
 	area.setY(319-20);
 	area.setX(0);
 
@@ -358,6 +506,12 @@ void initializePalette()
 	}
 }
 
+/**
+ * @details Draws a top-row palette swatch button with outer border and inner color fill.
+ * @see brush, lcd
+ * @todo none
+ * @bug none
+ */
 void drawPaletteTop(Area area, Color bdColor, Color color)
 {
 	brush.setBackgroundColor(bdColor);
@@ -367,6 +521,12 @@ void drawPaletteTop(Area area, Color bdColor, Color color)
 	lcd.drawBitmap(area.getPosition(), brush.getBitmap());
 }
 
+/**
+ * @details Draws a bottom-row palette swatch button with outer border and inner color fill.
+ * @see brush, lcd
+ * @todo none
+ * @bug none
+ */
 void drawPaletteBot(Area area, Color bdColor, Color color)
 {
 	brush.setBackgroundColor(bdColor);
@@ -376,6 +536,13 @@ void drawPaletteBot(Area area, Color bdColor, Color color)
 	lcd.drawBitmap(area.getPosition(), brush.getBitmap());
 }
 
+/**
+ * @details Renders a palette button at the given index with specified border and color.
+ *          Directs drawing to drawPaletteTop or drawPaletteBot based on index range.
+ * @see drawPaletteTop, drawPaletteBot
+ * @todo none
+ * @bug none
+ */
 void drawPalette(uint32_t index, Color bdColor, Color color)
 {
 	if(index < 7)
@@ -383,4 +550,5 @@ void drawPalette(uint32_t index, Color bdColor, Color color)
 	else if(index < 14)
 		drawPaletteBot(gPaletteArea[index], bdColor, color);		
 }
+
 

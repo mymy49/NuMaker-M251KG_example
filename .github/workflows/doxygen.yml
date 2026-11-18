@@ -1,0 +1,118 @@
+name: Doxygen GitHub Pages Deploy
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository with submodules
+        uses: actions/checkout@v4
+        with:
+          submodules: true
+
+      - name: Install Doxygen and Graphviz
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y doxygen graphviz
+
+      - name: Generate yss tag file
+        working-directory: yss
+        run: |
+          (
+            [ -f Doxyfile ] && cat Doxyfile
+            echo "EXTRACT_ALL      = YES"
+            echo "EXCLUDE_PATTERNS = *.md"
+            echo "GENERATE_HTML    = NO"
+            echo "GENERATE_LATEX   = NO"
+            echo "HAVE_DOT         = NO"
+            echo "QUIET            = YES"
+            echo "WARNINGS         = NO"
+            echo "OUTPUT_DIRECTORY = /tmp/yss_tag"
+            echo "GENERATE_TAGFILE = ../yss.tag"
+          ) | doxygen -
+
+      - name: Generate 2.8inch_TFT_Touch_Shield_Rev2.1 tag file
+        working-directory: module/2.8inch_TFT_Touch_Shield_Rev2.1
+        run: |
+          (
+            [ -f Doxyfile ] && cat Doxyfile
+            echo "EXTRACT_ALL      = YES"
+            echo "EXCLUDE_PATTERNS = *.md"
+            echo "GENERATE_HTML    = NO"
+            echo "GENERATE_LATEX   = NO"
+            echo "HAVE_DOT         = NO"
+            echo "QUIET            = YES"
+            echo "WARNINGS         = NO"
+            echo "OUTPUT_DIRECTORY = /tmp/touch_shield_tag"
+            echo "GENERATE_TAGFILE = ../../2.8inch_TFT_Touch_Shield_Rev2.1.tag"
+          ) | doxygen -
+
+      - name: Generate ValueDisplay tag file
+        working-directory: module/ValueDisplay
+        run: |
+          (
+            [ -f Doxyfile ] && cat Doxyfile
+            echo "EXTRACT_ALL      = YES"
+            echo "EXCLUDE_PATTERNS = *.md"
+            echo "GENERATE_HTML    = NO"
+            echo "GENERATE_LATEX   = NO"
+            echo "HAVE_DOT         = NO"
+            echo "QUIET            = YES"
+            echo "WARNINGS         = NO"
+            echo "OUTPUT_DIRECTORY = /tmp/valuedisplay_tag"
+            echo "GENERATE_TAGFILE = ../../ValueDisplay.tag"
+          ) | doxygen -
+
+      - name: Generate Lpf tag file
+        working-directory: module/Lpf
+        run: |
+          (
+            [ -f Doxyfile ] && cat Doxyfile
+            echo "EXTRACT_ALL      = YES"
+            echo "EXCLUDE_PATTERNS = *.md"
+            echo "GENERATE_HTML    = NO"
+            echo "GENERATE_LATEX   = NO"
+            echo "HAVE_DOT         = NO"
+            echo "QUIET            = YES"
+            echo "WARNINGS         = NO"
+            echo "OUTPUT_DIRECTORY = /tmp/lpf_tag"
+            echo "GENERATE_TAGFILE = ../../Lpf.tag"
+          ) | doxygen -
+
+      - name: Generate XPT2046 tag file
+        working-directory: module/XPT2046
+        run: |
+          (
+            [ -f Doxyfile ] && cat Doxyfile
+            echo "EXTRACT_ALL      = YES"
+            echo "EXCLUDE_PATTERNS = *.md"
+            echo "GENERATE_HTML    = NO"
+            echo "GENERATE_LATEX   = NO"
+            echo "HAVE_DOT         = NO"
+            echo "QUIET            = YES"
+            echo "WARNINGS         = NO"
+            echo "OUTPUT_DIRECTORY = /tmp/xpt2046_tag"
+            echo "GENERATE_TAGFILE = ../../XPT2046.tag"
+          ) | doxygen -
+
+      - name: Run Doxygen
+        run: doxygen Doxyfile
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./html

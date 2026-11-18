@@ -5,12 +5,32 @@
  * See the file "LICENSE" in the main directory of this archive for more details.
  */
 
+/**
+ * @file bsp.h
+ * @brief Board Support Package header for NuMaker-M251KG runtime timer example.
+ * @author Yoon-Ki Hong
+ * @date 2026-11-18
+ */
+
 #ifndef BSP__H_
 #define BSP__H_
 
 #include <stdint.h>
 
+/**
+ * @brief Initializes on-board hardware peripherals.
+ * @param[in] none
+ * @return none
+ * @author Yoon-Ki Hong
+ * @date 2026-11-18
+ * @warning none
+ * @note Peripherals required for runtime tracking are initialized by initializeYss().
+ * @pre yss OS core and system clock must be initialized via initializeYss().
+ * @post Hardware board configuration is complete.
+ * @deprecated none
+ */
 void initializeBoard(void);
 
 #endif
+
 
