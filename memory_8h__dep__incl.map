@@ -1,0 +1,9 @@
+<map id="common/memory.h" name="common/memory.h">
+<area shape="rect" id="Node000001" title="Non&#45;volatile memory management and touch calibration data storage." alt="" coords="263,5,410,33"/>
+<area shape="rect" id="Node000002" href="$2_88inch_01TFT_01Touch_01Shield_01Rev2_81_2app_2src_2main_8cpp.html" title="Main entry point for the 2.8&#45;inch TFT Touch Shield demonstration application." alt="" coords="5,81,188,143"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="290,38,178,83,176,78,285,40"/>
+<area shape="rect" id="Node000003" href="$page__touchCalibration_8cpp.html" title="Resistive touch screen 2&#45;point calibration routine with flash persistence." alt="" coords="212,81,461,143"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="338,47,339,82,334,79,335,51"/>
+<area shape="rect" id="Node000004" href="$memory_8cpp.html" title="Implementation of persistent memory management routines." alt="" coords="485,98,647,126"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="385,37,535,97,530,98,384,42"/>
+</map>

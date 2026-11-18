@@ -1,0 +1,20 @@
+<map id="SampleCode/2.8inch TFT Touch Shield Rev2.1/app/src/page_main.cpp" name="SampleCode/2.8inch TFT Touch Shield Rev2.1/app/src/page_main.cpp">
+<area shape="rect" id="Node000001" title="Main application launcher page implementation." alt="" coords="229,5,411,67"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,115,62,143"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="228,69,77,117,75,112,229,64"/>
+<area shape="rect" id="Node000003" href="$drawing_8h.html" title=" " alt="" coords="86,115,216,143"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="261,69,190,110,188,105,266,66"/>
+<area shape="rect" id="Node000005" href="$Ubuntu__14__B_8h.html" title=" " alt="" coords="240,115,401,143"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="322,65,322,100,318,98,319,70"/>
+<area shape="rect" id="Node000007" href="$Ubuntu__20__B_8h.html" title=" " alt="" coords="425,115,586,143"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="382,65,468,108,462,108,381,70"/>
+<area shape="rect" id="Node000008" href="$page_8h.html" title="GUI page task declarations and identifiers for 2.8&#45;inch TFT Touch Shield demo." alt="" coords="610,115,676,143"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="412,60,598,113,593,115,412,66"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="84,191,218,218"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="153,141,153,176,148,174,149,145"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="365,191,459,218"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="337,141,387,181,382,181,336,146"/>
+<area shape="poly" id="edge7_Node000007_Node000006" title=" " alt="" coords="491,142,442,183,439,179,486,144"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="608,191,678,218"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="645,141,645,177,641,173,641,145"/>
+</map>

@@ -1,0 +1,18 @@
+var searchData=
+[
+  ['dependencies_0',['Toolchain &amp;amp; Dependencies',['../index.html#autotoc_md8',1,'']]],
+  ['deprecated_20list_1',['Deprecated List',['../deprecated.html',1,'']]],
+  ['dev_5fled_2ecpp_2',['dev_led.cpp',['../dev__led_8cpp.html',1,'']]],
+  ['development_20environment_20specifications_3',['Development Environment &amp;amp; Specifications',['../index.html#autotoc_md5',1,'']]],
+  ['dispatcher_4',['dispatcher',['../2_88inch_01TFT_01Touch_01Shield_01Rev2_81_2app_2inc_2bsp_8h.html#a657871180a22662ec0bb1d89ff92357a',1,'dispatcher:&#160;bsp.h'],['../2_88inch_01TFT_01Touch_01Shield_01Rev2_81_2app_2src_2bsp_8cpp.html#a9e368fe70344faba2677317ab391d3e6',1,'dispatcher(20, 2048):&#160;bsp.cpp']]],
+  ['documentation_20api_20reference_5',['Documentation &amp;amp; API Reference',['../index.html#autotoc_md20',1,'']]],
+  ['drawbackground_6',['drawBackground',['https://mymy49.github.io/ValueDisplay/classValueDisplay.html#a035a6edfd2be7db85fd4808e9b75033b',1,'ValueDisplay::drawBackground()'],['https://mymy49.github.io/ValueDisplay/classProgressDisplay.html#aa7a15380790f0d2b541f522953c1d7da',1,'ProgressDisplay::drawBackground()'],['https://mymy49.github.io/ValueDisplay/classBaseDisplay.html#a0a14a702c2df4739c58e4ab08facaf99',1,'BaseDisplay::drawBackground()'],['https://mymy49.github.io/ValueDisplay/classRpmBarDisplay.html#a2e0fec8b40e13e57d002a67d36500943',1,'RpmBarDisplay::drawBackground()']]],
+  ['drawing_7',['drawing',['../drawing_8cpp.html#ab72245d1a74d378f18dd3a58abe14e3b',1,'drawing:&#160;drawing.cpp'],['../drawing_8h.html#ab72245d1a74d378f18dd3a58abe14e3b',1,'drawing:&#160;drawing.cpp']]],
+  ['drawing_2ecpp_8',['drawing.cpp',['../drawing_8cpp.html',1,'']]],
+  ['drawing_2eh_9',['drawing.h',['../drawing_8h.html',1,'']]],
+  ['drawpalette_10',['drawPalette',['../page__drawing_8cpp.html#a09fb388339e6fb7923f67e8a943ef115',1,'page_drawing.cpp']]],
+  ['drawpalettebot_11',['drawPaletteBot',['../page__drawing_8cpp.html#a94eeae95f9da018090855429f50d700a',1,'page_drawing.cpp']]],
+  ['drawpalettetop_12',['drawPaletteTop',['../page__drawing_8cpp.html#a9c3db132e70f16e32425e01a680b35fc',1,'page_drawing.cpp']]],
+  ['drawvalue_13',['drawValue',['https://mymy49.github.io/ValueDisplay/classValueDisplay.html#a08bb1d7b3710d7c167716f3c6468d197',1,'ValueDisplay::drawValue()'],['https://mymy49.github.io/ValueDisplay/classProgressDisplay.html#aaff00d2530e2a899527a813c5dabab1a',1,'ProgressDisplay::drawValue()'],['https://mymy49.github.io/ValueDisplay/classBaseDisplay.html#af5b3bffb81f612b55dc86045b3d51db7',1,'BaseDisplay::drawValue()'],['https://mymy49.github.io/ValueDisplay/classRpmBarDisplay.html#aba4b45df1270b9d5234b4749838ae49c',1,'RpmBarDisplay::drawValue()'],['https://mymy49.github.io/ValueDisplay/classAlertValueDisplay.html#adcfd4a0e9ba4c78c4bbb3a6cca48ea61',1,'AlertValueDisplay::drawValue()']]],
+  ['drawvaluewithcursor_14',['drawValueWithCursor',['https://mymy49.github.io/ValueDisplay/classValueDisplay.html#a26bd603b45a10759db4620b4ed2a3525',1,'ValueDisplay']]]
+];

@@ -1,0 +1,13 @@
+<map id="SampleCode/2.8inch TFT Touch Shield Rev2.1/app/font/Ubuntu_20_B.h" name="SampleCode/2.8inch TFT Touch Shield Rev2.1/app/font/Ubuntu_20_B.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="444,5,627,67"/>
+<area shape="rect" id="Node000002" href="$Ubuntu__20__B_8cpp.html" title=" " alt="" coords="5,115,202,177"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="428,65,215,118,203,121,201,116,214,112,430,60"/>
+<area shape="rect" id="Node000003" href="$page__drawing_8cpp.html" title="Free&#45;hand drawing page application with color palette and low&#45;pass filtering." alt="" coords="226,115,421,177"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="465,74,384,117,382,112,460,75"/>
+<area shape="rect" id="Node000004" href="$page__logo_8cpp.html" title="Startup splash screen displaying Nuvoton logo and system information." alt="" coords="444,115,627,177"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="537,81,538,116,533,113,534,84"/>
+<area shape="rect" id="Node000005" href="$page__main_8cpp.html" title="Main application launcher page implementation." alt="" coords="651,115,833,177"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="607,72,687,115,681,114,606,77"/>
+<area shape="rect" id="Node000006" href="$page__touchCalibration_8cpp.html" title="Resistive touch screen 2&#45;point calibration routine with flash persistence." alt="" coords="858,115,1107,177"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="642,60,860,114,854,115,641,66"/>
+</map>

@@ -1,0 +1,27 @@
+var searchData=
+[
+  ['savememory_0',['saveMemory',['../memory_8cpp.html#a44ef0e50f06b14420170d92cb204cd0c',1,'saveMemory():&#160;memory.cpp'],['../memory_8h.html#a44ef0e50f06b14420170d92cb204cd0c',1,'saveMemory():&#160;memory.cpp']]],
+  ['setalertcolor_1',['setAlertColor',['https://mymy49.github.io/ValueDisplay/classAlertValueDisplay.html#a74b9b324482d32f7ac87245bdee0bc0c',1,'AlertValueDisplay']]],
+  ['setalertvalue_2',['setAlertValue',['https://mymy49.github.io/ValueDisplay/classAlertValueDisplay.html#a4f3eb05fd720a173a11a3f516c5826de',1,'AlertValueDisplay']]],
+  ['setarea_3',['setArea',['https://mymy49.github.io/ValueDisplay/classBaseDisplay.html#ab7ac1ef1a8afe4902083216e0c65a74e',1,'BaseDisplay::setArea(Area *area)'],['https://mymy49.github.io/ValueDisplay/classBaseDisplay.html#ae78377c200b496fff2ac026da34b4212',1,'BaseDisplay::setArea(Area area)']]],
+  ['setbarbgcolor_4',['setBarBgColor',['https://mymy49.github.io/ValueDisplay/classRpmBarDisplay.html#a7d42bf4fb0786557b7f15d76f6028640',1,'RpmBarDisplay']]],
+  ['setbgcolor_5',['setBgColor',['https://mymy49.github.io/ValueDisplay/classBaseDisplay.html#ae011b4f768f68c7eb903778a507af20a',1,'BaseDisplay::setBgColor(Color color)'],['https://mymy49.github.io/ValueDisplay/classBaseDisplay.html#a12f0bcbf1c1ff38fec8a39488c94781b',1,'BaseDisplay::setBgColor(uint8_t red, uint8_t green, uint8_t blue, uint8_t alpha=0xFF)']]],
+  ['setcolor_6',['setColor',['https://mymy49.github.io/ValueDisplay/classProgressDisplay.html#a6ea16235ae4f087a889ed8c2dfec29b4',1,'ProgressDisplay']]],
+  ['setcurrentdata_7',['setCurrentData',['https://mymy49.github.io/Lpf/classLpf.html#adce9b10cb7aee09ba4ae4163748d9729',1,'Lpf']]],
+  ['setfont_8',['setFont',['https://mymy49.github.io/ValueDisplay/classBaseDisplay.html#a6278f7eb30679bba4c2879b4bd2e939a',1,'BaseDisplay']]],
+  ['setframebuffer_9',['setFrameBuffer',['https://mymy49.github.io/ValueDisplay/classBaseDisplay.html#ac83c002aba8cf4043fb6e4124b1bed85',1,'BaseDisplay::setFrameBuffer(FrameBuffer &amp;fb)'],['https://mymy49.github.io/ValueDisplay/classBaseDisplay.html#ab9315d0bcde97fec9f5bbfa52fb9ad98',1,'BaseDisplay::setFrameBuffer(FrameBuffer *fb)']]],
+  ['setidlecolor_10',['setIdleColor',['https://mymy49.github.io/ValueDisplay/classRpmBarDisplay.html#a17a216b6795730ae04a5d7719a8237ba',1,'RpmBarDisplay']]],
+  ['setlcd_11',['setLcd',['https://mymy49.github.io/ValueDisplay/classBaseDisplay.html#a626bb7b332c2c5323d26285192eb668d',1,'BaseDisplay']]],
+  ['setled_12',['setLed',['../MutexWatchdog_2app_2inc_2bsp_8h.html#ac088b04ace9a4bde43460c6cb70c7166',1,'setLed(bool on):&#160;bsp.cpp'],['../MutexWatchdog_2app_2src_2bsp_8cpp.html#ac088b04ace9a4bde43460c6cb70c7166',1,'setLed(bool on):&#160;bsp.cpp']]],
+  ['setmaxrpm_13',['setMaxRpm',['https://mymy49.github.io/ValueDisplay/classRpmBarDisplay.html#a23eede38f9fef459cdf8a6a24126cdd4',1,'RpmBarDisplay']]],
+  ['setnormalcolor_14',['setNormalColor',['https://mymy49.github.io/ValueDisplay/classRpmBarDisplay.html#a1cae7c9693382f0a96b6003a007a4f24',1,'RpmBarDisplay']]],
+  ['setovercolor_15',['setOverColor',['https://mymy49.github.io/ValueDisplay/classRpmBarDisplay.html#a3a326a827e3eb960e182167aac6221bf',1,'RpmBarDisplay']]],
+  ['setposition_16',['setPosition',['https://mymy49.github.io/ValueDisplay/classBaseDisplay.html#a6d2b804ec3ccfa6773c1d92b651d308a',1,'BaseDisplay']]],
+  ['setratio_17',['setRatio',['https://mymy49.github.io/Lpf/classLpf.html#ad0ef80c9916e17037fde58f84c39b6f1',1,'Lpf']]],
+  ['setsize_18',['setSize',['https://mymy49.github.io/ValueDisplay/classBaseDisplay.html#a973a860a6dd9fbb27dcb6fac6faaf62a',1,'BaseDisplay::setSize(uint16_t width, uint16_t height)'],['https://mymy49.github.io/ValueDisplay/classBaseDisplay.html#a502493591ecd9351491cc7e2766bba46',1,'BaseDisplay::setSize(Size size)']]],
+  ['settitleconfig_19',['setTitleConfig',['https://mymy49.github.io/ValueDisplay/classValueDisplay.html#ad21e5fe2648a19f1607cf87a9f5ab7fc',1,'ValueDisplay']]],
+  ['settoplinethickness_20',['setToplineThickness',['https://mymy49.github.io/ValueDisplay/classRpmBarDisplay.html#ade673b62adb2a1e5b7f62f44cdc2da7a',1,'RpmBarDisplay']]],
+  ['setunitconfig_21',['setUnitConfig',['https://mymy49.github.io/ValueDisplay/classValueDisplay.html#aa00da94eb32e1600b93dcf5482f9e973',1,'ValueDisplay']]],
+  ['setvalueconfig_22',['setValueConfig',['https://mymy49.github.io/ValueDisplay/classValueDisplay.html#a51a0542aff986c4a0c1cd0407cc1cf1e',1,'ValueDisplay']]],
+  ['setwarningcolor_23',['setWarningColor',['https://mymy49.github.io/ValueDisplay/classRpmBarDisplay.html#ad8405c376ab2db51afeed492ece06abf',1,'RpmBarDisplay']]]
+];

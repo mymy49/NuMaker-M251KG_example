@@ -1,0 +1,7 @@
+<map id="common/memory.h" name="common/memory.h">
+<area shape="rect" id="Node000001" title="Non&#45;volatile memory management and touch calibration data storage." alt="" coords="35,5,182,33"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,81,76,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="99,32,65,71,61,68,94,35"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="99,81,254,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="122,31,157,69,151,70,120,36"/>
+</map>

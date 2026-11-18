@@ -1,0 +1,20 @@
+<map id="SampleCode/2.8inch TFT Touch Shield Rev2.1/app/src/main.cpp" name="SampleCode/2.8inch TFT Touch Shield Rev2.1/app/src/main.cpp">
+<area shape="rect" id="Node000001" title="Main entry point for the 2.8&#45;inch TFT Touch Shield demonstration application." alt="" coords="176,5,359,67"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,115,61,143"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="189,70,76,114,74,109,190,65"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="85,115,141,143"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="214,69,150,109,147,105,218,66"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="165,115,264,143"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="252,66,232,103,228,100,248,69"/>
+<area shape="rect" id="Node000005" href="$page_8h.html" title="GUI page task declarations and identifiers for 2.8&#45;inch TFT Touch Shield demo." alt="" coords="288,115,354,143"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="286,65,308,102,303,101,284,70"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="378,115,488,143"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="323,65,399,107,393,108,322,70"/>
+<area shape="rect" id="Node000008" href="$memory_8h.html" title="Non&#45;volatile memory management and touch calibration data storage." alt="" coords="511,115,598,143"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="359,64,501,109,495,110,359,69"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="335,191,406,218"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="331,141,356,178,351,177,329,146"/>
+<area shape="poly" id="edge8_Node000008_Node000006" title=" " alt="" coords="524,143,418,187,416,182,519,144"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="477,191,632,218"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="556,141,556,177,552,173,552,145"/>
+</map>
