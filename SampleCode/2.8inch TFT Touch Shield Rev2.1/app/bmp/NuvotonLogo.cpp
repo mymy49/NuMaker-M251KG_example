@@ -1,13 +1,25 @@
 ////////////////////////////////////////////////////////////////////////////////////////
 //
-// yssBmpMaker를 사용해 생성된 코드 입니다.
+// Code generated using yssBmpMaker.
 //
 // Home Page : http://cafe.naver.com/yssoperatingsystem
 //
 ////////////////////////////////////////////////////////////////////////////////////////
 
+/**
+ * @file NuvotonLogo.cpp
+ * @brief Bitmap pixel data and descriptor for the Nuvoton corporate logo.
+ * @details Contains the raw 10,000-byte (200x25 pixels, 16-bit RGB565 Little Endian)
+ *          bitmap array and `bitmap_t` structure for `NuvotonLogo`.
+ * @author Yoon-Ki Hong
+ * @date 2026-11-18
+ */
+
 #include "NuvotonLogo.h"
 
+/**
+ * @brief Raw RGB565 little-endian pixel data array for the 200x25 Nuvoton logo (10,000 bytes / 9.8 kB).
+ */
 static const unsigned char data[10000] = // 9.8 kB
 {
 	0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 		// 10
@@ -1013,11 +1025,14 @@ static const unsigned char data[10000] = // 9.8 kB
 	
 };
 
+/**
+ * @brief Bitmap descriptor structure for the 200x25 RGB565 Nuvoton corporate logo.
+ */
 const bitmap_t NuvotonLogo = 
 {
-	200,	// width
-	25,	// height
-	BITMAP_TYPE_RGB565,	// type = 0 : RGB565, 1 : RGB888, 2 : ARGB1555
+	200,				// uint16_t width: 200 pixels
+	25,					// uint16_t height: 25 pixels
+	BITMAP_TYPE_RGB565,	// uint8_t type: 0 = RGB565, 1 = RGB888, 2 = ARGB1555
 	(unsigned char*)data
 };
 

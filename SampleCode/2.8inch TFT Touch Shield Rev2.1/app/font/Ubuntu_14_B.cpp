@@ -23,6 +23,15 @@
 //
 ////////////////////////////////////////////////////////////////////////////////////////
 
+/**
+ * @file Ubuntu_14_B.cpp
+ * @brief Glyph bitmap tables and `CodeFont` instance definition for Ubuntu 14pt Bold (`Font_Ubuntu_14_B`).
+ * @details Contains pre-rendered glyph bitmaps, character metric lookup tables, and the
+ *          `Font_Ubuntu_14_B` object used by the TurtleShip GUI brush renderer.
+ * @author Yoon-Ki Hong
+ * @date 2026-11-18
+ */
+
 #include "Ubuntu_14_B.h"
 
 static const uint8_t font_0x00000028[48] = // (
@@ -2314,6 +2323,9 @@ static const Font::fontInfo_t fontData7[11]
 		(uint8_t*)font_0x00000077	// data
 	}
 };
+/**
+ * @brief Master font metadata descriptor grouping the 8 hash-bucket glyph lookup tables for Ubuntu 14pt Bold.
+ */
 static const CodeFont::codeFontInfo_t codeFontInfo = 
 {
 	14,
@@ -2330,6 +2342,9 @@ static const CodeFont::codeFontInfo_t codeFontInfo =
 	}
 };
 
+/**
+ * @brief Global `CodeFont` instance initialized with the Ubuntu 14pt Bold font descriptor.
+ */
 CodeFont Font_Ubuntu_14_B(&codeFontInfo);
 
 

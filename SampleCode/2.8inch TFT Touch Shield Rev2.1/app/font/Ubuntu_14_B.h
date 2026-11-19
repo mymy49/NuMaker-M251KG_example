@@ -23,16 +23,28 @@
 //
 ////////////////////////////////////////////////////////////////////////////////////////
 
+/**
+ * @file Ubuntu_14_B.h
+ * @brief Header file for the Ubuntu 14pt Bold bitmap font (`Font_Ubuntu_14_B`).
+ * @details Declares the `CodeFont` instance providing anti-aliased glyph bitmaps for
+ *          Ubuntu 14 Bold text rendering on the TFT LCD.
+ * @author Yoon-Ki Hong
+ * @date 2026-11-18
+ */
+
 #ifndef YSS_FONT_Ubuntu_14_B__H_
 #define YSS_FONT_Ubuntu_14_B__H_
 
 #include <CodeFont.h>
 
+/**
+ * @brief Global `CodeFont` instance for Ubuntu 14pt Bold (code size: 5.08 kB).
+ */
 extern CodeFont Font_Ubuntu_14_B;
 
-// 점유 코드 용량 : 5.08 kB
+// Occupied code size : 5.08 kB
 
-// 사용된 문자 : 
+// Included characters : 
 /*
 
 */

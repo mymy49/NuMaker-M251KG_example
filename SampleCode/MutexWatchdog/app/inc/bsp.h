@@ -8,6 +8,7 @@
 /**
  * @file bsp.h
  * @brief Board Support Package header for NuMaker-M251KG Mutex Watchdog example.
+ * @details Declares board initialization, LED control, and RTOS mutex watchdog demonstration routines.
  * @author Yoon-Ki Hong
  * @date 2026-11-18
  */
@@ -44,6 +45,34 @@ void initializeBoard(void);
  * @deprecated none
  */
 void setLed(bool on);
+
+/**
+ * @brief Thread entry point designed to induce a mutex deadlock / watchdog trigger.
+ * @param[in] none
+ * @return none
+ * @author Yoon-Ki Hong
+ * @date 2026-11-18
+ * @warning Deliberately holds `gMutex` without releasing to trigger `mutexWatchdogHandler()`.
+ * @note Waits 5 seconds before locking the shared mutex indefinitely.
+ * @pre `gMutex` must be initialized and `THREAD_WATCHDOG_ENABLE` must be enabled in `config.h`.
+ * @post `gMutex` is locked indefinitely by this thread, causing a watchdog timeout on waiting threads.
+ * @deprecated none
+ */
+void thread_testMutexWatchdog(void);
+
+/**
+ * @brief Custom recovery handler invoked when a mutex lock exceeds `THREAD_WATCHDOG_OVERFLOW_TIME`.
+ * @param[in] none
+ * @return none
+ * @author Yoon-Ki Hong
+ * @date 2026-11-18
+ * @warning Overrides the default yss OS weak handler (which performs a system reset) with an infinite alarm blink loop.
+ * @note Toggles the on-board LED at 500 ms intervals to visually signal a detected mutex deadlock.
+ * @pre `THREAD_WATCHDOG_ENABLE` must be set to `true` in `config.h`.
+ * @post Execution remains in the emergency LED blink loop until reset.
+ * @deprecated none
+ */
+void mutexWatchdogHandler(void);
 
 #endif
 

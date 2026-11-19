@@ -8,6 +8,10 @@
 /**
  * @file page_touchCalibration.cpp
  * @brief Resistive touch screen 2-point calibration routine with flash persistence.
+ * @details Guides the user through pressing top-left (P1) and bottom-right (P2) bullseye targets
+ *          for 5 seconds each, filters raw XPT2046 ADC readings using a low-pass filter (`Lpf`),
+ *          displays real-time progress with `ProgressDisplay`, and persists the resulting
+ *          calibration matrix to internal flash page 511.
  * @author Yoon-Ki Hong
  * @date 2026-11-18
  */
@@ -24,39 +28,59 @@
 #include <memory.h>
 #include <page.h>
 
-/// Calibration state machine steps
+/**
+ * @enum step_t
+ * @brief State machine stages for the 2-point resistive touch calibration sequence.
+ */
 enum step_t
 {
-	STEP_WAITING_PRESS_P1,  ///< Waiting for initial touch on Point 1 (Top-Left)
-	STEP_CALIBRATING_P1,    ///< Filtering raw ADC readings during Point 1 press
-	STEP_WAITING_UP_P1,     ///< Waiting for finger release from Point 1
-	STEP_WAITING_PRESS_P2,  ///< Waiting for initial touch on Point 2 (Bottom-Right)
-	STEP_CALIBRATING_P2,    ///< Filtering raw ADC readings during Point 2 press
-	STEP_WAITING_UP_P2,     ///< Waiting for finger release from Point 2
+	STEP_WAITING_PRESS_P1,  ///< Waiting for initial touch contact on Point 1 (Top-Left)
+	STEP_CALIBRATING_P1,    ///< Accumulating and filtering raw ADC readings during Point 1 hold
+	STEP_WAITING_UP_P1,     ///< Waiting for stylus/finger release from Point 1
+	STEP_WAITING_PRESS_P2,  ///< Waiting for initial touch contact on Point 2 (Bottom-Right)
+	STEP_CALIBRATING_P2,    ///< Accumulating and filtering raw ADC readings during Point 2 hold
+	STEP_WAITING_UP_P2,     ///< Waiting for stylus/finger release from Point 2
 };
 
+/**
+ * @brief Registered task identifier for the 2-point touch calibration page.
+ */
 int16_t pageDisplayTouchCalibrationId;
 
+/**
+ * @brief Timer tracking elapsed time since the most recent touch callback invocation.
+ */
 ElapsedTime gLastUpdateTime;
+
+/**
+ * @brief Low-pass filter instances (cutoff factor 2.0) for averaging raw X and Y ADC samples during calibration.
+ */
 static Lpf gLpfX(2.f), gLpfY(2.f);
+
+/**
+ * @brief Volatile synchronization flags shared between `callback_calibrate` and `pageDisplayTouchCalibration`.
+ */
 volatile bool gPushFlag, gUpFlag, gCalibratingFlag, gFirstContactFlag;
 
 /**
  * @details Handles touch events during calibration:
- *          - EVENT_TOUCH_DOWN: flags touch press and resets low-pass filter state.
- *          - EVENT_TOUCH_DRAG: feeds raw ADC conversion values into low-pass filters (gLpfX, gLpfY).
- *          - EVENT_TOUCH_UP: flags release event to advance the state machine.
- * @see touch, gLpfX, gLpfY
+ *          - `EVENT_TOUCH_DOWN`: asserts `gPushFlag`, clears `gUpFlag`, and sets `gFirstContactFlag` to re-seed filters.
+ *          - `EVENT_TOUCH_DRAG`: when `gCalibratingFlag` is active, seeds or updates `gLpfX` and `gLpfY`
+ *            with the raw uncalibrated X/Y ADC readings from `touch.getLastConvertedAdcX()` / `getLastConvertedAdcY()`.
+ *          - `EVENT_TOUCH_UP`: asserts `gUpFlag` to signal stylus release to the calibration state machine.
+ * @see touch, gLpfX, gLpfY, XPT2046::getLastConvertedAdcX, XPT2046::getLastConvertedAdcY
  * @todo none
  * @bug none
  */
 void callback_calibrate(PointerDevice::event_t event)
 {
+	// Reset inactivity timer on every incoming touch event
 	gLastUpdateTime.reset();
 
 	switch(event.event)
 	{
 	case PointerDevice::EVENT_TOUCH_DOWN :
+		// Signal initial touch contact and request filter seeding on first drag sample
 		gPushFlag = true;
 		gUpFlag = false;
 		gFirstContactFlag = true;
@@ -67,14 +91,14 @@ void callback_calibrate(PointerDevice::event_t event)
 		{
 			if(gFirstContactFlag)
 			{
-				// Seed filters with initial raw touch ADC coordinates
+				// Seed low-pass filters with the first raw touch ADC reading
 				gFirstContactFlag = false;
 				gLpfX.setCurrentData(touch.getLastConvertedAdcX());
 				gLpfY.setCurrentData(touch.getLastConvertedAdcY());				
 			}
 			else
 			{
-				// Update moving average filter with incoming ADC samples
+				// Feed subsequent raw ADC samples into the low-pass filter
 				gLpfX.calculate(touch.getLastConvertedAdcX());
 				gLpfY.calculate(touch.getLastConvertedAdcY());
 			}
@@ -82,6 +106,7 @@ void callback_calibrate(PointerDevice::event_t event)
 		break;
 
 	case PointerDevice::EVENT_TOUCH_UP :
+		// Signal stylus/finger lift to the calibration state machine
 		gUpFlag = true;
 		break;
 

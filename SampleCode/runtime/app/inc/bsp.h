@@ -8,6 +8,7 @@
 /**
  * @file bsp.h
  * @brief Board Support Package header for NuMaker-M251KG runtime timer example.
+ * @details Declares board-level initialization routines for the high-resolution runtime measurement example.
  * @author Yoon-Ki Hong
  * @date 2026-11-18
  */
@@ -24,7 +25,7 @@
  * @author Yoon-Ki Hong
  * @date 2026-11-18
  * @warning none
- * @note Peripherals required for runtime tracking are initialized by initializeYss().
+ * @note Hardware timers required for runtime tracking (`YSS_RUNTIME_TIMER`) are initialized automatically by `initializeYss()`.
  * @pre yss OS core and system clock must be initialized via initializeYss().
  * @post Hardware board configuration is complete.
  * @deprecated none

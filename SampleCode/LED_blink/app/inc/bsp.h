@@ -8,6 +8,7 @@
 /**
  * @file bsp.h
  * @brief Board Support Package header for NuMaker-M251KG LED blink example.
+ * @details Declares board-level initialization routines for setting up the on-board red user LED (PB14).
  * @author Yoon-Ki Hong
  * @date 2026-11-18
  */
@@ -25,7 +26,7 @@
  * @author Yoon-Ki Hong
  * @date 2026-11-18
  * @warning none
- * @note Configures PB14 as output mode for the red LED.
+ * @note Configures PB14 as push-pull output mode for the active-low red LED.
  * @pre yss OS core and system clock must be initialized via initializeYss().
  * @post The on-board red LED is initialized and set to the OFF state.
  * @deprecated none

@@ -8,6 +8,7 @@
 /**
  * @file bsp.h
  * @brief Board Support Package header for NuMaker-M251KG UART example.
+ * @details Declares board initialization and asynchronous LED trigger routines for the UART0 echo application.
  * @author Yoon-Ki Hong
  * @date 2026-11-18
  */
@@ -31,6 +32,20 @@
  * @deprecated none
  */
 void initializeBoard(void);
+
+/**
+ * @brief Asynchronous RTOS trigger handler that briefly flashes the on-board red LED.
+ * @param[in] none
+ * @return none
+ * @author Yoon-Ki Hong
+ * @date 2026-11-18
+ * @warning Invoked asynchronously by the yss OS trigger manager upon UART reception events.
+ * @note Illuminates the red LED for 20 milliseconds and then turns it off.
+ * @pre `Led::initialize()` must have been called and this function registered via `trigger::add()`.
+ * @post The on-board red LED pulses ON for 20 ms and returns to the OFF state.
+ * @deprecated none
+ */
+void trigger_blinkLed(void);
 
 #endif
 

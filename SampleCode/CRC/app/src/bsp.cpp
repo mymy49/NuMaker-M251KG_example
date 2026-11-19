@@ -8,6 +8,7 @@
 /**
  * @file bsp.cpp
  * @brief Board Support Package implementation for NuMaker-M251KG CRC example.
+ * @details Implements hardware initialization for the Nuvoton M251 CRC peripheral in 32-bit CRC32 mode.
  * @author Yoon-Ki Hong
  * @date 2026-11-18
  */
@@ -18,11 +19,13 @@
 
 /**
  * @details Initializes the hardware CRC engine in CRC32 mode:
- *          - Data length: 32-bit words
- *          - Initial polynomial seed: 0xFFFFFFFF
- *          - Bit reversal: None (standard bit order for both write and checksum)
- *          - Enables CRC peripheral clock and interrupt service routine.
- * @see crc
+ *          - Polynomial mode: CRC-32 (`Crc::CRC_MODE_CRC32`, polynomial 0x04C11DB7)
+ *          - Data write width: 32-bit words (`Crc::CRC_DAT_LEN_32BIT`)
+ *          - Initial polynomial seed: `0xFFFFFFFF`
+ *          - Bit order reversal: Disabled (`false`) for both input write data and output checksum
+ *          - Enables the AHB clock for the CRC peripheral, applies the register configuration,
+ *            and enables the CRC peripheral interrupt service routine.
+ * @see crc, Crc::config_t, Crc::initialize
  * @todo none
  * @bug none
  */
@@ -33,16 +36,18 @@ void initializeBoard(void)
 	// --------------------------------------------------
 	Crc::config_t crcConfig =
 	{
-		Crc::CRC_MODE_CRC32,	// mode_t mode;
-		Crc::CRC_DAT_LEN_32BIT,	// datalen_t datalen;
-		0xFFFFFFFF,				// uint32_t seed;
-		false,					// bool writeBitOrderReverse;
-		false					// bool checksumBitOrderReverse;
+		Crc::CRC_MODE_CRC32,	// mode_t mode: Standard 32-bit CRC-32 polynomial
+		Crc::CRC_DAT_LEN_32BIT,	// datalen_t datalen: Process 32-bit words per write cycle
+		0xFFFFFFFF,				// uint32_t seed: Standard initial seed value (all ones)
+		false,					// bool writeBitOrderReverse: Do not reverse input bit order
+		false					// bool checksumBitOrderReverse: Do not reverse output bit order
 	};
 
-	// Enable clock, initialize registers, and enable CRC interrupts
+	// Enable AHB peripheral clock for the hardware CRC controller
 	crc.enableClock();
+	// Initialize CRC control and seed registers with the specified configuration
 	crc.initialize(crcConfig);
+	// Enable interrupt handling for the CRC driver instance
 	crc.enableInterrupt();
 }
 

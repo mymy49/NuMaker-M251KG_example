@@ -23,6 +23,15 @@
 //
 ////////////////////////////////////////////////////////////////////////////////////////
 
+/**
+ * @file Ubuntu_20_B.cpp
+ * @brief Glyph bitmap tables and `CodeFont` instance definition for Ubuntu 20pt Bold (`Font_Ubuntu_20_B`).
+ * @details Contains pre-rendered glyph bitmaps, character metric lookup tables, and the
+ *          `Font_Ubuntu_20_B` object used by the TurtleShip GUI brush renderer.
+ * @author Yoon-Ki Hong
+ * @date 2026-11-18
+ */
+
 #include "Ubuntu_20_B.h"
 
 static const uint8_t font_0x00000070[96] = // p
@@ -2666,6 +2675,9 @@ static const Font::fontInfo_t fontData7[11]
 		(uint8_t*)font_0x0000006F	// data
 	}
 };
+/**
+ * @brief Master font metadata descriptor grouping the 8 hash-bucket glyph lookup tables for Ubuntu 20pt Bold.
+ */
 static const CodeFont::codeFontInfo_t codeFontInfo = 
 {
 	20,
@@ -2682,6 +2694,9 @@ static const CodeFont::codeFontInfo_t codeFontInfo =
 	}
 };
 
+/**
+ * @brief Global `CodeFont` instance initialized with the Ubuntu 20pt Bold font descriptor.
+ */
 CodeFont Font_Ubuntu_20_B(&codeFontInfo);
 
 

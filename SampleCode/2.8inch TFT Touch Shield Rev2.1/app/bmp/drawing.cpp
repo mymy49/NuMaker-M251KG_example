@@ -1,13 +1,25 @@
 ////////////////////////////////////////////////////////////////////////////////////////
 //
-// yssBmpMaker를 사용해 생성된 코드 입니다.
+// Code generated using yssBmpMaker.
 //
 // Home Page : http://cafe.naver.com/yssoperatingsystem
 //
 ////////////////////////////////////////////////////////////////////////////////////////
 
+/**
+ * @file drawing.cpp
+ * @brief Bitmap pixel data and descriptor for the Drawing application launcher icon.
+ * @details Contains the raw 16,200-byte (90x90 pixels, 16-bit RGB565 Little Endian)
+ *          bitmap array and `bitmap_t` structure for `drawing`.
+ * @author Yoon-Ki Hong
+ * @date 2026-11-18
+ */
+
 #include "drawing.h"
 
+/**
+ * @brief Raw RGB565 little-endian pixel data array for the 90x90 Drawing icon (16,200 bytes / 15.8 kB).
+ */
 static const unsigned char data[16200] = // 15.8 kB
 {
 	0x55, 0xad, 0x55, 0xad, 0x55, 0xad, 0x55, 0xad, 0x55, 0xad, 		// 10
@@ -1633,11 +1645,14 @@ static const unsigned char data[16200] = // 15.8 kB
 	
 };
 
+/**
+ * @brief Bitmap descriptor structure for the 90x90 RGB565 Drawing application launcher icon.
+ */
 const bitmap_t drawing = 
 {
-	90,	// width
-	90,	// height
-	BITMAP_TYPE_RGB565, // type = 0 : RGB565, 1 : RGB888, 2 : ARGB1555
+	90,					// uint16_t width: 90 pixels
+	90,					// uint16_t height: 90 pixels
+	BITMAP_TYPE_RGB565, // uint8_t type: 0 = RGB565, 1 = RGB888, 2 = ARGB1555
 	(unsigned char*)data
 };
 

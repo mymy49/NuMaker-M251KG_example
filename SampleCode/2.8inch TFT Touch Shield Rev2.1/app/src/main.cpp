@@ -8,6 +8,8 @@
 /**
  * @file main.cpp
  * @brief Main entry point for the 2.8-inch TFT Touch Shield demonstration application.
+ * @details Coordinates system initialization, non-volatile touch calibration loading from flash,
+ *          and GUI page task scheduling via the yss OS `TaskManager`.
  * @author Yoon-Ki Hong
  * @date 2026-11-18
  */
@@ -21,11 +23,12 @@
 
 /**
  * @details Initializes the yss OS kernel, target board hardware peripherals, and non-volatile
- *          flash memory. Registers the page tasks into the TaskManager (logo, main menu,
- *          touch calibration, drawing app). First presents the startup logo for 5 seconds.
- *          If touch calibration data exists, advances directly to the main menu page; otherwise,
- *          launches the calibration sequence. The main thread then yields execution in an infinite loop.
- * @see initializeYss, initializeBoard, initializeMemory, page
+ *          flash memory. Registers the 4 GUI page tasks into the `page` TaskManager (logo, main menu,
+ *          touch calibration, drawing app). First presents the startup logo splash screen for 5 seconds.
+ *          If valid touch calibration data exists in flash (`memory.touchInitFlag == true`), advances
+ *          directly to the main menu page; otherwise, launches the 2-point touch calibration page.
+ *          The main thread then yields execution in an infinite loop.
+ * @see initializeYss, initializeBoard, initializeMemory, page, TaskManager::add, TaskManager::play
  * @todo none
  * @bug none
  */
@@ -56,19 +59,19 @@ int main(void)
 	pageDisplayTouchCalibrationId = page.add(pageDisplayTouchCalibration, 2048);
 	pageDisplayDrawingId = page.add(pageDisplayDrawing, 2048);
 
-	// Display startup logo page
+	// Launch startup logo splash screen task
 	page.play(pageDisplayLogoId);
 
-	// Display splash screen for 5 seconds
+	// Display splash screen for 5000 ms (5 seconds)
 	thread::delay(5000);
 	
-	// If touch is already calibrated, switch to main page; otherwise, run calibration
+	// Transition to main menu if touch calibration is already stored in flash; otherwise start calibration
 	if(memory.touchInitFlag)
 		page.play(pageDisplayMainId);
 	else
 		page.play(pageDisplayTouchCalibrationId);
 
-	// Main loop: yield execution to background tasks
+	// Main loop: yield CPU execution to active GUI page and touch dispatcher threads
 	while(1)
 	{
 		thread::yield();

@@ -8,6 +8,8 @@
 /**
  * @file bsp.cpp
  * @brief Board Support Package implementation for NuMaker-M251KG Mutex Watchdog example.
+ * @details Provides direct GPIO Port B Pin 14 configuration and output control for the
+ *          on-board status indicator LED.
  * @author Yoon-Ki Hong
  * @date 2026-11-18
  */
@@ -17,26 +19,26 @@
 #include <yss/debug.h>
 
 /**
- * @details Configures GPIO port B pin 14 as output mode to control the on-board red LED.
- * @see setLed, gpioB
+ * @details Configures GPIO port B pin 14 as push-pull output mode to control the on-board red LED.
+ * @see setLed, gpioB, Gpio::setAsOutput
  * @todo none
  * @bug none
  */
 void initializeBoard(void)
 {
-	// Configure PB14 as push-pull output for status indicator LED
+	// Configure PB14 as push-pull output for the status indicator LED
 	gpioB.setAsOutput(14);
 }
 
 /**
  * @details Drives PB14 LOW to turn ON the active-low LED, or HIGH to turn it OFF.
- * @see initializeBoard, gpioB
+ * @see initializeBoard, gpioB, Gpio::setOutput
  * @todo none
  * @bug none
  */
 void setLed(bool on)
 {
-	// Invert state for active-low circuit logic
+	// Invert boolean value to match active-low LED circuit logic (LOW = ON, HIGH = OFF)
 	gpioB.setOutput(14, !on);
 }
 

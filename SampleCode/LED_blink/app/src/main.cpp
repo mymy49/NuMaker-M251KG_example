@@ -8,6 +8,8 @@
 /**
  * @file main.cpp
  * @brief Main application demonstration for on-board LED blinking using yss OS delay.
+ * @details Toggles the NuMaker-M251KG red user LED every 500 milliseconds using the
+ *          non-blocking `thread::delay()` scheduler service.
  * @author Yoon-Ki Hong
  * @date 2026-11-18
  */
@@ -18,8 +20,8 @@
 
 /**
  * @details Initializes the yss OS kernel and board hardware. In the main task loop,
- *          periodically toggles the on-board red LED with a 500ms delay between states
- *          using the thread::delay non-blocking RTOS delay service.
+ *          periodically toggles the on-board red LED with a 500 ms interval between ON and OFF states
+ *          using the `thread::delay()` non-blocking RTOS delay service (yielding CPU cycles during the wait).
  * @see initializeYss, initializeBoard, Led::red, thread::delay
  * @todo none
  * @bug none
@@ -36,14 +38,14 @@ int main(void)
 	// --------------------------------------------------
 	initializeBoard();
 
-	// Main blinking loop
+	// Main blinking loop (1 Hz cycle: 500 ms ON, 500 ms OFF)
 	while(1)
 	{
-		// Wait 500 ms and illuminate LED
+		// Suspend thread for 500 ms and then turn ON the red LED (PB14 driven LOW)
 		thread::delay(500);
 		Led::red(true);
 
-		// Wait 500 ms and turn off LED
+		// Suspend thread for 500 ms and then turn OFF the red LED (PB14 driven HIGH)
 		thread::delay(500);
 		Led::red(false);
 	}

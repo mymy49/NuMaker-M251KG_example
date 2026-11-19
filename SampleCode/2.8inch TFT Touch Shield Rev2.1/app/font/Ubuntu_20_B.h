@@ -23,16 +23,28 @@
 //
 ////////////////////////////////////////////////////////////////////////////////////////
 
+/**
+ * @file Ubuntu_20_B.h
+ * @brief Header file for the Ubuntu 20pt Bold bitmap font (`Font_Ubuntu_20_B`).
+ * @details Declares the `CodeFont` instance providing anti-aliased glyph bitmaps for
+ *          Ubuntu 20 Bold heading text rendering on the TFT LCD.
+ * @author Yoon-Ki Hong
+ * @date 2026-11-18
+ */
+
 #ifndef YSS_FONT_Ubuntu_20_B__H_
 #define YSS_FONT_Ubuntu_20_B__H_
 
 #include <CodeFont.h>
 
+/**
+ * @brief Global `CodeFont` instance for Ubuntu 20pt Bold (code size: 8.91 kB).
+ */
 extern CodeFont Font_Ubuntu_20_B;
 
-// 점유 코드 용량 : 8.91 kB
+// Occupied code size : 8.91 kB
 
-// 사용된 문자 : 
+// Included characters : 
 /*
 
 */

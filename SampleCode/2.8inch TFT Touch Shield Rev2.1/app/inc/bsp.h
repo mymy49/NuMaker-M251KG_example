@@ -8,6 +8,9 @@
 /**
  * @file bsp.h
  * @brief Board Support Package header for NuMaker-M251KG and 2.8-inch TFT Touch Shield.
+ * @details Declares board initialization and global driver instances for the Waveshare 2.8-inch
+ *          TFT Touch Shield Rev2.1 (ST7789V LCD, XPT2046 resistive touch controller, RGB565 frame
+ *          buffer brush, GUI page task manager, and touch event dispatcher).
  * @author Yoon-Ki Hong
  * @date 2026-11-18
  */
@@ -36,27 +39,27 @@
 void initializeBoard(void);
 
 /**
- * @brief Global display driver instance for the 2.8-inch TFT Touch Shield.
+ * @brief Global display driver instance for the 2.8-inch TFT Touch Shield (ST7789V over SPI0).
  */
 extern Touch_LCD_Shield_for_Arduino_2_8_inch lcd;
 
 /**
- * @brief Global graphic buffer used for rendering operations.
+ * @brief Global RGB565 little-endian graphic frame buffer used for partial rendering operations.
  */
 extern FrameBufferRgb565LE brush;
 
 /**
- * @brief Task manager for handling page transitions and GUI tasks.
+ * @brief Task manager instance for handling GUI page task registration and page transitions.
  */
 extern TaskManager page;
 
 /**
- * @brief Resistive touch controller instance (XPT2046).
+ * @brief Resistive touch controller driver instance (XPT2046 over SPI0).
  */
 extern XPT2046 touch;
 
 /**
- * @brief Touch event dispatcher for routing touch press, drag, and release events.
+ * @brief Touch event dispatcher for routing touch press, drag, and release events to registered hit areas.
  */
 extern TouchEventDispatcher dispatcher;
 

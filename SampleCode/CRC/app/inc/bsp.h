@@ -8,6 +8,8 @@
 /**
  * @file bsp.h
  * @brief Board Support Package header for NuMaker-M251KG CRC example.
+ * @details Declares board-level initialization routines for setting up the Nuvoton M251
+ *          hardware Cyclic Redundancy Check (CRC) calculation engine.
  * @author Yoon-Ki Hong
  * @date 2026-11-18
  */
@@ -24,9 +26,9 @@
  * @author Yoon-Ki Hong
  * @date 2026-11-18
  * @warning none
- * @note Enables CRC peripheral clock and sets up CRC32 mode.
+ * @note Enables CRC peripheral clock and sets up 32-bit CRC32 mode with initial seed 0xFFFFFFFF.
  * @pre yss OS core and system clock must be initialized via initializeYss().
- * @post Hardware CRC engine is initialized and ready for calculation.
+ * @post Hardware CRC engine is initialized and ready for 32-bit word calculation.
  * @deprecated none
  */
 void initializeBoard(void);
