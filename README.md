@@ -3,108 +3,148 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![GitHub Pages](https://img.shields.io/badge/docs-GitHub_Pages-blue.svg)](https://mymy49.github.io/NuMaker-M251KG_example/)
 
-Firmware examples and Board Support Package (BSP) for the **Nuvoton NuMaker-M251KG** development board powered by **yss OS** (embedded C++ RTOS framework).
+Firmware examples and Board Support Package (BSP) for the **NuMaker-M251KG** development board, providing full peripheral driver support for the **Nuvoton M251 series** microcontroller powered by **yss OS** (embedded C++ RTOS framework).
 
 ---
 
-## Overview
+## 1. Overview
 
-This repository provides comprehensive sample projects demonstrating the peripherals and capabilities of the Nuvoton M251 series microcontroller (Arm® Cortex®-M23) using the object-oriented yss OS framework. Examples range from basic GPIO and UART communication to complex multi-tasking graphical user interface (GUI) applications with touch input and non-volatile flash storage.
-
-### Key Features
-- **yss OS Multitasking**: Preemptive thread scheduler, event loop, software timers, and task managers.
-- **Graphical Display & Touch GUI**: ST7789V 2.8-inch TFT LCD controller driver with XPT2046 resistive touch screen interface, 2-point touch calibration, and interactive drawing canvas.
-- **Hardware Acceleration**: High-speed SPI master communication and hardware-accelerated CRC32 checksum engine.
-- **Non-volatile Configuration (Flash)**: Persistent storage of calibration data in internal on-chip flash memory with CRC integrity validation.
-- **Peripheral Drivers**: EADC (Analog-to-Digital Converter), UART (asynchronous serial), PWM, and GPIO on-board LED control.
+This repository hosts official example applications and board support drivers for the Nuvoton NuMaker-M251KG evaluation board. It demonstrates how to leverage the **Nuvoton M251 Support Package** integrated into yss OS to build efficient, multitasking embedded applications for the Arm® Cortex®-M23 architecture.
 
 ---
 
-## Development Environment & Specifications
+## 2. Nuvoton M251 Support Package
+
+The Nuvoton M251 Support Package provides a comprehensive Hardware Abstraction Layer (HAL) and MCU Support Package (MSP) tailored for the Nuvoton NuMicro® M251 series microcontrollers. It encapsulates low-level hardware registers into modern, object-oriented C++ driver instances.
+
+### Supported Peripherals & Drivers
+
+- **Clock & Power Management (`clock`)**:
+  - Flexible system clock generation supporting both Internal High-Speed RC oscillator (HIRC at 48 MHz) and External Crystal (HXT, 4 to 24 MHz).
+  - On-chip Phase-Locked Loop (PLL) configuration supporting up to 48 MHz system core clock (HCLK).
+  - Dynamic peripheral clock prescaling and routing for APB0 and APB1 buses.
+
+- **GPIO & Pin Multiplexing (`gpioA`, `gpioB`, `gpioC`, `gpioD`, `gpioE`, `gpioF`)**:
+  - Independent pin direction control (Input, Push-Pull Output, Open-Drain, Quasi-bidirectional).
+  - Peripheral alternate function routing (`setAsAltFunc()`).
+  - High-speed bit-level reading and writing.
+
+- **UART Communication (`uart0`, `uart1`, `uart2`)**:
+  - Asynchronous serial communication up to high baud rates (e.g., 115200, 921600 bps).
+  - Interrupt-driven transmission and reception with configurable ring buffer.
+  - Integration with yss OS asynchronous event triggers.
+
+- **Enhanced ADC (`eadc`)**:
+  - 14-bit successive approximation register (SAR) Analog-to-Digital Converter.
+  - Multi-channel simultaneous conversion and digital low-pass filtering (LPF) support.
+  - Continuous non-blocking background conversions.
+
+- **Hardware CRC Engine (`crc`)**:
+  - Hardware-accelerated CRC-CCITT, CRC-8, CRC-16, and CRC-32 polynomials.
+  - Programmable seed values, data lengths (8, 16, 32 bits), and bit/byte reversal options.
+
+- **Timers & Runtime (`timer0`, `timer1`, `timer2`, `timer3`)**:
+  - Periodic interrupt generation and event timing.
+  - OS tick generation and high-resolution elapsed time measurement (`runtime::getMsec()`).
+
+- **Flash Memory Controller (`flash`)**:
+  - In-System Programming (ISP) and In-Application Programming (IAP) driver.
+  - Page-based erase and 32-bit word programming for non-volatile parameter persistence.
+
+- **Watchdog Timer & RTOS Mutex Watchdog (`wdt`, `Mutex`)**:
+  - Hardware independent watchdog timer supervision.
+  - Automatic software mutex lock duration monitoring and deadlock prevention.
+
+- **Serial Peripheral Interface (`spi0`) & USCI (`uspi0`, `uuart0`)**:
+  - Master and slave SPI modes with programmable clock polarities and phases.
+  - Universal Serial Communication Interface support.
+
+### System Configuration (`config.h`)
+
+Each application configures the M251 Support Package via `app/inc/config.h`:
+- Enabling or disabling peripheral driver instances to minimize code footprint.
+- Selecting the runtime measurement timer (`YSS_RUNTIME_TIMER`).
+- Configuring thread scheduling parameters (`THREAD_GIVEN_CLOCK`, `MAX_THREAD`).
+- Enabling Mutex Watchdog threshold limits (`THREAD_WATCHDOG_ENABLE`, `THREAD_WATCHDOG_OVERFLOW_TIME`).
+
+---
+
+## 3. Development Environment & Specifications
 
 ### Hardware Specifications
-- **Target MCU**: Nuvoton M251KG6AE (Arm® Cortex®-M23, up to 48 MHz)
-- **Target Board**: NuMaker-M251KG V1.1
-- **Expansion Shield**: 2.8-inch TFT Touch Shield Rev2.1 (Arduino Uno compatible header)
+- **Target Evaluation Board**: NuMaker-M251KG V1.1
+- **Target Microcontroller**: Nuvoton M251KG6AE
+  - **Core**: Arm® Cortex®-M23 (Armv8-M Baseline architecture)
+  - **Max Clock Speed**: Up to 48 MHz
+  - **Flash Memory**: 256 KB on-chip APROM
+  - **SRAM**: 32 KB embedded SRAM
+  - **Operating Voltage**: 1.75 V to 5.5 V
+- **On-Board Debugger**: Nu-Link-Me (SWD programming and Virtual COM port interface)
 
-### Pin Mapping
-
-| Peripheral | Function / Signal | MCU Pin | Description |
-|:---|:---|:---|:---|
-| **User LED** | Red LED | `PB14` | Active-low on-board indicator |
-| **UART0** | RXD | `PB12` | Serial Receive Data |
-| **UART0** | TXD | `PB13` | Serial Transmit Data |
-| **EADC0** | Channel 0 | `PB0` | Analog Input Channel 0 |
-| **EADC0** | Channel 1 | `PB1` | Analog Input Channel 1 |
-| **SPI0** | MOSI | `PA0` | SPI Master Output Slave Input |
-| **SPI0** | MISO | `PA1` | SPI Master Input Slave Output |
-| **SPI0** | CLK | `PA2` | SPI Serial Clock |
-| **ST7789V LCD** | Chip Select (CS) | `PA3` | Display controller chip select |
-| **ST7789V LCD** | Backlight (BL) | `PA4` | Display backlight enable |
-| **ST7789V LCD** | Data/Command (DC) | `PA6` | Display data / command selector |
-| **XPT2046 Touch** | Chip Select (CS) | `PC3` | Touch controller chip select |
-| **XPT2046 Touch** | Interrupt (IRQ) | `PC5` | Touch event interrupt line |
-
-### Toolchain & Dependencies
-- **IDE / Toolchain**: SEGGER Embedded Studio for ARM (v8.x or later) or ARM GNU Toolchain
-- **Operating System / Framework**: [yss OS](https://github.com/mymy49/yss)
-- **Submodule Dependencies**:
-  - `module/2.8inch_TFT_Touch_Shield_Rev2.1`
-  - `module/ValueDisplay`
-  - `module/Lpf`
-  - `module/XPT2046`
+### Toolchain & Software Dependencies
+- **IDE / Toolchain**: CrossWorks for ARM (v5.x or higher)
+- **Operating System / Framework**: [yss OS](https://github.com/mymy49/yss) (embedded C++ RTOS)
 
 ---
 
-## Sample Code Overview
+## 4. Prerequisites: Nuvoton M251 Support Package for CrossWorks for ARM
 
-The `SampleCode/` directory contains standalone projects configured for SEGGER Embedded Studio (`.hzp`):
+CrossWorks for ARM does not natively provide device support for Nuvoton NuMicro® M251 microcontrollers in its default package manager. A custom device support package must be installed beforehand:
 
-| Project | Path | Description |
+1. Clone or download the [CrossworksForARM_Nuvoton_M251](https://github.com/mymy49/CrossworksForARM_Nuvoton_M251) repository.
+2. Open the package project file (`.hzp`) in CrossWorks for ARM and build it (`F7` or `Build -> Build Project`) to generate the package file (`.hzq`).
+3. In CrossWorks for ARM, navigate to **Tools -> Packages -> Manually Install Packages...** and select the generated `.hzq` package file.
+4. Once installed, M251 target device definitions, CMSIS headers, and project templates will be fully available in CrossWorks for ARM.
+
+---
+
+## 5. Sample Code Overview
+
+The `SampleCode/` directory contains complete projects configured with solution files (`.hzp`):
+
+| Project | Path | Focus Area |
 |:---|:---|:---|
-| **2.8inch TFT Touch Shield** | `SampleCode/2.8inch TFT Touch Shield Rev2.1` | Full GUI demo including startup logo, 2-point touch calibration, and drawing application with color palette |
-| **LED Blink** | `SampleCode/LED_blink` | Basic GPIO toggle demonstration using on-board red LED |
-| **UART** | `SampleCode/UART` | Serial communication, interrupt-driven echo, and trigger-based LED activity indicator |
-| **EADC** | `SampleCode/EADC` | Enhanced Analog-to-Digital Converter 2-channel data acquisition with digital filtering |
-| **CRC** | `SampleCode/CRC` | Hardware-based CRC32 calculation and verification |
-| **MutexWatchdog** | `SampleCode/MutexWatchdog` | Thread synchronization, deadlock detection, and watchdog timer management |
-| **Runtime** | `SampleCode/runtime` | Execution time tracking and precision timer delays |
+| **LED Blink** | `SampleCode/LED_blink` | Basic GPIO configuration and non-blocking RTOS thread delays |
+| **UART** | `SampleCode/UART` | Serial communication, interrupt-driven reception, and asynchronous triggers |
+| **EADC** | `SampleCode/EADC` | 14-bit dual-channel ADC acquisition with digital filtering |
+| **CRC** | `SampleCode/CRC` | Hardware CRC32 calculation and checksum verification |
+| **MutexWatchdog** | `SampleCode/MutexWatchdog` | Thread synchronization and mutex deadlock supervision |
+| **Runtime** | `SampleCode/runtime` | High-precision system uptime and execution timing |
+| **2.8inch TFT Touch Shield** | `SampleCode/2.8inch TFT Touch Shield Rev2.1` | Multi-tasking application integrating display, touch, and flash storage |
 
 ---
 
-## Getting Started
+## 6. Getting Started & Build Instructions
 
 ### 1. Clone Repository with Submodules
 
-To clone this repository together with all necessary submodules (yss OS and peripheral modules), run:
+To clone this repository along with yss OS and all dependencies, run:
 
 ```bash
 git clone --recursive https://github.com/mymy49/NuMaker-M251KG_example.git
 ```
 
-If you have already cloned without submodules, initialize and update them:
+If the repository was cloned without submodules, initialize them using:
 
 ```bash
 cd NuMaker-M251KG_example
 git submodule update --init --recursive
 ```
 
-### 2. Build & Flash
+### 2. Build and Firmware Flashing
 
-1. Open **SEGGER Embedded Studio for ARM**.
-2. Go to **File -> Open Solution...** and select the `.hzp` project file of interest, for example:
-   ```text
-   SampleCode/2.8inch TFT Touch Shield Rev2.1/Example.hzp
-   ```
-3. Connect the NuMaker-M251KG board to your computer via USB (Nu-Link-Me programming interface).
-4. Select **Build -> Build Example** (`F7`).
-5. Select **Debug -> Go** (`F5`) to flash and run the application on target hardware.
+#### Using CrossWorks for ARM :
+1. Ensure the [CrossworksForARM_Nuvoton_M251](https://github.com/mymy49/CrossworksForARM_Nuvoton_M251) package has been installed.
+2. Select **File -> Open Solution...** and choose the desired project file (e.g., `SampleCode/LED_blink/Example.hzp`).
+3. Select target configuration (`Example THUMB Release` or `Example THUMB Debug`).
+4. Build solution via `F7` or `Build -> Build Solution`.
+5. Connect the NuMaker-M251KG board via Nu-Link-Me USB ICE interface and flash with `F5` / `Ctrl+D` (`Target -> Download`).
 
 ---
 
-## Quick Start Examples
+## 7. Quick Start Examples
 
-### Example 1: Basic GPIO & Threading (LED Blink)
+### 1. GPIO Control & Thread Delay
 
 ```cpp
 #include <yss.h>
@@ -112,26 +152,24 @@ git submodule update --init --recursive
 
 int main(void)
 {
-    // Initialize the yss OS kernel and system clock
+    // Initialize yss OS kernel and M251 clock system
     initializeYss();
 
-    // Initialize the on-board red LED GPIO (PB14)
+    // Initialize on-board LED GPIO
     Led::initialize();
 
     while (1)
     {
-        // Turn ON the red LED (active-low)
-        Led::red(true);
-        thread::delay(500);
+        Led::red(true);       // Turn LED ON
+        thread::delay(500);   // Non-blocking OS delay
 
-        // Turn OFF the red LED
-        Led::red(false);
+        Led::red(false);      // Turn LED OFF
         thread::delay(500);
     }
 }
 ```
 
-### Example 2: Serial Communication Echo (UART0)
+### 2. Interrupt-Driven UART Communication
 
 ```cpp
 #include <yss.h>
@@ -149,8 +187,8 @@ int main(void)
         if (count > 0)
         {
             int8_t *buf = uart0.getRxBuffer();
-            uart0.send(buf, count);          // Echo received data
-            uart0.releaseRxBuffer(count);   // Release ring buffer
+            uart0.send(buf, count);          // Echo back received bytes
+            uart0.releaseRxBuffer(count);   // Release ring buffer bytes
         }
         else
         {
@@ -160,27 +198,51 @@ int main(void)
 }
 ```
 
+### 3. Dual-Channel Analog Data Acquisition (EADC)
+
+```cpp
+#include <yss.h>
+#include <bsp.h>
+#include <yss/debug.h>
+
+int main(void)
+{
+    initializeYss();
+    initializeBoard(); // Configures EADC channels with LPF
+
+    while (1)
+    {
+        // Read 14-bit converted results from Channel 0 and Channel 1
+        int32_t ch0 = eadc.getResult(0);
+        int32_t ch1 = eadc.getResult(1);
+
+        debug_printf("CH0: %d, CH1: %d\n", ch0, ch1);
+        thread::delay(200);
+    }
+}
+```
+
 ---
 
-## Documentation & API Reference
+## 8. Documentation & API Reference
 
-Comprehensive Doxygen API documentation is automatically published on GitHub Pages:
+Comprehensive Doxygen API documentation is published on GitHub Pages:
 - **Online Documentation**: [https://mymy49.github.io/NuMaker-M251KG_example/](https://mymy49.github.io/NuMaker-M251KG_example/)
 
-To build the HTML documentation locally:
+To build the documentation locally:
 ```bash
 doxygen Doxyfile
 ```
-The output files will be generated in `./html/index.html`.
+Documentation will be generated in `./html/index.html`.
 
 ---
 
-## Author
+## 9. Author
 
 - **Yoon-Ki Hong**
 
 ---
 
-## License
+## 10. License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
