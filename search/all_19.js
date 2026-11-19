@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['xpt2046_0',['XPT2046',['https://mymy49.github.io/XPT2046/classXPT2046.html',1,'XPT2046'],['https://mymy49.github.io/XPT2046/classXPT2046.html#a20082a088be0347ee5e9f220bd9e710c',1,'XPT2046::XPT2046()']]],
-  ['xpt2046_2eh_1',['XPT2046.h',['https://mymy49.github.io/XPT2046/XPT2046_8h.html',1,'']]],
-  ['xpt2046_5fcontrol_5ft_2',['XPT2046_Control_t',['https://mymy49.github.io/XPT2046/unionXPT2046_1_1XPT2046__Control__t.html',1,'XPT2046']]]
+  ['qspi0_5fenable_0',['QSPI0_ENABLE',['../CRC_2app_2inc_2config_8h.html#a240833a17c2cc43d950f1e148f9073d9',1,'QSPI0_ENABLE:&#160;config.h'],['../EADC_2app_2inc_2config_8h.html#a240833a17c2cc43d950f1e148f9073d9',1,'QSPI0_ENABLE:&#160;config.h'],['../LED__blink_2app_2inc_2config_8h.html#a240833a17c2cc43d950f1e148f9073d9',1,'QSPI0_ENABLE:&#160;config.h'],['../MutexWatchdog_2app_2inc_2config_8h.html#a240833a17c2cc43d950f1e148f9073d9',1,'QSPI0_ENABLE:&#160;config.h'],['../UART_2app_2inc_2config_8h.html#a240833a17c2cc43d950f1e148f9073d9',1,'QSPI0_ENABLE:&#160;config.h'],['../runtime_2app_2inc_2config_8h.html#a240833a17c2cc43d950f1e148f9073d9',1,'QSPI0_ENABLE:&#160;config.h'],['../2_88inch_01TFT_01Touch_01Shield_01Rev2_81_2app_2inc_2config_8h.html#a240833a17c2cc43d950f1e148f9073d9',1,'QSPI0_ENABLE:&#160;config.h']]],
+  ['quick_20start_20examples_1',['7. Quick Start Examples',['../index.html#autotoc_md21',1,'']]]
 ];

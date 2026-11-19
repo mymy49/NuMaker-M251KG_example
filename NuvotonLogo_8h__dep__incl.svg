@@ -58,7 +58,7 @@ var sectionId = 'dynsection-1';
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title=" ">
+<g id="a_Node000001"><a xlink:title="Bitmap resource header for the Nuvoton corporate logo.">
 <polygon fill="#999999" stroke="#666666" points="388.88,-128.5 250.62,-128.5 250.62,-82.25 388.88,-82.25 388.88,-128.5"/>
 <text xml:space="preserve" text-anchor="start" x="258.62" y="-115" font-family="Helvetica,sans-Serif" font-size="10.00">SampleCode/2.8inch</text>
 <text xml:space="preserve" text-anchor="start" x="258.62" y="-102.25" font-family="Helvetica,sans-Serif" font-size="10.00"> TFT Touch Shield Rev2.1</text>
@@ -69,7 +69,7 @@ var sectionId = 'dynsection-1';
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="NuvotonLogo_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_Node000002"><a xlink:href="NuvotonLogo_8cpp.html" target="_top" xlink:title="Bitmap pixel data and descriptor for the Nuvoton corporate logo.">
 <polygon fill="white" stroke="#666666" points="149.5,-46.25 0,-46.25 0,0 149.5,0 149.5,-46.25"/>
 <text xml:space="preserve" text-anchor="start" x="8" y="-32.75" font-family="Helvetica,sans-Serif" font-size="10.00">SampleCode/2.8inch</text>
 <text xml:space="preserve" text-anchor="start" x="8" y="-20" font-family="Helvetica,sans-Serif" font-size="10.00"> TFT Touch Shield Rev2.1</text>

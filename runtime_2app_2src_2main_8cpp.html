@@ -107,7 +107,7 @@ Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Demonstration of high-resolution runtime execution time tracking using yss OS. </p>
-<dl class="section author"><dt>Author</dt><dd>Yoon-Ki Hong </dd></dl>
+<p>Repeatedly queries the monotonic system uptime counter (<span class="tt">runtime::getMsec()</span>) backed by a hardware timer and outputs the elapsed milliseconds to the debug console. </p><dl class="section author"><dt>Author</dt><dd>Yoon-Ki Hong </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2026-11-18 </dd></dl>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
 <a id="a840291bc02cba5474a4cb46a9b9566fe" name="a840291bc02cba5474a4cb46a9b9566fe"></a>
@@ -124,9 +124,9 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Initializes the yss OS kernel and board hardware. Continuously queries the elapsed system uptime in milliseconds via runtime::getMsec() and prints the value to the debug console using carriage return to update in place. </p><dl class="section see"><dt>See also</dt><dd>initializeYss, <a class="el" href="2_88inch_01TFT_01Touch_01Shield_01Rev2_81_2app_2inc_2bsp_8h.html#a558343e35b6f62622ff72de7868723d1" title="Initializes all on-board hardware peripherals for the 2.8-inch TFT Touch Shield.">initializeBoard</a>, runtime::getMsec </dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000048">Todo</a></b></dt><dd>none </dd></dl>
-<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000048">Bug</a></b></dt><dd>none </dd></dl>
+<p>Initializes the yss OS kernel and board hardware. Continuously queries the elapsed system uptime in milliseconds via <span class="tt">runtime::getMsec()</span> and prints the 32-bit value to the SWD debug console using a carriage return (<span class="tt">\r</span>) to update the readout in place. </p><dl class="section see"><dt>See also</dt><dd>initializeYss, <a class="el" href="CRC_2app_2inc_2bsp_8h.html#a558343e35b6f62622ff72de7868723d1" title="Initializes on-board peripherals and hardware CRC engine.">initializeBoard</a>, runtime::getMsec </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000022">Todo</a></b></dt><dd>none </dd></dl>
+<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000022">Bug</a></b></dt><dd>none </dd></dl>
 
 </div>
 </div>

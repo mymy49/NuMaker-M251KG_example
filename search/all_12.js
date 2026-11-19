@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['qspi0_5fenable_0',['QSPI0_ENABLE',['../2_88inch_01TFT_01Touch_01Shield_01Rev2_81_2app_2inc_2config_8h.html#a240833a17c2cc43d950f1e148f9073d9',1,'QSPI0_ENABLE:&#160;config.h'],['../CRC_2app_2inc_2config_8h.html#a240833a17c2cc43d950f1e148f9073d9',1,'QSPI0_ENABLE:&#160;config.h'],['../EADC_2app_2inc_2config_8h.html#a240833a17c2cc43d950f1e148f9073d9',1,'QSPI0_ENABLE:&#160;config.h'],['../LED__blink_2app_2inc_2config_8h.html#a240833a17c2cc43d950f1e148f9073d9',1,'QSPI0_ENABLE:&#160;config.h'],['../MutexWatchdog_2app_2inc_2config_8h.html#a240833a17c2cc43d950f1e148f9073d9',1,'QSPI0_ENABLE:&#160;config.h'],['../runtime_2app_2inc_2config_8h.html#a240833a17c2cc43d950f1e148f9073d9',1,'QSPI0_ENABLE:&#160;config.h'],['../UART_2app_2inc_2config_8h.html#a240833a17c2cc43d950f1e148f9073d9',1,'QSPI0_ENABLE:&#160;config.h']]],
-  ['quick_20start_20examples_1',['Quick Start Examples',['../index.html#autotoc_md16',1,'']]]
+  ['h_0',['System Configuration (&lt;span class=&quot;tt&quot;&gt;config.h&lt;/span&gt;)',['../index.html#autotoc_md6',1,'']]],
+  ['hardware_20specifications_1',['Hardware Specifications',['../index.html#autotoc_md9',1,'']]]
 ];

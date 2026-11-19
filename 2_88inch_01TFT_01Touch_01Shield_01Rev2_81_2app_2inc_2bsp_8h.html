@@ -102,6 +102,11 @@ Include dependency graph for bsp.h:</div>
 <div class="dyncontent">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="2_88inch_01TFT_01Touch_01Shield_01Rev2_81_2app_2inc_2bsp_8h__incl.svg" width="100%" height="437"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
+</div><div class="textblock"><div class="dynheader">
+This graph shows which files directly or indirectly include this file:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="2_88inch_01TFT_01Touch_01Shield_01Rev2_81_2app_2inc_2bsp_8h__dep__incl.svg" width="100%" height="519"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
 </div>
 <p><a href="2_88inch_01TFT_01Touch_01Shield_01Rev2_81_2app_2inc_2bsp_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -113,19 +118,19 @@ Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:a6a30c52f5c6f01f7db95cb30da870c9f" id="r_a6a30c52f5c6f01f7db95cb30da870c9f"><td class="memItemLeft" align="right" valign="top"><a class="elRef" href="https://mymy49.github.io/2.8inch_TFT_Touch_Shield_Rev2.1/classTouch__LCD__Shield__for__Arduino__2__8__inch.html">Touch_LCD_Shield_for_Arduino_2_8_inch</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6a30c52f5c6f01f7db95cb30da870c9f">lcd</a></td></tr>
-<tr class="memdesc:a6a30c52f5c6f01f7db95cb30da870c9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global display driver instance for the 2.8-inch TFT Touch Shield.  <br /></td></tr>
+<tr class="memdesc:a6a30c52f5c6f01f7db95cb30da870c9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global display driver instance for the 2.8-inch TFT Touch Shield (ST7789V over SPI0).  <br /></td></tr>
 <tr class="memitem:aff564f4c14df2d3e83b2d0ef5ebf4287" id="r_aff564f4c14df2d3e83b2d0ef5ebf4287"><td class="memItemLeft" align="right" valign="top">FrameBufferRgb565LE&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aff564f4c14df2d3e83b2d0ef5ebf4287">brush</a></td></tr>
-<tr class="memdesc:aff564f4c14df2d3e83b2d0ef5ebf4287"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global graphic buffer used for rendering operations.  <br /></td></tr>
+<tr class="memdesc:aff564f4c14df2d3e83b2d0ef5ebf4287"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global RGB565 little-endian graphic frame buffer used for partial rendering operations.  <br /></td></tr>
 <tr class="memitem:a9e01130487771e916af4b44cf153ff6d" id="r_a9e01130487771e916af4b44cf153ff6d"><td class="memItemLeft" align="right" valign="top">TaskManager&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9e01130487771e916af4b44cf153ff6d">page</a></td></tr>
-<tr class="memdesc:a9e01130487771e916af4b44cf153ff6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Task manager for handling page transitions and GUI tasks.  <br /></td></tr>
+<tr class="memdesc:a9e01130487771e916af4b44cf153ff6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Task manager instance for handling GUI page task registration and page transitions.  <br /></td></tr>
 <tr class="memitem:adab6ae6bcf203e8ce9c24d96b90271ff" id="r_adab6ae6bcf203e8ce9c24d96b90271ff"><td class="memItemLeft" align="right" valign="top"><a class="elRef" href="https://mymy49.github.io/XPT2046/classXPT2046.html">XPT2046</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adab6ae6bcf203e8ce9c24d96b90271ff">touch</a></td></tr>
-<tr class="memdesc:adab6ae6bcf203e8ce9c24d96b90271ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resistive touch controller instance (<a class="elRef" href="https://mymy49.github.io/XPT2046/classXPT2046.html">XPT2046</a>).  <br /></td></tr>
+<tr class="memdesc:adab6ae6bcf203e8ce9c24d96b90271ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resistive touch controller driver instance (<a class="elRef" href="https://mymy49.github.io/XPT2046/classXPT2046.html">XPT2046</a> over SPI0).  <br /></td></tr>
 <tr class="memitem:a657871180a22662ec0bb1d89ff92357a" id="r_a657871180a22662ec0bb1d89ff92357a"><td class="memItemLeft" align="right" valign="top">TouchEventDispatcher&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a657871180a22662ec0bb1d89ff92357a">dispatcher</a></td></tr>
-<tr class="memdesc:a657871180a22662ec0bb1d89ff92357a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Touch event dispatcher for routing touch press, drag, and release events.  <br /></td></tr>
+<tr class="memdesc:a657871180a22662ec0bb1d89ff92357a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Touch event dispatcher for routing touch press, drag, and release events to registered hit areas.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Board Support Package header for NuMaker-M251KG and 2.8-inch TFT Touch Shield. </p>
-<dl class="section author"><dt>Author</dt><dd>Yoon-Ki Hong </dd></dl>
+<p>Declares board initialization and global driver instances for the Waveshare 2.8-inch TFT Touch Shield Rev2.1 (ST7789V LCD, <a class="elRef" href="https://mymy49.github.io/XPT2046/classXPT2046.html">XPT2046</a> resistive touch controller, RGB565 frame buffer brush, GUI page task manager, and touch event dispatcher). </p><dl class="section author"><dt>Author</dt><dd>Yoon-Ki Hong </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2026-11-18 </dd></dl>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
 <a id="a558343e35b6f62622ff72de7868723d1" name="a558343e35b6f62622ff72de7868723d1"></a>
@@ -157,47 +162,83 @@ Variables</h2></td></tr>
 <dl class="section note"><dt>Note</dt><dd>Initializes SPI0, hardware CRC32, display controller, and resistive touch driver. </dd></dl>
 <dl class="section pre"><dt>Precondition</dt><dd>yss OS core and system clock must be initialized via initializeYss(). </dd></dl>
 <dl class="section post"><dt>Postcondition</dt><dd>SPI0, LCD display, touch controller, and event dispatcher are ready for operation. </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000006">Deprecated</a></b></dt><dd>none </dd></dl>
-<p>Configures peripheral pins and initializes hardware devices:</p><ol type="1">
-<li>SPI0: PA0 (MOSI), PA1 (MISO), PA2 (CLK) initialized in Master mode.</li>
-<li>CRC: Hardware CRC32 engine initialized with 0xFFFFFFFF polynomial seed.</li>
-<li>LCD: PA3 (CS), PA4 (Backlight), PA6 (DC) configured; frame buffer allocated and display cleared.</li>
-<li>Touch: PC3 (CS), PC5 (IRQ) configured for <a class="elRef" href="https://mymy49.github.io/XPT2046/classXPT2046.html">XPT2046</a> controller and linked to touch event dispatcher. <dl class="section see"><dt>See also</dt><dd><a class="el" href="#a6a30c52f5c6f01f7db95cb30da870c9f" title="Global display driver instance for the 2.8-inch TFT Touch Shield.">lcd</a>, <a class="el" href="#aff564f4c14df2d3e83b2d0ef5ebf4287" title="Global graphic buffer used for rendering operations.">brush</a>, <a class="el" href="memory_8h.html#a3126659901c9cd3da49efc0420fa609f" title="Resistive touch calibration coordinates and display dimensions.">touch</a>, <a class="el" href="#a657871180a22662ec0bb1d89ff92357a" title="Touch event dispatcher for routing touch press, drag, and release events.">dispatcher</a>, spi0, crc, initializeYss </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000017">Deprecated</a></b></dt><dd>none </dd></dl>
+<p>Initializes all on-board hardware peripherals for the 2.8-inch TFT Touch Shield.</p>
+<p>Initializes on-board hardware peripherals, LED, and UART0 interface.</p>
+<p>Initializes on-board hardware peripherals.</p>
+<p>Initializes on-board peripherals and user LED GPIO.</p>
+<p>Initializes on-board peripherals and EADC channels.</p>
+<p>Initializes the hardware CRC engine in CRC32 mode:</p><ul>
+<li>Polynomial mode: CRC-32 (<span class="tt">Crc::CRC_MODE_CRC32</span>, polynomial 0x04C11DB7)</li>
+<li>Data write width: 32-bit words (<span class="tt">Crc::CRC_DAT_LEN_32BIT</span>)</li>
+<li>Initial polynomial seed: <span class="tt">0xFFFFFFFF</span></li>
+<li>Bit order reversal: Disabled (<span class="tt">false</span>) for both input write data and output checksum</li>
+<li>Enables the AHB clock for the CRC peripheral, applies the register configuration, and enables the CRC peripheral interrupt service routine. <dl class="section see"><dt>See also</dt><dd>crc, Crc::config_t, Crc::initialize </dd></dl>
 <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000007">Todo</a></b></dt><dd>none </dd></dl>
 <dl class="bug"><dt><b><a class="el" href="bug.html#_bug000007">Bug</a></b></dt><dd>none </dd></dl>
 </li>
-</ol>
-<p>Initializes the hardware CRC engine in CRC32 mode:</p><ul>
-<li>Data length: 32-bit words</li>
-<li>Initial polynomial seed: 0xFFFFFFFF</li>
-<li>Bit reversal: None (standard bit order for both write and checksum)</li>
-<li>Enables CRC peripheral clock and interrupt service routine. <dl class="section see"><dt>See also</dt><dd>crc </dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000036">Todo</a></b></dt><dd>none </dd></dl>
-<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000036">Bug</a></b></dt><dd>none </dd></dl>
-</li>
 </ul>
-<p>Configures PB0 and PB1 as analog input pins (EADC0 CH0 and CH1). Initializes the EADC peripheral for 2 channels with interrupt support, configures 14-bit resolution and level-14 digital low-pass filtering, and triggers continuous analog-to-digital conversions. </p><dl class="section see"><dt>See also</dt><dd>eadc, gpioB </dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000038">Todo</a></b></dt><dd>none </dd></dl>
-<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000038">Bug</a></b></dt><dd>none </dd></dl>
+<p>Initializes all on-board hardware peripherals for the 2.8-inch TFT Touch Shield.</p>
+<p>Initializes on-board hardware peripherals, LED, and UART0 interface.</p>
+<p>Initializes on-board hardware peripherals.</p>
+<p>Initializes on-board peripherals and user LED GPIO.</p>
+<p>Initializes on-board peripherals and EADC channels.</p>
+<p>Configures PB0 and PB1 as analog input pins (<span class="tt">Gpio::PB0_EADC0_CH0</span> and <span class="tt">Gpio::PB1_EADC0_CH1</span>). Enables the EADC peripheral clock, initializes the EADC driver for 2 active channels, and enables EADC conversion completion interrupts. Registers channels 0 and 1 with 14-bit output resolution (<span class="tt">Adc::RES_BIT14</span>) and level-14 software low-pass filtering (<span class="tt">Adc::LPF_LV14</span>), then triggers continuous background conversions. </p><dl class="section see"><dt>See also</dt><dd>eadc, gpioB, Adc::add, Adc::convert </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000009">Todo</a></b></dt><dd>none </dd></dl>
+<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000009">Bug</a></b></dt><dd>none </dd></dl>
+<p>Initializes all on-board hardware peripherals for the 2.8-inch TFT Touch Shield.</p>
+<p>Initializes on-board hardware peripherals, LED, and UART0 interface.</p>
+<p>Initializes on-board hardware peripherals.</p>
+<p>Initializes on-board peripherals and user LED GPIO.</p>
+<p>Initializes on-board peripherals and EADC channels.</p>
 <p>Initializes target board peripherals:</p><ul>
-<li>Calls <a class="el" href="namespaceLed.html#a139e01c0554b39b6f74628e43913e087" title="Initializes the GPIO pin for the on-board red LED.">Led::initialize()</a> to set PB14 as GPIO output and turn off the red LED. <dl class="section see"><dt>See also</dt><dd><a class="el" href="namespaceLed.html#a139e01c0554b39b6f74628e43913e087" title="Initializes the GPIO pin for the on-board red LED.">Led::initialize</a>, <a class="el" href="namespaceLed.html" title="Provides control routines for the on-board user LED.">Led</a> </dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000040">Todo</a></b></dt><dd>none </dd></dl>
-<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000040">Bug</a></b></dt><dd>none </dd></dl>
+<li>Calls <span class="tt"><a class="el" href="namespaceLed.html#a139e01c0554b39b6f74628e43913e087" title="Initializes the GPIO pin for the on-board red LED.">Led::initialize()</a></span> to configure GPIO Port B Pin 14 (PB14) as push-pull output and drive it HIGH to turn off the active-low red LED. <dl class="section see"><dt>See also</dt><dd><a class="el" href="namespaceLed.html#a139e01c0554b39b6f74628e43913e087" title="Initializes the GPIO pin for the on-board red LED.">Led::initialize</a>, <a class="el" href="namespaceLed.html#ac9ac694776b0e7b184999425669eaa89" title="Sets the on-board red LED output state.">Led::red</a> </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000011">Todo</a></b></dt><dd>none </dd></dl>
+<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000011">Bug</a></b></dt><dd>none </dd></dl>
 </li>
 </ul>
-<p>Configures GPIO port B pin 14 as output mode to control the on-board red LED. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="MutexWatchdog_2app_2inc_2bsp_8h.html#ac088b04ace9a4bde43460c6cb70c7166" title="Sets the state of the on-board red LED indicator.">setLed</a>, gpioB </dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000042">Todo</a></b></dt><dd>none </dd></dl>
-<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000042">Bug</a></b></dt><dd>none </dd></dl>
-<p>Initializes hardware peripherals specific to the runtime example. Hardware timers used by the runtime module (TIMER0 and TIMER1) are managed directly by the yss OS initialization layer. </p><dl class="section see"><dt>See also</dt><dd>initializeYss </dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000047">Todo</a></b></dt><dd>none </dd></dl>
-<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000047">Bug</a></b></dt><dd>none </dd></dl>
+<p>Initializes all on-board hardware peripherals for the 2.8-inch TFT Touch Shield.</p>
+<p>Initializes on-board hardware peripherals, LED, and UART0 interface.</p>
+<p>Initializes on-board hardware peripherals.</p>
+<p>Initializes on-board peripherals and user LED GPIO.</p>
+<p>Initializes on-board peripherals and EADC channels.</p>
+<p>Configures GPIO port B pin 14 as push-pull output mode to control the on-board red LED. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="MutexWatchdog_2app_2inc_2bsp_8h.html#ac088b04ace9a4bde43460c6cb70c7166" title="Sets the state of the on-board red LED indicator.">setLed</a>, gpioB, Gpio::setAsOutput </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000013">Todo</a></b></dt><dd>none </dd></dl>
+<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000013">Bug</a></b></dt><dd>none </dd></dl>
+<p>Initializes all on-board hardware peripherals for the 2.8-inch TFT Touch Shield.</p>
+<p>Initializes on-board hardware peripherals, LED, and UART0 interface.</p>
+<p>Initializes on-board hardware peripherals.</p>
+<p>Initializes on-board peripherals and user LED GPIO.</p>
+<p>Initializes on-board peripherals and EADC channels.</p>
 <p>Initializes UART0 peripheral and on-board status LED:</p><ol type="1">
-<li>Sets PB12 as UART0_RXD and PB13 as UART0_TXD alternate functions.</li>
-<li>Configures UART0 in normal 8N1 mode at 115200 baud with a 64-byte receive buffer.</li>
-<li>Enables UART0 peripheral clock and interrupts.</li>
-<li>Initializes user LED via <a class="el" href="namespaceLed.html#a139e01c0554b39b6f74628e43913e087" title="Initializes the GPIO pin for the on-board red LED.">Led::initialize()</a>. <dl class="section see"><dt>See also</dt><dd>uart0, <a class="el" href="namespaceLed.html#a139e01c0554b39b6f74628e43913e087" title="Initializes the GPIO pin for the on-board red LED.">Led::initialize</a>, gpioB </dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000049">Todo</a></b></dt><dd>none </dd></dl>
-<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000049">Bug</a></b></dt><dd>none </dd></dl>
+<li>Sets PB12 as <span class="tt">UART0_RXD</span> and PB13 as <span class="tt">UART0_TXD</span> alternate functions.</li>
+<li>Configures UART0 in normal 8N1 mode at 115200 baud with a 64-byte internal receive ring buffer.</li>
+<li>Enables the UART0 peripheral clock and NVIC receive/transmit interrupts.</li>
+<li>Initializes the on-board user LED via <span class="tt"><a class="el" href="namespaceLed.html#a139e01c0554b39b6f74628e43913e087" title="Initializes the GPIO pin for the on-board red LED.">Led::initialize()</a></span>. <dl class="section see"><dt>See also</dt><dd>uart0, Uart::config_t, <a class="el" href="namespaceLed.html#a139e01c0554b39b6f74628e43913e087" title="Initializes the GPIO pin for the on-board red LED.">Led::initialize</a>, gpioB </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000018">Todo</a></b></dt><dd>none </dd></dl>
+<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000018">Bug</a></b></dt><dd>none </dd></dl>
+</li>
+</ol>
+<p>Initializes all on-board hardware peripherals for the 2.8-inch TFT Touch Shield.</p>
+<p>Initializes on-board hardware peripherals, LED, and UART0 interface.</p>
+<p>Initializes on-board hardware peripherals.</p>
+<p>Initializes on-board peripherals and user LED GPIO.</p>
+<p>Initializes on-board peripherals and EADC channels.</p>
+<p>Initializes hardware peripherals specific to the runtime example. Hardware timers used by the runtime module (<span class="tt">RUNTIME_TIMER0</span> and <span class="tt">RUNTIME_TIMER1</span>) are configured and started directly by <span class="tt">initializeYss()</span>. </p><dl class="section see"><dt>See also</dt><dd>initializeYss, runtime::getMsec </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000021">Todo</a></b></dt><dd>none </dd></dl>
+<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000021">Bug</a></b></dt><dd>none </dd></dl>
+<p>Initializes all on-board hardware peripherals for the 2.8-inch TFT Touch Shield.</p>
+<p>Initializes on-board hardware peripherals, LED, and UART0 interface.</p>
+<p>Initializes on-board hardware peripherals.</p>
+<p>Initializes on-board peripherals and user LED GPIO.</p>
+<p>Initializes on-board peripherals and EADC channels.</p>
+<p>Configures peripheral pins and initializes hardware devices:</p><ol type="1">
+<li>SPI0: PA0 (MOSI), PA1 (MISO), PA2 (CLK) initialized in Master mode (<span class="tt">Spi::MODE_MAIN</span>).</li>
+<li>CRC: Hardware CRC32 engine initialized in 8-bit data width mode with <span class="tt">0xFFFFFFFF</span> polynomial seed.</li>
+<li>LCD: PA3 (CS), PA4 (Backlight), PA6 (DC) configured; 5000-byte frame buffer allocated and display cleared to white.</li>
+<li>Touch: PC3 (CS), PC5 (IRQ) configured for <a class="elRef" href="https://mymy49.github.io/XPT2046/classXPT2046.html">XPT2046</a> controller and linked to the touch event dispatcher. <dl class="section see"><dt>See also</dt><dd><a class="el" href="#a6a30c52f5c6f01f7db95cb30da870c9f" title="Global display driver instance for the 2.8-inch TFT Touch Shield (ST7789V over SPI0).">lcd</a>, <a class="el" href="#aff564f4c14df2d3e83b2d0ef5ebf4287" title="Global RGB565 little-endian graphic frame buffer used for partial rendering operations.">brush</a>, <a class="el" href="#adab6ae6bcf203e8ce9c24d96b90271ff" title="Resistive touch controller driver instance (XPT2046 over SPI0).">touch</a>, <a class="el" href="#a657871180a22662ec0bb1d89ff92357a" title="Touch event dispatcher for routing touch press, drag, and release events to registered hit areas.">dispatcher</a>, spi0, crc, initializeYss </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000023">Todo</a></b></dt><dd>none </dd></dl>
+<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000023">Bug</a></b></dt><dd>none </dd></dl>
 </li>
 </ol>
 
@@ -224,7 +265,8 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Global graphic buffer used for rendering operations. </p>
+<p>Global RGB565 little-endian graphic frame buffer used for partial rendering operations. </p>
+<p>Global RGB565 little-endian graphic frame buffer used for partial rendering operations. </p>
 
 </div>
 </div>
@@ -248,7 +290,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Touch event dispatcher for routing touch press, drag, and release events. </p>
+<p>Touch event dispatcher for routing touch press, drag, and release events to registered hit areas. </p>
 
 </div>
 </div>
@@ -272,7 +314,8 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Global display driver instance for the 2.8-inch TFT Touch Shield. </p>
+<p>Global display driver instance for the 2.8-inch TFT Touch Shield (ST7789V over SPI0). </p>
+<p>Global display driver instance for the 2.8-inch TFT Touch Shield (ST7789V over SPI0). </p>
 
 </div>
 </div>
@@ -296,7 +339,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Task manager for handling page transitions and GUI tasks. </p>
+<p>Task manager instance for handling GUI page task registration and page transitions. </p>
 
 </div>
 </div>
@@ -320,8 +363,8 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Resistive touch controller instance (<a class="elRef" href="https://mymy49.github.io/XPT2046/classXPT2046.html">XPT2046</a>). </p>
-<p>Resistive touch controller instance (<a class="elRef" href="https://mymy49.github.io/XPT2046/classXPT2046.html">XPT2046</a>). </p>
+<p>Resistive touch controller driver instance (<a class="elRef" href="https://mymy49.github.io/XPT2046/classXPT2046.html">XPT2046</a> over SPI0). </p>
+<p>Resistive touch controller driver instance (<a class="elRef" href="https://mymy49.github.io/XPT2046/classXPT2046.html">XPT2046</a> over SPI0). </p>
 
 </div>
 </div>

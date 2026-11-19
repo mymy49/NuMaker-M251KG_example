@@ -20,7 +20,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="led_8h.html" target="_top" xlink:title="Header file for on&#45;board LED control functions.">
+<g id="a_Node000002"><a xlink:href="led_8h.html" target="_top" xlink:title="Header file for on&#45;board LED control functions on the NuMaker&#45;M251KG evaluation board.">
 <polygon fill="white" stroke="#666666" points="61,-20.75 0,-20.75 0,0 61,0 61,-20.75"/>
 <text xml:space="preserve" text-anchor="middle" x="30.5" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">dev/led.h</text>
 </a>

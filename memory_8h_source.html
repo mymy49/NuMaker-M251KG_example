@@ -87,43 +87,46 @@ $(function() {
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> * See the file &quot;LICENSE&quot; in the main directory of this archive for more details.</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> */</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#ifndef MEMORY__H_</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#define MEMORY__H_</span></div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &lt;hal/ResistiveTouch.h&gt;</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span></div>
-<div class="foldopen" id="foldopen00042" data-start="{" data-end="};">
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="structmemory__t.html">   42</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structmemory__t.html">memory_t</a></div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>{</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="structmemory__t.html#a1d551d0356c948cd3920b772d1952c3e">   44</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="structmemory__t.html#a1d551d0356c948cd3920b772d1952c3e">touchInitFlag</a>;                     </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="structmemory__t.html#a16c9502c6f6bf2d5209aae89aee78d81">   45</a></span>    ResistiveTouch::calibration_t <a class="code hl_variable" href="structmemory__t.html#a16c9502c6f6bf2d5209aae89aee78d81">touch</a>;    </div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="structmemory__t.html#aa395ae9c3443ae657314d0f94c6a527c">   46</a></span>    uint32_t <a class="code hl_variable" href="structmemory__t.html#aa395ae9c3443ae657314d0f94c6a527c">crc32</a>;                         </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>} <a class="code hl_function" href="memory_8h.html#a64abad4afd1169050b2dfdc1287dbe8e">__attribute__</a> ((packed));</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#ifndef MEMORY__H_</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#define MEMORY__H_</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &lt;hal/ResistiveTouch.h&gt;</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span></div>
+<div class="foldopen" id="foldopen00047" data-start="{" data-end="};">
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="structmemory__t.html">   47</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structmemory__t.html">memory_t</a></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>{</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="structmemory__t.html#a1d551d0356c948cd3920b772d1952c3e">   49</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="structmemory__t.html#a1d551d0356c948cd3920b772d1952c3e">touchInitFlag</a>;                     </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="structmemory__t.html#a16c9502c6f6bf2d5209aae89aee78d81">   50</a></span>    ResistiveTouch::calibration_t <a class="code hl_variable" href="structmemory__t.html#a16c9502c6f6bf2d5209aae89aee78d81">touch</a>;    </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="structmemory__t.html#aa395ae9c3443ae657314d0f94c6a527c">   51</a></span>    uint32_t <a class="code hl_variable" href="structmemory__t.html#aa395ae9c3443ae657314d0f94c6a527c">crc32</a>;                         </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>} <a class="code hl_function" href="memory_8h.html#a64abad4afd1169050b2dfdc1287dbe8e">__attribute__</a> ((packed));</div>
 </div>
 </div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span></div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="keyword">extern</span> <a class="code hl_struct" href="structmemory__t.html">memory_t</a> <a class="code hl_variable" href="memory_8h.html#a757b7a2e4ec11980491df9fa20d94d2b">memory</a>;</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span></div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="keywordtype">void</span> <a class="code hl_function" href="memory_8h.html#ab058849f3170edfd9919126b64bbc9fe">initializeMemory</a>();</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span></div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="keywordtype">void</span> <a class="code hl_function" href="memory_8h.html#a9df5da6d1b7386012c519be40bd58bcf">updateMemory</a>();</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span></div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span><span class="keywordtype">void</span> <a class="code hl_function" href="memory_8h.html#a44ef0e50f06b14420170d92cb204cd0c">saveMemory</a>();</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
-<div class="ttc" id="amemory_8h_html_a44ef0e50f06b14420170d92cb204cd0c"><div class="ttname"><a href="memory_8h.html#a44ef0e50f06b14420170d92cb204cd0c">saveMemory</a></div><div class="ttdeci">void saveMemory()</div><div class="ttdoc">Saves the current memory structure to flash memory with calculated CRC32.</div><div class="ttdef"><b>Definition</b> memory.cpp:102</div></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="keyword">extern</span> <a class="code hl_struct" href="structmemory__t.html">memory_t</a> <a class="code hl_variable" href="memory_8h.html#a757b7a2e4ec11980491df9fa20d94d2b">memory</a>;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>uint32_t <a class="code hl_function" href="memory_8h.html#a3f5f38847da00c89e2932577c310004b">calculateCrc32</a>();</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span><span class="keywordtype">void</span> <a class="code hl_function" href="memory_8h.html#ab058849f3170edfd9919126b64bbc9fe">initializeMemory</a>();</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span></div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span><span class="keywordtype">void</span> <a class="code hl_function" href="memory_8h.html#a9df5da6d1b7386012c519be40bd58bcf">updateMemory</a>();</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span></div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span><span class="keywordtype">void</span> <a class="code hl_function" href="memory_8h.html#a44ef0e50f06b14420170d92cb204cd0c">saveMemory</a>();</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
+<div class="ttc" id="amemory_8h_html_a3f5f38847da00c89e2932577c310004b"><div class="ttname"><a href="memory_8h.html#a3f5f38847da00c89e2932577c310004b">calculateCrc32</a></div><div class="ttdeci">uint32_t calculateCrc32()</div><div class="ttdoc">Calculates the CRC32 checksum of the active memory configuration structure.</div><div class="ttdef"><b>Definition</b> memory.cpp:70</div></div>
+<div class="ttc" id="amemory_8h_html_a44ef0e50f06b14420170d92cb204cd0c"><div class="ttname"><a href="memory_8h.html#a44ef0e50f06b14420170d92cb204cd0c">saveMemory</a></div><div class="ttdeci">void saveMemory()</div><div class="ttdoc">Saves the current memory structure to flash memory with calculated CRC32.</div><div class="ttdef"><b>Definition</b> memory.cpp:103</div></div>
 <div class="ttc" id="amemory_8h_html_a64abad4afd1169050b2dfdc1287dbe8e"><div class="ttname"><a href="memory_8h.html#a64abad4afd1169050b2dfdc1287dbe8e">__attribute__</a></div><div class="ttdeci">struct memory_t __attribute__((packed))</div></div>
 <div class="ttc" id="amemory_8h_html_a757b7a2e4ec11980491df9fa20d94d2b"><div class="ttname"><a href="memory_8h.html#a757b7a2e4ec11980491df9fa20d94d2b">memory</a></div><div class="ttdeci">memory_t memory</div><div class="ttdoc">Global memory structure holding active configuration loaded from flash.</div></div>
-<div class="ttc" id="amemory_8h_html_a9df5da6d1b7386012c519be40bd58bcf"><div class="ttname"><a href="memory_8h.html#a9df5da6d1b7386012c519be40bd58bcf">updateMemory</a></div><div class="ttdeci">void updateMemory()</div><div class="ttdoc">Updates hardware peripherals with active configuration from memory.</div><div class="ttdef"><b>Definition</b> memory.cpp:86</div></div>
-<div class="ttc" id="amemory_8h_html_ab058849f3170edfd9919126b64bbc9fe"><div class="ttname"><a href="memory_8h.html#ab058849f3170edfd9919126b64bbc9fe">initializeMemory</a></div><div class="ttdeci">void initializeMemory()</div><div class="ttdoc">Initializes non-volatile memory and verifies data integrity.</div><div class="ttdef"><b>Definition</b> memory.cpp:38</div></div>
-<div class="ttc" id="astructmemory__t_html"><div class="ttname"><a href="structmemory__t.html">memory_t</a></div><div class="ttdoc">Persistent configuration data structure stored in internal flash memory.</div><div class="ttdef"><b>Definition</b> memory.h:43</div></div>
-<div class="ttc" id="astructmemory__t_html_a16c9502c6f6bf2d5209aae89aee78d81"><div class="ttname"><a href="structmemory__t.html#a16c9502c6f6bf2d5209aae89aee78d81">memory_t::touch</a></div><div class="ttdeci">ResistiveTouch::calibration_t touch</div><div class="ttdoc">Resistive touch calibration coordinates and display dimensions.</div><div class="ttdef"><b>Definition</b> memory.h:45</div></div>
-<div class="ttc" id="astructmemory__t_html_a1d551d0356c948cd3920b772d1952c3e"><div class="ttname"><a href="structmemory__t.html#a1d551d0356c948cd3920b772d1952c3e">memory_t::touchInitFlag</a></div><div class="ttdeci">bool touchInitFlag</div><div class="ttdoc">Flag indicating whether touch calibration has been completed.</div><div class="ttdef"><b>Definition</b> memory.h:44</div></div>
-<div class="ttc" id="astructmemory__t_html_aa395ae9c3443ae657314d0f94c6a527c"><div class="ttname"><a href="structmemory__t.html#aa395ae9c3443ae657314d0f94c6a527c">memory_t::crc32</a></div><div class="ttdeci">uint32_t crc32</div><div class="ttdoc">CRC32 checksum for validating data integrity in flash memory.</div><div class="ttdef"><b>Definition</b> memory.h:46</div></div>
+<div class="ttc" id="amemory_8h_html_a9df5da6d1b7386012c519be40bd58bcf"><div class="ttname"><a href="memory_8h.html#a9df5da6d1b7386012c519be40bd58bcf">updateMemory</a></div><div class="ttdeci">void updateMemory()</div><div class="ttdoc">Updates hardware peripherals with active configuration from memory.</div><div class="ttdef"><b>Definition</b> memory.cpp:87</div></div>
+<div class="ttc" id="amemory_8h_html_ab058849f3170edfd9919126b64bbc9fe"><div class="ttname"><a href="memory_8h.html#ab058849f3170edfd9919126b64bbc9fe">initializeMemory</a></div><div class="ttdeci">void initializeMemory()</div><div class="ttdoc">Initializes non-volatile memory and verifies data integrity.</div><div class="ttdef"><b>Definition</b> memory.cpp:37</div></div>
+<div class="ttc" id="astructmemory__t_html"><div class="ttname"><a href="structmemory__t.html">memory_t</a></div><div class="ttdoc">Persistent configuration data structure stored in internal flash memory.</div><div class="ttdef"><b>Definition</b> memory.h:48</div></div>
+<div class="ttc" id="astructmemory__t_html_a16c9502c6f6bf2d5209aae89aee78d81"><div class="ttname"><a href="structmemory__t.html#a16c9502c6f6bf2d5209aae89aee78d81">memory_t::touch</a></div><div class="ttdeci">ResistiveTouch::calibration_t touch</div><div class="ttdoc">Resistive touch calibration coordinates and display dimensions.</div><div class="ttdef"><b>Definition</b> memory.h:50</div></div>
+<div class="ttc" id="astructmemory__t_html_a1d551d0356c948cd3920b772d1952c3e"><div class="ttname"><a href="structmemory__t.html#a1d551d0356c948cd3920b772d1952c3e">memory_t::touchInitFlag</a></div><div class="ttdeci">bool touchInitFlag</div><div class="ttdoc">Flag indicating whether touch calibration has been completed.</div><div class="ttdef"><b>Definition</b> memory.h:49</div></div>
+<div class="ttc" id="astructmemory__t_html_aa395ae9c3443ae657314d0f94c6a527c"><div class="ttname"><a href="structmemory__t.html#aa395ae9c3443ae657314d0f94c6a527c">memory_t::crc32</a></div><div class="ttdeci">uint32_t crc32</div><div class="ttdoc">CRC32 checksum for validating data integrity in flash memory.</div><div class="ttdef"><b>Definition</b> memory.h:51</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

@@ -102,7 +102,7 @@ Public Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Persistent configuration data structure stored in internal flash memory. </p>
-<p>Stores system-wide non-volatile configuration parameters including touch screen calibration coordinates and an integrity verification checksum (CRC32). Packed to ensure consistent binary layout.</p>
+<p>Stores system-wide non-volatile configuration parameters including touch screen calibration coordinates (inherited from <span class="tt">ResistiveTouch::calibration_t</span> in the yss OS HAL module) and an integrity verification checksum (<span class="tt"><a class="el" href="#aa395ae9c3443ae657314d0f94c6a527c" title="CRC32 checksum for validating data integrity in flash memory.">crc32</a></span>). Packed to ensure a deterministic binary layout across flash read and write operations.</p>
 <p>Example usage: </p><div class="fragment"><div class="line"><a class="code hl_function" href="memory_8h.html#ab058849f3170edfd9919126b64bbc9fe">initializeMemory</a>();</div>
 <div class="line"><span class="keywordflow">if</span> (!<a class="code hl_variable" href="memory_8h.html#a757b7a2e4ec11980491df9fa20d94d2b">memory</a>.touchInitFlag)</div>
 <div class="line">{</div>
@@ -114,9 +114,9 @@ Public Attributes</h2></td></tr>
 <div class="line">    <a class="code hl_variable" href="memory_8h.html#a757b7a2e4ec11980491df9fa20d94d2b">memory</a>.touchInitFlag = <span class="keyword">true</span>;</div>
 <div class="line">    <a class="code hl_function" href="memory_8h.html#a44ef0e50f06b14420170d92cb204cd0c">saveMemory</a>();</div>
 <div class="line">}</div>
-<div class="ttc" id="amemory_8h_html_a44ef0e50f06b14420170d92cb204cd0c"><div class="ttname"><a href="memory_8h.html#a44ef0e50f06b14420170d92cb204cd0c">saveMemory</a></div><div class="ttdeci">void saveMemory()</div><div class="ttdoc">Saves the current memory structure to flash memory with calculated CRC32.</div><div class="ttdef"><b>Definition</b> memory.cpp:102</div></div>
+<div class="ttc" id="amemory_8h_html_a44ef0e50f06b14420170d92cb204cd0c"><div class="ttname"><a href="memory_8h.html#a44ef0e50f06b14420170d92cb204cd0c">saveMemory</a></div><div class="ttdeci">void saveMemory()</div><div class="ttdoc">Saves the current memory structure to flash memory with calculated CRC32.</div><div class="ttdef"><b>Definition</b> memory.cpp:103</div></div>
 <div class="ttc" id="amemory_8h_html_a757b7a2e4ec11980491df9fa20d94d2b"><div class="ttname"><a href="memory_8h.html#a757b7a2e4ec11980491df9fa20d94d2b">memory</a></div><div class="ttdeci">memory_t memory</div><div class="ttdoc">Global memory structure holding active configuration loaded from flash.</div></div>
-<div class="ttc" id="amemory_8h_html_ab058849f3170edfd9919126b64bbc9fe"><div class="ttname"><a href="memory_8h.html#ab058849f3170edfd9919126b64bbc9fe">initializeMemory</a></div><div class="ttdeci">void initializeMemory()</div><div class="ttdoc">Initializes non-volatile memory and verifies data integrity.</div><div class="ttdef"><b>Definition</b> memory.cpp:38</div></div>
+<div class="ttc" id="amemory_8h_html_ab058849f3170edfd9919126b64bbc9fe"><div class="ttname"><a href="memory_8h.html#ab058849f3170edfd9919126b64bbc9fe">initializeMemory</a></div><div class="ttdeci">void initializeMemory()</div><div class="ttdoc">Initializes non-volatile memory and verifies data integrity.</div><div class="ttdef"><b>Definition</b> memory.cpp:37</div></div>
 </div><!-- fragment --> </div><a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
 <a id="aa395ae9c3443ae657314d0f94c6a527c" name="aa395ae9c3443ae657314d0f94c6a527c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa395ae9c3443ae657314d0f94c6a527c">&#9670;&#160;</a></span>crc32</h2>

@@ -104,22 +104,24 @@ Include dependency graph for bsp.cpp:</div>
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ae0c063b7a323314c74fa7c754cf35ab0" id="r_ae0c063b7a323314c74fa7c754cf35ab0"><td class="memItemLeft" align="right" valign="top">TaskManager&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae0c063b7a323314c74fa7c754cf35ab0">page</a> (8)</td></tr>
+<tr class="memdesc:ae0c063b7a323314c74fa7c754cf35ab0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global GUI task manager configured to manage up to 8 page tasks.  <br /></td></tr>
 <tr class="memitem:a9e368fe70344faba2677317ab391d3e6" id="r_a9e368fe70344faba2677317ab391d3e6"><td class="memItemLeft" align="right" valign="top">TouchEventDispatcher&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9e368fe70344faba2677317ab391d3e6">dispatcher</a> (20, 2048)</td></tr>
+<tr class="memdesc:a9e368fe70344faba2677317ab391d3e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global touch event dispatcher configured for up to 20 touch regions and a 2048-byte worker stack.  <br /></td></tr>
 <tr class="memitem:a558343e35b6f62622ff72de7868723d1" id="r_a558343e35b6f62622ff72de7868723d1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a558343e35b6f62622ff72de7868723d1">initializeBoard</a> (void)</td></tr>
-<tr class="memdesc:a558343e35b6f62622ff72de7868723d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes all on-board hardware peripherals for the 2.8-inch TFT Touch Shield.  <br /></td></tr>
+<tr class="memdesc:a558343e35b6f62622ff72de7868723d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes on-board peripherals and hardware CRC engine.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:a6a30c52f5c6f01f7db95cb30da870c9f" id="r_a6a30c52f5c6f01f7db95cb30da870c9f"><td class="memItemLeft" align="right" valign="top"><a class="elRef" href="https://mymy49.github.io/2.8inch_TFT_Touch_Shield_Rev2.1/classTouch__LCD__Shield__for__Arduino__2__8__inch.html">Touch_LCD_Shield_for_Arduino_2_8_inch</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6a30c52f5c6f01f7db95cb30da870c9f">lcd</a></td></tr>
-<tr class="memdesc:a6a30c52f5c6f01f7db95cb30da870c9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global display driver instance for the 2.8-inch TFT Touch Shield.  <br /></td></tr>
+<tr class="memdesc:a6a30c52f5c6f01f7db95cb30da870c9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global display driver instance for the Waveshare 2.8-inch TFT Touch Shield Rev2.1.  <br /></td></tr>
 <tr class="memitem:aff564f4c14df2d3e83b2d0ef5ebf4287" id="r_aff564f4c14df2d3e83b2d0ef5ebf4287"><td class="memItemLeft" align="right" valign="top">FrameBufferRgb565LE&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aff564f4c14df2d3e83b2d0ef5ebf4287">brush</a></td></tr>
-<tr class="memdesc:aff564f4c14df2d3e83b2d0ef5ebf4287"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global graphic buffer used for rendering operations.  <br /></td></tr>
+<tr class="memdesc:aff564f4c14df2d3e83b2d0ef5ebf4287"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global RGB565 little-endian frame buffer used as a scratchpad brush for text and UI rendering.  <br /></td></tr>
 <tr class="memitem:adab6ae6bcf203e8ce9c24d96b90271ff" id="r_adab6ae6bcf203e8ce9c24d96b90271ff"><td class="memItemLeft" align="right" valign="top"><a class="elRef" href="https://mymy49.github.io/XPT2046/classXPT2046.html">XPT2046</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adab6ae6bcf203e8ce9c24d96b90271ff">touch</a></td></tr>
-<tr class="memdesc:adab6ae6bcf203e8ce9c24d96b90271ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resistive touch controller instance (<a class="elRef" href="https://mymy49.github.io/XPT2046/classXPT2046.html">XPT2046</a>).  <br /></td></tr>
+<tr class="memdesc:adab6ae6bcf203e8ce9c24d96b90271ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global <a class="elRef" href="https://mymy49.github.io/XPT2046/classXPT2046.html">XPT2046</a> resistive touch screen controller instance.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Board Support Package implementation for NuMaker-M251KG and 2.8-inch TFT Touch Shield. </p>
-<dl class="section author"><dt>Author</dt><dd>Yoon-Ki Hong </dd></dl>
+<p>Instantiates and configures the SPI0 bus, hardware CRC32 peripheral, ST7789V 2.8-inch TFT LCD driver, RGB565 frame buffer, <a class="elRef" href="https://mymy49.github.io/XPT2046/classXPT2046.html">XPT2046</a> resistive touch controller, GUI page task manager, and touch event dispatcher. </p><dl class="section author"><dt>Author</dt><dd>Yoon-Ki Hong </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2026-11-18 </dd></dl>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
 <a id="a9e368fe70344faba2677317ab391d3e6" name="a9e368fe70344faba2677317ab391d3e6"></a>
@@ -141,6 +143,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Global touch event dispatcher configured for up to 20 touch regions and a 2048-byte worker stack. </p>
+
 </div>
 </div>
 <a id="a558343e35b6f62622ff72de7868723d1" name="a558343e35b6f62622ff72de7868723d1"></a>
@@ -158,19 +162,19 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Initializes all on-board hardware peripherals for the 2.8-inch TFT Touch Shield. </p>
+<p>Initializes on-board peripherals and hardware CRC engine. </p>
+<p>Initializes all on-board hardware peripherals for the 2.8-inch TFT Touch Shield.</p>
 <p>Initializes on-board hardware peripherals, LED, and UART0 interface.</p>
 <p>Initializes on-board hardware peripherals.</p>
 <p>Initializes on-board peripherals and user LED GPIO.</p>
 <p>Initializes on-board peripherals and EADC channels.</p>
-<p>Initializes on-board peripherals and hardware CRC engine.</p>
 <p>Configures peripheral pins and initializes hardware devices:</p><ol type="1">
-<li>SPI0: PA0 (MOSI), PA1 (MISO), PA2 (CLK) initialized in Master mode.</li>
-<li>CRC: Hardware CRC32 engine initialized with 0xFFFFFFFF polynomial seed.</li>
-<li>LCD: PA3 (CS), PA4 (Backlight), PA6 (DC) configured; frame buffer allocated and display cleared.</li>
-<li>Touch: PC3 (CS), PC5 (IRQ) configured for <a class="elRef" href="https://mymy49.github.io/XPT2046/classXPT2046.html">XPT2046</a> controller and linked to touch event dispatcher. <dl class="section see"><dt>See also</dt><dd><a class="el" href="2_88inch_01TFT_01Touch_01Shield_01Rev2_81_2app_2inc_2bsp_8h.html#a6a30c52f5c6f01f7db95cb30da870c9f" title="Global display driver instance for the 2.8-inch TFT Touch Shield.">lcd</a>, <a class="el" href="2_88inch_01TFT_01Touch_01Shield_01Rev2_81_2app_2inc_2bsp_8h.html#aff564f4c14df2d3e83b2d0ef5ebf4287" title="Global graphic buffer used for rendering operations.">brush</a>, <a class="el" href="2_88inch_01TFT_01Touch_01Shield_01Rev2_81_2app_2inc_2bsp_8h.html#adab6ae6bcf203e8ce9c24d96b90271ff" title="Resistive touch controller instance (XPT2046).">touch</a>, <a class="el" href="2_88inch_01TFT_01Touch_01Shield_01Rev2_81_2app_2inc_2bsp_8h.html#a657871180a22662ec0bb1d89ff92357a" title="Touch event dispatcher for routing touch press, drag, and release events.">dispatcher</a>, spi0, crc, initializeYss </dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000007">Todo</a></b></dt><dd>none </dd></dl>
-<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000007">Bug</a></b></dt><dd>none </dd></dl>
+<li>SPI0: PA0 (MOSI), PA1 (MISO), PA2 (CLK) initialized in Master mode (<span class="tt">Spi::MODE_MAIN</span>).</li>
+<li>CRC: Hardware CRC32 engine initialized in 8-bit data width mode with <span class="tt">0xFFFFFFFF</span> polynomial seed.</li>
+<li>LCD: PA3 (CS), PA4 (Backlight), PA6 (DC) configured; 5000-byte frame buffer allocated and display cleared to white.</li>
+<li>Touch: PC3 (CS), PC5 (IRQ) configured for <a class="elRef" href="https://mymy49.github.io/XPT2046/classXPT2046.html">XPT2046</a> controller and linked to the touch event dispatcher. <dl class="section see"><dt>See also</dt><dd><a class="el" href="2_88inch_01TFT_01Touch_01Shield_01Rev2_81_2app_2inc_2bsp_8h.html#a6a30c52f5c6f01f7db95cb30da870c9f" title="Global display driver instance for the 2.8-inch TFT Touch Shield (ST7789V over SPI0).">lcd</a>, <a class="el" href="2_88inch_01TFT_01Touch_01Shield_01Rev2_81_2app_2inc_2bsp_8h.html#aff564f4c14df2d3e83b2d0ef5ebf4287" title="Global RGB565 little-endian graphic frame buffer used for partial rendering operations.">brush</a>, <a class="el" href="2_88inch_01TFT_01Touch_01Shield_01Rev2_81_2app_2inc_2bsp_8h.html#adab6ae6bcf203e8ce9c24d96b90271ff" title="Resistive touch controller driver instance (XPT2046 over SPI0).">touch</a>, <a class="el" href="2_88inch_01TFT_01Touch_01Shield_01Rev2_81_2app_2inc_2bsp_8h.html#a657871180a22662ec0bb1d89ff92357a" title="Touch event dispatcher for routing touch press, drag, and release events to registered hit areas.">dispatcher</a>, spi0, crc, initializeYss </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000023">Todo</a></b></dt><dd>none </dd></dl>
+<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000023">Bug</a></b></dt><dd>none </dd></dl>
 </li>
 </ol>
 
@@ -191,6 +195,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Global GUI task manager configured to manage up to 8 page tasks. </p>
+
 </div>
 </div>
 <a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="groupheader">Variable Documentation</h2>
@@ -206,7 +212,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Global graphic buffer used for rendering operations. </p>
+<p>Global RGB565 little-endian frame buffer used as a scratchpad brush for text and UI rendering. </p>
+<p>Global RGB565 little-endian graphic frame buffer used for partial rendering operations. </p>
 
 </div>
 </div>
@@ -222,7 +229,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Global display driver instance for the 2.8-inch TFT Touch Shield. </p>
+<p>Global display driver instance for the Waveshare 2.8-inch TFT Touch Shield Rev2.1. </p>
+<p>Global display driver instance for the 2.8-inch TFT Touch Shield (ST7789V over SPI0). </p>
 
 </div>
 </div>
@@ -238,8 +246,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Resistive touch controller instance (<a class="elRef" href="https://mymy49.github.io/XPT2046/classXPT2046.html">XPT2046</a>). </p>
-<p>Resistive touch controller instance (<a class="elRef" href="https://mymy49.github.io/XPT2046/classXPT2046.html">XPT2046</a>). </p>
+<p>Global <a class="elRef" href="https://mymy49.github.io/XPT2046/classXPT2046.html">XPT2046</a> resistive touch screen controller instance. </p>
+<p>Resistive touch controller driver instance (<a class="elRef" href="https://mymy49.github.io/XPT2046/classXPT2046.html">XPT2046</a> over SPI0). </p>
 
 </div>
 </div>

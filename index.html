@@ -84,157 +84,190 @@ $(function() {
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="md_README"></a></p>
 <p>[<img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT" style="pointer-events: none;" class="inline"/>](LICENSE) <a href="https://mymy49.github.io/NuMaker-M251KG_example/"><img src="https://img.shields.io/badge/docs-GitHub_Pages-blue.svg" alt="GitHub Pages" style="pointer-events: none;" class="inline"/></a></p>
-<p>Firmware examples and Board Support Package (BSP) for the <b>Nuvoton NuMaker-M251KG</b> development board powered by <b>yss OS</b> (embedded C++ RTOS framework).</p>
+<p>Firmware examples and Board Support Package (BSP) for the <b>NuMaker-M251KG</b> development board, providing full peripheral driver support for the <b>Nuvoton M251 series</b> microcontroller powered by <b>yss OS</b> (embedded C++ RTOS framework).</p>
 <hr  />
 <h1 class="doxsection"><a class="anchor" id="autotoc_md2"></a>
-Overview</h1>
-<p>This repository provides comprehensive sample projects demonstrating the peripherals and capabilities of the Nuvoton M251 series microcontroller (Arm® Cortex®-M23) using the object-oriented yss OS framework. Examples range from basic GPIO and UART communication to complex multi-tasking graphical user interface (GUI) applications with touch input and non-volatile flash storage.</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md3"></a>
-Key Features</h2>
-<ul>
-<li><b>yss OS Multitasking</b>: Preemptive thread scheduler, event loop, software timers, and task managers.</li>
-<li><b>Graphical Display &amp; Touch GUI</b>: ST7789V 2.8-inch TFT LCD controller driver with <a class="elRef" href="https://mymy49.github.io/XPT2046/classXPT2046.html">XPT2046</a> resistive touch screen interface, 2-point touch calibration, and interactive drawing canvas.</li>
-<li><b>Hardware Acceleration</b>: High-speed SPI master communication and hardware-accelerated CRC32 checksum engine.</li>
-<li><b>Non-volatile Configuration (Flash)</b>: Persistent storage of calibration data in internal on-chip flash memory with CRC integrity validation.</li>
-<li><b>Peripheral Drivers</b>: EADC (Analog-to-Digital Converter), UART (asynchronous serial), PWM, and GPIO on-board LED control.</li>
-</ul>
+1. Overview</h1>
+<p>This repository hosts official example applications and board support drivers for the Nuvoton NuMaker-M251KG evaluation board. It demonstrates how to leverage the <b>Nuvoton M251 Support Package</b> integrated into yss OS to build efficient, multitasking embedded applications for the Arm® Cortex®-M23 architecture.</p>
 <hr  />
-<h1 class="doxsection"><a class="anchor" id="autotoc_md5"></a>
-Development Environment &amp; Specifications</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md6"></a>
-Hardware Specifications</h2>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md4"></a>
+2. Nuvoton M251 Support Package</h1>
+<p>The Nuvoton M251 Support Package provides a comprehensive Hardware Abstraction Layer (HAL) and MCU Support Package (MSP) tailored for the Nuvoton NuMicro® M251 series microcontrollers. It encapsulates low-level hardware registers into modern, object-oriented C++ driver instances.</p>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md5"></a>
+Supported Peripherals &amp; Drivers</h2>
 <ul>
-<li><b>Target MCU</b>: Nuvoton M251KG6AE (Arm® Cortex®-M23, up to 48 MHz)</li>
-<li><b>Target Board</b>: NuMaker-M251KG V1.1</li>
-<li><b>Expansion Shield</b>: 2.8-inch TFT Touch Shield Rev2.1 (Arduino Uno compatible header)</li>
+<li><b>Clock &amp; Power Management (<span class="tt">clock</span>)</b>:<ul>
+<li>Flexible system clock generation supporting both Internal High-Speed RC oscillator (HIRC at 48 MHz) and External Crystal (HXT, 4 to 24 MHz).</li>
+<li>On-chip Phase-Locked Loop (PLL) configuration supporting up to 48 MHz system core clock (HCLK).</li>
+<li>Dynamic peripheral clock prescaling and routing for APB0 and APB1 buses.</li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md7"></a>
-Pin Mapping</h2>
-<table class="markdownTable">
-<tr class="markdownTableHead">
-<th class="markdownTableHeadLeft">Peripheral  </th><th class="markdownTableHeadLeft">Function / Signal  </th><th class="markdownTableHeadLeft">MCU Pin  </th><th class="markdownTableHeadLeft">Description  </th></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft"><b>User LED</b>  </td><td class="markdownTableBodyLeft">Red LED  </td><td class="markdownTableBodyLeft"><span class="tt">PB14</span>  </td><td class="markdownTableBodyLeft">Active-low on-board indicator  </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyLeft"><b>UART0</b>  </td><td class="markdownTableBodyLeft">RXD  </td><td class="markdownTableBodyLeft"><span class="tt">PB12</span>  </td><td class="markdownTableBodyLeft">Serial Receive Data  </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft"><b>UART0</b>  </td><td class="markdownTableBodyLeft">TXD  </td><td class="markdownTableBodyLeft"><span class="tt">PB13</span>  </td><td class="markdownTableBodyLeft">Serial Transmit Data  </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyLeft"><b>EADC0</b>  </td><td class="markdownTableBodyLeft">Channel 0  </td><td class="markdownTableBodyLeft"><span class="tt">PB0</span>  </td><td class="markdownTableBodyLeft">Analog Input Channel 0  </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft"><b>EADC0</b>  </td><td class="markdownTableBodyLeft">Channel 1  </td><td class="markdownTableBodyLeft"><span class="tt">PB1</span>  </td><td class="markdownTableBodyLeft">Analog Input Channel 1  </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyLeft"><b>SPI0</b>  </td><td class="markdownTableBodyLeft">MOSI  </td><td class="markdownTableBodyLeft"><span class="tt">PA0</span>  </td><td class="markdownTableBodyLeft">SPI Master Output Slave Input  </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft"><b>SPI0</b>  </td><td class="markdownTableBodyLeft">MISO  </td><td class="markdownTableBodyLeft"><span class="tt">PA1</span>  </td><td class="markdownTableBodyLeft">SPI Master Input Slave Output  </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyLeft"><b>SPI0</b>  </td><td class="markdownTableBodyLeft">CLK  </td><td class="markdownTableBodyLeft"><span class="tt">PA2</span>  </td><td class="markdownTableBodyLeft">SPI Serial Clock  </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft"><b>ST7789V LCD</b>  </td><td class="markdownTableBodyLeft">Chip Select (CS)  </td><td class="markdownTableBodyLeft"><span class="tt">PA3</span>  </td><td class="markdownTableBodyLeft">Display controller chip select  </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyLeft"><b>ST7789V LCD</b>  </td><td class="markdownTableBodyLeft">Backlight (BL)  </td><td class="markdownTableBodyLeft"><span class="tt">PA4</span>  </td><td class="markdownTableBodyLeft">Display backlight enable  </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft"><b>ST7789V LCD</b>  </td><td class="markdownTableBodyLeft">Data/Command (DC)  </td><td class="markdownTableBodyLeft"><span class="tt">PA6</span>  </td><td class="markdownTableBodyLeft">Display data / command selector  </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyLeft"><b><a class="elRef" href="https://mymy49.github.io/XPT2046/classXPT2046.html">XPT2046</a> Touch</b>  </td><td class="markdownTableBodyLeft">Chip Select (CS)  </td><td class="markdownTableBodyLeft"><span class="tt">PC3</span>  </td><td class="markdownTableBodyLeft">Touch controller chip select  </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft"><b><a class="elRef" href="https://mymy49.github.io/XPT2046/classXPT2046.html">XPT2046</a> Touch</b>  </td><td class="markdownTableBodyLeft">Interrupt (IRQ)  </td><td class="markdownTableBodyLeft"><span class="tt">PC5</span>  </td><td class="markdownTableBodyLeft">Touch event interrupt line  </td></tr>
-</table>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md8"></a>
-Toolchain &amp; Dependencies</h2>
-<ul>
-<li><b>IDE / Toolchain</b>: SEGGER Embedded Studio for ARM (v8.x or later) or ARM GNU Toolchain</li>
-<li><b>Operating System / Framework</b>: <a href="https://github.com/mymy49/yss">yss OS</a></li>
-<li><b>Submodule Dependencies</b>:<ul>
-<li><span class="tt">module/2.8inch_TFT_Touch_Shield_Rev2.1</span></li>
-<li><span class="tt">module/ValueDisplay</span></li>
-<li><span class="tt">module/Lpf</span></li>
-<li><span class="tt">module/XPT2046</span></li>
+</li>
+<li><b>GPIO &amp; Pin Multiplexing (<span class="tt">gpioA</span>, <span class="tt">gpioB</span>, <span class="tt">gpioC</span>, <span class="tt">gpioD</span>, <span class="tt">gpioE</span>, <span class="tt">gpioF</span>)</b>:<ul>
+<li>Independent pin direction control (Input, Push-Pull Output, Open-Drain, Quasi-bidirectional).</li>
+<li>Peripheral alternate function routing (<span class="tt">setAsAltFunc()</span>).</li>
+<li>High-speed bit-level reading and writing.</li>
+</ul>
+</li>
+<li><b>UART Communication (<span class="tt">uart0</span>, <span class="tt">uart1</span>, <span class="tt">uart2</span>)</b>:<ul>
+<li>Asynchronous serial communication up to high baud rates (e.g., 115200, 921600 bps).</li>
+<li>Interrupt-driven transmission and reception with configurable ring buffer.</li>
+<li>Integration with yss OS asynchronous event triggers.</li>
+</ul>
+</li>
+<li><b>Enhanced ADC (<span class="tt">eadc</span>)</b>:<ul>
+<li>14-bit successive approximation register (SAR) Analog-to-Digital Converter.</li>
+<li>Multi-channel simultaneous conversion and digital low-pass filtering (LPF) support.</li>
+<li>Continuous non-blocking background conversions.</li>
+</ul>
+</li>
+<li><b>Hardware CRC Engine (<span class="tt">crc</span>)</b>:<ul>
+<li>Hardware-accelerated CRC-CCITT, CRC-8, CRC-16, and CRC-32 polynomials.</li>
+<li>Programmable seed values, data lengths (8, 16, 32 bits), and bit/byte reversal options.</li>
+</ul>
+</li>
+<li><b>Timers &amp; Runtime (<span class="tt">timer0</span>, <span class="tt">timer1</span>, <span class="tt">timer2</span>, <span class="tt">timer3</span>)</b>:<ul>
+<li>Periodic interrupt generation and event timing.</li>
+<li>OS tick generation and high-resolution elapsed time measurement (<span class="tt">runtime::getMsec()</span>).</li>
+</ul>
+</li>
+<li><b>Flash Memory Controller (<span class="tt">flash</span>)</b>:<ul>
+<li>In-System Programming (ISP) and In-Application Programming (IAP) driver.</li>
+<li>Page-based erase and 32-bit word programming for non-volatile parameter persistence.</li>
+</ul>
+</li>
+<li><b>Watchdog Timer &amp; RTOS Mutex Watchdog (<span class="tt">wdt</span>, <span class="tt">Mutex</span>)</b>:<ul>
+<li>Hardware independent watchdog timer supervision.</li>
+<li>Automatic software mutex lock duration monitoring and deadlock prevention.</li>
+</ul>
+</li>
+<li><b>Serial Peripheral Interface (<span class="tt">spi0</span>) &amp; USCI (<span class="tt">uspi0</span>, <span class="tt">uuart0</span>)</b>:<ul>
+<li>Master and slave SPI modes with programmable clock polarities and phases.</li>
+<li>Universal Serial Communication Interface support.</li>
 </ul>
 </li>
 </ul>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md6"></a>
+System Configuration (<span class="tt">config.h</span>)</h2>
+<p>Each application configures the M251 Support Package via <span class="tt">app/inc/config.h</span>:</p><ul>
+<li>Enabling or disabling peripheral driver instances to minimize code footprint.</li>
+<li>Selecting the runtime measurement timer (<span class="tt"><a class="el" href="runtime_2app_2inc_2config_8h.html#a74f228c246818a1fbde9780d3f176932" title="Select TIMER peripheral to support runtime measurement (RUNTIME_TIMER0, 1, 2, 3).">YSS_RUNTIME_TIMER</a></span>).</li>
+<li>Configuring thread scheduling parameters (<span class="tt"><a class="el" href="CRC_2app_2inc_2config_8h.html#ad18f35ad4210510ae190e270e2790192" title="Number of SysTick clock cycles allocated per thread timeslice.">THREAD_GIVEN_CLOCK</a></span>, <span class="tt"><a class="el" href="CRC_2app_2inc_2config_8h.html#a04922e4673a244d94b12566890b2e96c" title="Maximum number of threads that can be registered in the scheduler.">MAX_THREAD</a></span>).</li>
+<li>Enabling Mutex Watchdog threshold limits (<span class="tt"><a class="el" href="MutexWatchdog_2app_2inc_2config_8h.html#a0eded579298d388d1c247c31b7e4af90" title="Enable RTOS mutex lock timeout supervision (true, false).">THREAD_WATCHDOG_ENABLE</a></span>, <span class="tt"><a class="el" href="MutexWatchdog_2app_2inc_2config_8h.html#ac7e1ad0ab93834e71f323244a8fd14cf" title="Maximum allowed mutex wait duration in milliseconds before triggering mutexWatchdogHandler().">THREAD_WATCHDOG_OVERFLOW_TIME</a></span>).</li>
+</ul>
 <hr  />
-<h1 class="doxsection"><a class="anchor" id="autotoc_md10"></a>
-Sample Code Overview</h1>
-<p>The <span class="tt">SampleCode/</span> directory contains standalone projects configured for SEGGER Embedded Studio (<span class="tt">.hzp</span>):</p>
-<table class="markdownTable">
-<tr class="markdownTableHead">
-<th class="markdownTableHeadLeft">Project  </th><th class="markdownTableHeadLeft">Path  </th><th class="markdownTableHeadLeft">Description  </th></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft"><b>2.8inch TFT Touch Shield</b>  </td><td class="markdownTableBodyLeft"><span class="tt">SampleCode/2.8inch TFT Touch Shield Rev2.1</span>  </td><td class="markdownTableBodyLeft">Full GUI demo including startup logo, 2-point touch calibration, and drawing application with color palette  </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyLeft"><b>LED Blink</b>  </td><td class="markdownTableBodyLeft"><span class="tt">SampleCode/LED_blink</span>  </td><td class="markdownTableBodyLeft">Basic GPIO toggle demonstration using on-board red LED  </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft"><b>UART</b>  </td><td class="markdownTableBodyLeft"><span class="tt">SampleCode/UART</span>  </td><td class="markdownTableBodyLeft">Serial communication, interrupt-driven echo, and trigger-based LED activity indicator  </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyLeft"><b>EADC</b>  </td><td class="markdownTableBodyLeft"><span class="tt">SampleCode/EADC</span>  </td><td class="markdownTableBodyLeft">Enhanced Analog-to-Digital Converter 2-channel data acquisition with digital filtering  </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft"><b>CRC</b>  </td><td class="markdownTableBodyLeft"><span class="tt">SampleCode/CRC</span>  </td><td class="markdownTableBodyLeft">Hardware-based CRC32 calculation and verification  </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyLeft"><b>MutexWatchdog</b>  </td><td class="markdownTableBodyLeft"><span class="tt">SampleCode/MutexWatchdog</span>  </td><td class="markdownTableBodyLeft">Thread synchronization, deadlock detection, and watchdog timer management  </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft"><b>Runtime</b>  </td><td class="markdownTableBodyLeft"><span class="tt">SampleCode/runtime</span>  </td><td class="markdownTableBodyLeft">Execution time tracking and precision timer delays  </td></tr>
-</table>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md8"></a>
+3. Development Environment &amp; Specifications</h1>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md9"></a>
+Hardware Specifications</h2>
+<ul>
+<li><b>Target Evaluation Board</b>: NuMaker-M251KG V1.1</li>
+<li><b>Target Microcontroller</b>: Nuvoton M251KG6AE<ul>
+<li><b>Core</b>: Arm® Cortex®-M23 (Armv8-M Baseline architecture)</li>
+<li><b>Max Clock Speed</b>: Up to 48 MHz</li>
+<li><b>Flash Memory</b>: 256 KB on-chip APROM</li>
+<li><b>SRAM</b>: 32 KB embedded SRAM</li>
+<li><b>Operating Voltage</b>: 1.75 V to 5.5 V</li>
+</ul>
+</li>
+<li><b>On-Board Debugger</b>: Nu-Link-Me (SWD programming and Virtual COM port interface)</li>
+</ul>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md10"></a>
+Toolchain &amp; Software Dependencies</h2>
+<ul>
+<li><b>IDE / Toolchain</b>: CrossWorks for ARM (v5.x or higher)</li>
+<li><b>Operating System / Framework</b>: <a href="https://github.com/mymy49/yss">yss OS</a> (embedded C++ RTOS)</li>
+</ul>
 <hr  />
 <h1 class="doxsection"><a class="anchor" id="autotoc_md12"></a>
-Getting Started</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md13"></a>
-1. Clone Repository with Submodules</h2>
-<p>To clone this repository together with all necessary submodules (yss OS and peripheral modules), run:</p>
-<div class="fragment"><div class="line">git clone --recursive https://github.com/mymy49/NuMaker-M251KG_example.git</div>
-</div><!-- fragment --><p>If you have already cloned without submodules, initialize and update them:</p>
-<div class="fragment"><div class="line">cd NuMaker-M251KG_example</div>
-<div class="line">git submodule update --init --recursive</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md14"></a>
-2. Build &amp; Flash</h2>
+4. Prerequisites: Nuvoton M251 Support Package for CrossWorks for ARM</h1>
+<p>CrossWorks for ARM does not natively provide device support for Nuvoton NuMicro® M251 microcontrollers in its default package manager. A custom device support package must be installed beforehand:</p>
 <ol type="1">
-<li>Open <b>SEGGER Embedded Studio for ARM</b>.</li>
-<li>Go to <b>File -&gt; Open Solution...</b> and select the <span class="tt">.hzp</span> project file of interest, for example: <div class="fragment"><div class="line">SampleCode/2.8inch TFT Touch Shield Rev2.1/Example.hzp</div>
-</div><!-- fragment --></li>
-<li>Connect the NuMaker-M251KG board to your computer via USB (Nu-Link-Me programming interface).</li>
-<li>Select <b>Build -&gt; Build Example</b> (<span class="tt">F7</span>).</li>
-<li>Select <b>Debug -&gt; Go</b> (<span class="tt">F5</span>) to flash and run the application on target hardware.</li>
+<li>Clone or download the <a href="https://github.com/mymy49/CrossworksForARM_Nuvoton_M251">CrossworksForARM_Nuvoton_M251</a> repository.</li>
+<li>Open the package project file (<span class="tt">.hzp</span>) in CrossWorks for ARM and build it (<span class="tt">F7</span> or <span class="tt">Build -&gt; Build Project</span>) to generate the package file (<span class="tt">.hzq</span>).</li>
+<li>In CrossWorks for ARM, navigate to <b>Tools -&gt; Packages -&gt; Manually Install Packages...</b> and select the generated <span class="tt">.hzq</span> package file.</li>
+<li>Once installed, M251 target device definitions, CMSIS headers, and project templates will be fully available in CrossWorks for ARM.</li>
 </ol>
 <hr  />
+<h1 class="doxsection"><a class="anchor" id="autotoc_md14"></a>
+5. Sample Code Overview</h1>
+<p>The <span class="tt">SampleCode/</span> directory contains complete projects configured with solution files (<span class="tt">.hzp</span>):</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadLeft">Project  </th><th class="markdownTableHeadLeft">Path  </th><th class="markdownTableHeadLeft">Focus Area  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><b>LED Blink</b>  </td><td class="markdownTableBodyLeft"><span class="tt">SampleCode/LED_blink</span>  </td><td class="markdownTableBodyLeft">Basic GPIO configuration and non-blocking RTOS thread delays  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><b>UART</b>  </td><td class="markdownTableBodyLeft"><span class="tt">SampleCode/UART</span>  </td><td class="markdownTableBodyLeft">Serial communication, interrupt-driven reception, and asynchronous triggers  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><b>EADC</b>  </td><td class="markdownTableBodyLeft"><span class="tt">SampleCode/EADC</span>  </td><td class="markdownTableBodyLeft">14-bit dual-channel ADC acquisition with digital filtering  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><b>CRC</b>  </td><td class="markdownTableBodyLeft"><span class="tt">SampleCode/CRC</span>  </td><td class="markdownTableBodyLeft">Hardware CRC32 calculation and checksum verification  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><b>MutexWatchdog</b>  </td><td class="markdownTableBodyLeft"><span class="tt">SampleCode/MutexWatchdog</span>  </td><td class="markdownTableBodyLeft">Thread synchronization and mutex deadlock supervision  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><b>Runtime</b>  </td><td class="markdownTableBodyLeft"><span class="tt">SampleCode/runtime</span>  </td><td class="markdownTableBodyLeft">High-precision system uptime and execution timing  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><b>2.8inch TFT Touch Shield</b>  </td><td class="markdownTableBodyLeft"><span class="tt">SampleCode/2.8inch TFT Touch Shield Rev2.1</span>  </td><td class="markdownTableBodyLeft">Multi-tasking application integrating display, touch, and flash storage  </td></tr>
+</table>
+<hr  />
 <h1 class="doxsection"><a class="anchor" id="autotoc_md16"></a>
-Quick Start Examples</h1>
+6. Getting Started &amp; Build Instructions</h1>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md17"></a>
-Example 1: Basic GPIO &amp; Threading (LED Blink)</h2>
+1. Clone Repository with Submodules</h2>
+<p>To clone this repository along with yss OS and all dependencies, run:</p>
+<div class="fragment"><div class="line">git clone --recursive https://github.com/mymy49/NuMaker-M251KG_example.git</div>
+</div><!-- fragment --><p>If the repository was cloned without submodules, initialize them using:</p>
+<div class="fragment"><div class="line">cd NuMaker-M251KG_example</div>
+<div class="line">git submodule update --init --recursive</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md18"></a>
+2. Build and Firmware Flashing</h2>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md19"></a>
+Using CrossWorks for ARM :</h3>
+<ol type="1">
+<li>Ensure the <a href="https://github.com/mymy49/CrossworksForARM_Nuvoton_M251">CrossworksForARM_Nuvoton_M251</a> package has been installed.</li>
+<li>Select <b>File -&gt; Open Solution...</b> and choose the desired project file (e.g., <span class="tt">SampleCode/LED_blink/Example.hzp</span>).</li>
+<li>Select target configuration (<span class="tt">Example THUMB Release</span> or <span class="tt">Example THUMB Debug</span>).</li>
+<li>Build solution via <span class="tt">F7</span> or <span class="tt">Build -&gt; Build Solution</span>.</li>
+<li>Connect the NuMaker-M251KG board via Nu-Link-Me USB ICE interface and flash with <span class="tt">F5</span> / <span class="tt">Ctrl+D</span> (<span class="tt">Target -&gt; Download</span>).</li>
+</ol>
+<hr  />
+<h1 class="doxsection"><a class="anchor" id="autotoc_md21"></a>
+7. Quick Start Examples</h1>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md22"></a>
+1. GPIO Control &amp; Thread Delay</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;yss.h&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;<a class="code" href="led_8h.html">dev/led.h</a>&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">int</span> <a class="code hl_function" href="2_88inch_01TFT_01Touch_01Shield_01Rev2_81_2app_2src_2main_8cpp.html#a840291bc02cba5474a4cb46a9b9566fe">main</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><span class="keywordtype">int</span> <a class="code hl_function" href="CRC_2app_2src_2main_8cpp.html#a840291bc02cba5474a4cb46a9b9566fe">main</a>(<span class="keywordtype">void</span>)</div>
 <div class="line">{</div>
-<div class="line">    <span class="comment">// Initialize the yss OS kernel and system clock</span></div>
+<div class="line">    <span class="comment">// Initialize yss OS kernel and M251 clock system</span></div>
 <div class="line">    initializeYss();</div>
 <div class="line"> </div>
-<div class="line">    <span class="comment">// Initialize the on-board red LED GPIO (PB14)</span></div>
+<div class="line">    <span class="comment">// Initialize on-board LED GPIO</span></div>
 <div class="line">    <a class="code hl_function" href="namespaceLed.html#a139e01c0554b39b6f74628e43913e087">Led::initialize</a>();</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordflow">while</span> (1)</div>
 <div class="line">    {</div>
-<div class="line">        <span class="comment">// Turn ON the red LED (active-low)</span></div>
-<div class="line">        <a class="code hl_function" href="namespaceLed.html#ac9ac694776b0e7b184999425669eaa89">Led::red</a>(<span class="keyword">true</span>);</div>
-<div class="line">        thread::delay(500);</div>
+<div class="line">        <a class="code hl_function" href="namespaceLed.html#ac9ac694776b0e7b184999425669eaa89">Led::red</a>(<span class="keyword">true</span>);       <span class="comment">// Turn LED ON</span></div>
+<div class="line">        thread::delay(500);   <span class="comment">// Non-blocking OS delay</span></div>
 <div class="line"> </div>
-<div class="line">        <span class="comment">// Turn OFF the red LED</span></div>
-<div class="line">        <a class="code hl_function" href="namespaceLed.html#ac9ac694776b0e7b184999425669eaa89">Led::red</a>(<span class="keyword">false</span>);</div>
+<div class="line">        <a class="code hl_function" href="namespaceLed.html#ac9ac694776b0e7b184999425669eaa89">Led::red</a>(<span class="keyword">false</span>);      <span class="comment">// Turn LED OFF</span></div>
 <div class="line">        thread::delay(500);</div>
 <div class="line">    }</div>
 <div class="line">}</div>
-<div class="ttc" id="a2_88inch_01TFT_01Touch_01Shield_01Rev2_81_2app_2src_2main_8cpp_html_a840291bc02cba5474a4cb46a9b9566fe"><div class="ttname"><a href="2_88inch_01TFT_01Touch_01Shield_01Rev2_81_2app_2src_2main_8cpp.html#a840291bc02cba5474a4cb46a9b9566fe">main</a></div><div class="ttdeci">int main(void)</div><div class="ttdef"><b>Definition</b> main.cpp:32</div></div>
-<div class="ttc" id="aled_8h_html"><div class="ttname"><a href="led_8h.html">led.h</a></div><div class="ttdoc">Header file for on-board LED control functions.</div></div>
-<div class="ttc" id="anamespaceLed_html_a139e01c0554b39b6f74628e43913e087"><div class="ttname"><a href="namespaceLed.html#a139e01c0554b39b6f74628e43913e087">Led::initialize</a></div><div class="ttdeci">void initialize(void)</div><div class="ttdoc">Initializes the GPIO pin for the on-board red LED.</div><div class="ttdef"><b>Definition</b> dev_led.cpp:27</div></div>
-<div class="ttc" id="anamespaceLed_html_ac9ac694776b0e7b184999425669eaa89"><div class="ttname"><a href="namespaceLed.html#ac9ac694776b0e7b184999425669eaa89">Led::red</a></div><div class="ttdeci">void red(bool on)</div><div class="ttdoc">Sets the on-board red LED output state.</div><div class="ttdef"><b>Definition</b> dev_led.cpp:44</div></div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md18"></a>
-Example 2: Serial Communication Echo (UART0)</h2>
+<div class="ttc" id="aCRC_2app_2src_2main_8cpp_html_a840291bc02cba5474a4cb46a9b9566fe"><div class="ttname"><a href="CRC_2app_2src_2main_8cpp.html#a840291bc02cba5474a4cb46a9b9566fe">main</a></div><div class="ttdeci">int main(void)</div><div class="ttdef"><b>Definition</b> main.cpp:31</div></div>
+<div class="ttc" id="aled_8h_html"><div class="ttname"><a href="led_8h.html">led.h</a></div><div class="ttdoc">Header file for on-board LED control functions on the NuMaker-M251KG evaluation board.</div></div>
+<div class="ttc" id="anamespaceLed_html_a139e01c0554b39b6f74628e43913e087"><div class="ttname"><a href="namespaceLed.html#a139e01c0554b39b6f74628e43913e087">Led::initialize</a></div><div class="ttdeci">void initialize(void)</div><div class="ttdoc">Initializes the GPIO pin for the on-board red LED.</div><div class="ttdef"><b>Definition</b> dev_led.cpp:30</div></div>
+<div class="ttc" id="anamespaceLed_html_ac9ac694776b0e7b184999425669eaa89"><div class="ttname"><a href="namespaceLed.html#ac9ac694776b0e7b184999425669eaa89">Led::red</a></div><div class="ttdeci">void red(bool on)</div><div class="ttdoc">Sets the on-board red LED output state.</div><div class="ttdef"><b>Definition</b> dev_led.cpp:48</div></div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md23"></a>
+2. Interrupt-Driven UART Communication</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;yss.h&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;bsp.h&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">int</span> <a class="code hl_function" href="2_88inch_01TFT_01Touch_01Shield_01Rev2_81_2app_2src_2main_8cpp.html#a840291bc02cba5474a4cb46a9b9566fe">main</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><span class="keywordtype">int</span> <a class="code hl_function" href="CRC_2app_2src_2main_8cpp.html#a840291bc02cba5474a4cb46a9b9566fe">main</a>(<span class="keywordtype">void</span>)</div>
 <div class="line">{</div>
 <div class="line">    initializeYss();</div>
-<div class="line">    <a class="code hl_function" href="2_88inch_01TFT_01Touch_01Shield_01Rev2_81_2app_2inc_2bsp_8h.html#a558343e35b6f62622ff72de7868723d1">initializeBoard</a>(); <span class="comment">// Configures UART0 at 115200 8N1</span></div>
+<div class="line">    <a class="code hl_function" href="CRC_2app_2inc_2bsp_8h.html#a558343e35b6f62622ff72de7868723d1">initializeBoard</a>(); <span class="comment">// Configures UART0 at 115200 8N1</span></div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordflow">while</span> (1)</div>
 <div class="line">    {</div>
@@ -243,8 +276,8 @@ Example 2: Serial Communication Echo (UART0)</h2>
 <div class="line">        <span class="keywordflow">if</span> (count &gt; 0)</div>
 <div class="line">        {</div>
 <div class="line">            int8_t *buf = uart0.getRxBuffer();</div>
-<div class="line">            uart0.send(buf, count);          <span class="comment">// Echo received data</span></div>
-<div class="line">            uart0.releaseRxBuffer(count);   <span class="comment">// Release ring buffer</span></div>
+<div class="line">            uart0.send(buf, count);          <span class="comment">// Echo back received bytes</span></div>
+<div class="line">            uart0.releaseRxBuffer(count);   <span class="comment">// Release ring buffer bytes</span></div>
 <div class="line">        }</div>
 <div class="line">        <span class="keywordflow">else</span></div>
 <div class="line">        {</div>
@@ -252,24 +285,45 @@ Example 2: Serial Communication Echo (UART0)</h2>
 <div class="line">        }</div>
 <div class="line">    }</div>
 <div class="line">}</div>
-<div class="ttc" id="a2_88inch_01TFT_01Touch_01Shield_01Rev2_81_2app_2inc_2bsp_8h_html_a558343e35b6f62622ff72de7868723d1"><div class="ttname"><a href="2_88inch_01TFT_01Touch_01Shield_01Rev2_81_2app_2inc_2bsp_8h.html#a558343e35b6f62622ff72de7868723d1">initializeBoard</a></div><div class="ttdeci">void initializeBoard(void)</div><div class="ttdoc">Initializes all on-board hardware peripherals for the 2.8-inch TFT Touch Shield.</div><div class="ttdef"><b>Definition</b> bsp.cpp:39</div></div>
+<div class="ttc" id="aCRC_2app_2inc_2bsp_8h_html_a558343e35b6f62622ff72de7868723d1"><div class="ttname"><a href="CRC_2app_2inc_2bsp_8h.html#a558343e35b6f62622ff72de7868723d1">initializeBoard</a></div><div class="ttdeci">void initializeBoard(void)</div><div class="ttdoc">Initializes on-board peripherals and hardware CRC engine.</div><div class="ttdef"><b>Definition</b> bsp.cpp:32</div></div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md24"></a>
+3. Dual-Channel Analog Data Acquisition (EADC)</h2>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;yss.h&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;bsp.h&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;yss/debug.h&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> <a class="code hl_function" href="CRC_2app_2src_2main_8cpp.html#a840291bc02cba5474a4cb46a9b9566fe">main</a>(<span class="keywordtype">void</span>)</div>
+<div class="line">{</div>
+<div class="line">    initializeYss();</div>
+<div class="line">    <a class="code hl_function" href="CRC_2app_2inc_2bsp_8h.html#a558343e35b6f62622ff72de7868723d1">initializeBoard</a>(); <span class="comment">// Configures EADC channels with LPF</span></div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">while</span> (1)</div>
+<div class="line">    {</div>
+<div class="line">        <span class="comment">// Read 14-bit converted results from Channel 0 and Channel 1</span></div>
+<div class="line">        int32_t ch0 = eadc.getResult(0);</div>
+<div class="line">        int32_t ch1 = eadc.getResult(1);</div>
+<div class="line"> </div>
+<div class="line">        debug_printf(<span class="stringliteral">&quot;CH0: %d, CH1: %d\n&quot;</span>, ch0, ch1);</div>
+<div class="line">        thread::delay(200);</div>
+<div class="line">    }</div>
+<div class="line">}</div>
 </div><!-- fragment --><hr  />
-<h1 class="doxsection"><a class="anchor" id="autotoc_md20"></a>
-Documentation &amp; API Reference</h1>
-<p>Comprehensive Doxygen API documentation is automatically published on GitHub Pages:</p><ul>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md26"></a>
+8. Documentation &amp; API Reference</h1>
+<p>Comprehensive Doxygen API documentation is published on GitHub Pages:</p><ul>
 <li><b>Online Documentation</b>: <a href="https://mymy49.github.io/NuMaker-M251KG_example/">https://mymy49.github.io/NuMaker-M251KG_example/</a></li>
 </ul>
-<p>To build the HTML documentation locally: </p><div class="fragment"><div class="line">doxygen Doxyfile</div>
-</div><!-- fragment --><p> The output files will be generated in <span class="tt">./html/index.html</span>.</p>
+<p>To build the documentation locally: </p><div class="fragment"><div class="line">doxygen Doxyfile</div>
+</div><!-- fragment --><p> Documentation will be generated in <span class="tt">./html/index.html</span>.</p>
 <hr  />
-<h1 class="doxsection"><a class="anchor" id="autotoc_md22"></a>
-Author</h1>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md28"></a>
+9. Author</h1>
 <ul>
 <li><b>Yoon-Ki Hong</b></li>
 </ul>
 <hr  />
-<h1 class="doxsection"><a class="anchor" id="autotoc_md24"></a>
-License</h1>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md30"></a>
+10. License</h1>
 <p>This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details. </p>
 </div></div><!-- PageDoc -->
 <a href="doxygen_crawl.html"></a>

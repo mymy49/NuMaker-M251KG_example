@@ -1,22 +1,33 @@
 <map id="SampleCode/2.8inch TFT Touch Shield Rev2.1/app/src/page_drawing.cpp" name="SampleCode/2.8inch TFT Touch Shield Rev2.1/app/src/page_drawing.cpp">
 <area shape="rect" id="Node000001" title="Free&#45;hand drawing page application with color palette and low&#45;pass filtering." alt="" coords="350,5,544,67"/>
 <area shape="rect" id="Node000002" title=" " alt="" coords="5,115,62,143"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="347,56,224,83,78,117,76,112,223,78,351,54"/>
-<area shape="rect" id="Node000003" href="$NuvotonLogo_8h.html" title=" " alt="" coords="86,115,250,143"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="351,69,224,112,222,107,356,66"/>
-<area shape="rect" id="Node000005" href="$Ubuntu__14__B_8h.html" title=" " alt="" coords="274,115,436,143"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="419,66,380,106,378,102,414,69"/>
-<area shape="rect" id="Node000007" href="$Ubuntu__20__B_8h.html" title=" " alt="" coords="460,115,621,143"/>
-<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="479,65,518,104,513,103,477,70"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="347,57,224,83,78,117,76,112,223,78,351,53"/>
+<area shape="rect" id="Node000003" href="$NuvotonLogo_8h.html" title="Bitmap resource header for the Nuvoton corporate logo." alt="" coords="86,115,250,143"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="352,69,224,112,222,107,356,66"/>
+<area shape="rect" id="Node000005" href="$Ubuntu__14__B_8h.html" title="Header file for the Ubuntu 14pt Bold bitmap font (Font_Ubuntu_14_B)." alt="" coords="274,115,436,143"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="418,66,381,106,377,102,414,69"/>
+<area shape="rect" id="Node000007" href="$Ubuntu__20__B_8h.html" title="Header file for the Ubuntu 20pt Bold bitmap font (Font_Ubuntu_20_B)." alt="" coords="460,115,621,143"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="478,65,518,104,513,104,477,70"/>
 <area shape="rect" id="Node000008" title=" " alt="" coords="645,115,721,143"/>
 <area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="526,65,637,109,632,109,525,70"/>
-<area shape="rect" id="Node000009" href="$page_8h.html" title="GUI page task declarations and identifiers for 2.8&#45;inch TFT Touch Shield demo." alt="" coords="745,115,810,143"/>
-<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="545,61,732,114,727,114,544,66"/>
+<area shape="rect" id="Node000009" href="$page_8h.html" title="GUI page task declarations, touch callbacks, and identifiers for 2.8&#45;inch TFT Touch Shield demo." alt="" coords="745,115,810,143"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="545,61,732,113,727,115,544,66"/>
 <area shape="rect" id="Node000004" title=" " alt="" coords="101,191,235,218"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="170,141,171,176,166,174,166,145"/>
-<area shape="rect" id="Node000006" title=" " alt="" coords="400,191,494,218"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="372,141,422,181,416,181,370,146"/>
-<area shape="poly" id="edge7_Node000007_Node000006" title=" " alt="" coords="526,142,476,183,474,179,521,144"/>
-<area shape="rect" id="Node000010" title=" " alt="" coords="742,191,813,218"/>
-<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="779,141,780,177,775,173,776,145"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="169,141,171,176,166,174,167,146"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="376,191,470,218"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="368,141,403,179,398,179,366,146"/>
+<area shape="poly" id="edge7_Node000007_Node000006" title=" " alt="" coords="522,142,457,185,455,180,517,144"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="565,283,635,311"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="766,142,626,275,624,270,761,144"/>
+<area shape="rect" id="Node000011" href="$2_88inch_01TFT_01Touch_01Shield_01Rev2_81_2app_2inc_2bsp_8h.html" title="Board Support Package header for NuMaker&#45;M251KG and 2.8&#45;inch TFT Touch Shield." alt="" coords="849,191,906,218"/>
+<area shape="poly" id="edge11_Node000009_Node000011" title=" " alt="" coords="796,141,850,182,845,181,795,146"/>
+<area shape="poly" id="edge12_Node000011_Node000010" title=" " alt="" coords="852,210,758,233,702,248,648,269,632,277,630,272,646,264,701,243,757,227,846,211"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="659,266,853,328"/>
+<area shape="poly" id="edge13_Node000011_Node000012" title=" " alt="" coords="863,218,810,259,807,255,858,220"/>
+<area shape="rect" id="Node000013" title=" " alt="" coords="878,283,1029,311"/>
+<area shape="poly" id="edge14_Node000011_Node000013" title=" " alt="" coords="890,216,936,273,931,271,887,221"/>
+<area shape="rect" id="Node000014" title=" " alt="" coords="1054,283,1197,311"/>
+<area shape="poly" id="edge15_Node000011_Node000014" title=" " alt="" coords="906,214,1078,278,1072,277,905,219"/>
+<area shape="rect" id="Node000015" title=" " alt="" coords="1221,283,1422,311"/>
+<area shape="poly" id="edge16_Node000011_Node000015" title=" " alt="" coords="906,208,1038,230,1210,264,1263,279,1258,279,1209,269,1037,235,906,213"/>
 </map>

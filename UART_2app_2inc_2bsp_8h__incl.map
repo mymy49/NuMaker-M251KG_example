@@ -2,6 +2,6 @@
 <area shape="rect" id="Node000001" title="Board Support Package header for NuMaker&#45;M251KG UART example." alt="" coords="5,5,176,50"/>
 <area shape="rect" id="Node000002" title=" " alt="" coords="6,98,76,126"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="80,49,59,86,55,83,75,52"/>
-<area shape="rect" id="Node000003" href="$led_8h.html" title="Header file for on&#45;board LED control functions." alt="" coords="100,98,182,126"/>
+<area shape="rect" id="Node000003" href="$led_8h.html" title="Header file for on&#45;board LED control functions on the NuMaker&#45;M251KG evaluation board." alt="" coords="100,98,182,126"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="105,48,128,85,122,85,103,53"/>
 </map>

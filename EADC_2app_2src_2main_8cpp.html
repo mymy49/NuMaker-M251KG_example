@@ -106,7 +106,7 @@ Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Main application demonstration for dual-channel EADC acquisition. </p>
-<dl class="section author"><dt>Author</dt><dd>Yoon-Ki Hong </dd></dl>
+<p>Continuously reads low-pass filtered 14-bit ADC results from EADC Channel 0 (PB0) and Channel 1 (PB1) and outputs them to the debug console. </p><dl class="section author"><dt>Author</dt><dd>Yoon-Ki Hong </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2026-11-18 </dd></dl>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
 <a id="a840291bc02cba5474a4cb46a9b9566fe" name="a840291bc02cba5474a4cb46a9b9566fe"></a>
@@ -123,9 +123,9 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Initializes the yss OS and target board peripherals. Continually reads the filtered 14-bit digital conversion values from EADC channels 0 and 1, printing results to the debug console. </p><dl class="section see"><dt>See also</dt><dd>initializeYss, <a class="el" href="2_88inch_01TFT_01Touch_01Shield_01Rev2_81_2app_2inc_2bsp_8h.html#a558343e35b6f62622ff72de7868723d1" title="Initializes all on-board hardware peripherals for the 2.8-inch TFT Touch Shield.">initializeBoard</a>, eadc </dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000039">Todo</a></b></dt><dd>none </dd></dl>
-<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000039">Bug</a></b></dt><dd>none </dd></dl>
+<p>Initializes the yss OS kernel and target board peripherals. In an infinite polling loop, fetches the latest filtered 14-bit digital conversion values from EADC channels 0 and 1 via <span class="tt">eadc.getResult()</span> and prints the pair of values to the SWD debug terminal. </p><dl class="section see"><dt>See also</dt><dd>initializeYss, <a class="el" href="CRC_2app_2inc_2bsp_8h.html#a558343e35b6f62622ff72de7868723d1" title="Initializes on-board peripherals and hardware CRC engine.">initializeBoard</a>, eadc, Adc::getResult </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000010">Todo</a></b></dt><dd>none </dd></dl>
+<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000010">Bug</a></b></dt><dd>none </dd></dl>
 
 </div>
 </div>

@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title="Header file for on&#45;board LED control functions.">
+<g id="a_Node000001"><a xlink:title="Header file for on&#45;board LED control functions on the NuMaker&#45;M251KG evaluation board.">
 <polygon fill="#999999" stroke="#666666" points="263.62,-90.25 156.88,-90.25 156.88,-69.5 263.62,-69.5 263.62,-90.25"/>
 <text xml:space="preserve" text-anchor="middle" x="210.25" y="-76.75" font-family="Helvetica,sans-Serif" font-size="10.00">common/dev/led.h</text>
 </a>

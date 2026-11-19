@@ -103,11 +103,11 @@ Include dependency graph for memory.cpp:</div>
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a8a8243a64dbd4549c74e5c858ea96dfe" id="r_a8a8243a64dbd4549c74e5c858ea96dfe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmemory__t.html">memory_t</a> <a class="el" href="memory_8h.html#a757b7a2e4ec11980491df9fa20d94d2b">memory</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8a8243a64dbd4549c74e5c858ea96dfe">__attribute__</a> ((aligned(4)))</td></tr>
-<tr class="memdesc:a8a8243a64dbd4549c74e5c858ea96dfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">4-byte aligned global memory instance  <br /></td></tr>
-<tr class="memitem:a3f5f38847da00c89e2932577c310004b" id="r_a3f5f38847da00c89e2932577c310004b"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3f5f38847da00c89e2932577c310004b">calculateCrc32</a> ()</td></tr>
-<tr class="memdesc:a3f5f38847da00c89e2932577c310004b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal helper to calculate CRC32 checksum of the memory structure.  <br /></td></tr>
+<tr class="memdesc:a8a8243a64dbd4549c74e5c858ea96dfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">4-byte aligned global memory instance holding runtime configuration data.  <br /></td></tr>
 <tr class="memitem:ab058849f3170edfd9919126b64bbc9fe" id="r_ab058849f3170edfd9919126b64bbc9fe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab058849f3170edfd9919126b64bbc9fe">initializeMemory</a> ()</td></tr>
 <tr class="memdesc:ab058849f3170edfd9919126b64bbc9fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes non-volatile memory and verifies data integrity.  <br /></td></tr>
+<tr class="memitem:a3f5f38847da00c89e2932577c310004b" id="r_a3f5f38847da00c89e2932577c310004b"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3f5f38847da00c89e2932577c310004b">calculateCrc32</a> ()</td></tr>
+<tr class="memdesc:a3f5f38847da00c89e2932577c310004b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the CRC32 checksum of the active memory configuration structure.  <br /></td></tr>
 <tr class="memitem:a9df5da6d1b7386012c519be40bd58bcf" id="r_a9df5da6d1b7386012c519be40bd58bcf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9df5da6d1b7386012c519be40bd58bcf">updateMemory</a> ()</td></tr>
 <tr class="memdesc:a9df5da6d1b7386012c519be40bd58bcf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates hardware peripherals with active configuration from memory.  <br /></td></tr>
 <tr class="memitem:a44ef0e50f06b14420170d92cb204cd0c" id="r_a44ef0e50f06b14420170d92cb204cd0c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a44ef0e50f06b14420170d92cb204cd0c">saveMemory</a> ()</td></tr>
@@ -115,7 +115,7 @@ Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Implementation of persistent memory management routines. </p>
-<dl class="section author"><dt>Author</dt><dd>Yoon-Ki Hong </dd></dl>
+<p>Implements non-volatile configuration loading, hardware CRC32 checksum validation, peripheral synchronization, and internal flash programming on page 511 of the M251 APROM. </p><dl class="section author"><dt>Author</dt><dd>Yoon-Ki Hong </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2026-11-18 </dd></dl>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
 <a id="a8a8243a64dbd4549c74e5c858ea96dfe" name="a8a8243a64dbd4549c74e5c858ea96dfe"></a>
@@ -133,7 +133,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>4-byte aligned global memory instance </p>
+<p>4-byte aligned global memory instance holding runtime configuration data. </p>
 
 </div>
 </div>
@@ -152,11 +152,10 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Internal helper to calculate CRC32 checksum of the memory structure. </p>
-<dl class="section return"><dt>Returns</dt><dd>Computed 32-bit CRC checksum value.</dd></dl>
-<p>Resets the hardware CRC peripheral engine and calculates the 32-bit checksum over the <a class="el" href="structmemory__t.html" title="Persistent configuration data structure stored in internal flash memory.">memory_t</a> structure excluding the trailing 4-byte crc32 field itself. </p><dl class="section see"><dt>See also</dt><dd>crc </dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000004">Todo</a></b></dt><dd>none </dd></dl>
-<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000004">Bug</a></b></dt><dd>none </dd></dl>
+<p>Calculates the CRC32 checksum of the active memory configuration structure. </p>
+<p>Resets the hardware CRC peripheral engine to its configured seed value and calculates the 32-bit checksum over the <span class="tt"><a class="el" href="structmemory__t.html" title="Persistent configuration data structure stored in internal flash memory.">memory_t</a></span> structure excluding the trailing 4-byte <span class="tt"><a class="el" href="memory_8h.html#a7ba6d986496f16e7c9bb92ea0265914d" title="CRC32 checksum for validating data integrity in flash memory.">crc32</a></span> member field itself. </p><dl class="section see"><dt>See also</dt><dd>crc, Crc::resetChecksum, Crc::calculate </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000002">Todo</a></b></dt><dd>none </dd></dl>
+<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000002">Bug</a></b></dt><dd>none </dd></dl>
 
 </div>
 </div>
@@ -176,9 +175,9 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Initializes non-volatile memory and verifies data integrity. </p>
-<p>Reads the stored <a class="el" href="structmemory__t.html" title="Persistent configuration data structure stored in internal flash memory.">memory_t</a> structure from the last sector of internal flash memory (page index 511). Verifies data integrity by comparing the stored CRC32 against the calculated checksum. If the checksum mismatches or the data is corrupted, it resets touch parameters to their default values and immediately writes them back to flash. Finally, calls <a class="el" href="#a9df5da6d1b7386012c519be40bd58bcf" title="Updates hardware peripherals with active configuration from memory.">updateMemory()</a> to propagate parameters to active drivers. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="#a3f5f38847da00c89e2932577c310004b" title="Internal helper to calculate CRC32 checksum of the memory structure.">calculateCrc32</a>, <a class="el" href="#a9df5da6d1b7386012c519be40bd58bcf" title="Updates hardware peripherals with active configuration from memory.">updateMemory</a>, <a class="el" href="#a44ef0e50f06b14420170d92cb204cd0c" title="Saves the current memory structure to flash memory with calculated CRC32.">saveMemory</a>, flash </dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000003">Todo</a></b></dt><dd>none </dd></dl>
-<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000003">Bug</a></b></dt><dd>none </dd></dl>
+<p>Reads the stored <span class="tt"><a class="el" href="structmemory__t.html" title="Persistent configuration data structure stored in internal flash memory.">memory_t</a></span> structure from the last sector of internal flash memory (page index 511). Verifies data integrity by comparing the stored CRC32 against the newly calculated checksum. If the checksum mismatches or the flash page is unprogrammed, it resets touch calibration parameters to their default uncalibrated boundaries and immediately writes them back to flash. Finally, calls <span class="tt"><a class="el" href="#a9df5da6d1b7386012c519be40bd58bcf" title="Updates hardware peripherals with active configuration from memory.">updateMemory()</a></span> to propagate the loaded parameters to active hardware drivers. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="#a3f5f38847da00c89e2932577c310004b" title="Calculates the CRC32 checksum of the active memory configuration structure.">calculateCrc32</a>, <a class="el" href="#a9df5da6d1b7386012c519be40bd58bcf" title="Updates hardware peripherals with active configuration from memory.">updateMemory</a>, <a class="el" href="#a44ef0e50f06b14420170d92cb204cd0c" title="Saves the current memory structure to flash memory with calculated CRC32.">saveMemory</a>, flash </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">Todo</a></b></dt><dd>none </dd></dl>
+<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000001">Bug</a></b></dt><dd>none </dd></dl>
 
 </div>
 </div>
@@ -198,9 +197,9 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Saves the current memory structure to flash memory with calculated CRC32. </p>
-<p>Computes a fresh CRC32 value over the configuration structure, stores it in memory.crc32, erases flash page 511, and programs the updated data words into internal flash memory. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="#a3f5f38847da00c89e2932577c310004b" title="Internal helper to calculate CRC32 checksum of the memory structure.">calculateCrc32</a>, flash </dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000006">Todo</a></b></dt><dd>none </dd></dl>
-<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000006">Bug</a></b></dt><dd>none </dd></dl>
+<p>Computes a fresh CRC32 value over the configuration payload, stores it in <span class="tt">memory.crc32</span>, erases flash page 511, and programs the updated data words into internal flash memory in 32-bit word units. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="#a3f5f38847da00c89e2932577c310004b" title="Calculates the CRC32 checksum of the active memory configuration structure.">calculateCrc32</a>, flash, Flash::erasePage, Flash::program </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000004">Todo</a></b></dt><dd>none </dd></dl>
+<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000004">Bug</a></b></dt><dd>none </dd></dl>
 
 </div>
 </div>
@@ -220,9 +219,9 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Updates hardware peripherals with active configuration from memory. </p>
-<p>Checks whether the 2.8-inch TFT touch shield is enabled, and if so, updates the <a class="elRef" href="https://mymy49.github.io/XPT2046/classXPT2046.html">XPT2046</a> resistive touch controller driver with the calibration matrix stored in the global memory structure. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="memory_8h.html#a3126659901c9cd3da49efc0420fa609f" title="Resistive touch calibration coordinates and display dimensions.">touch</a>, ResistiveTouch::setCalibrationData </dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000005">Todo</a></b></dt><dd>none </dd></dl>
-<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000005">Bug</a></b></dt><dd>none </dd></dl>
+<p>Checks whether the 2.8-inch TFT touch shield module is enabled at compile time, and if so, updates the <a class="elRef" href="https://mymy49.github.io/XPT2046/classXPT2046.html">XPT2046</a> resistive touch controller driver with the calibration matrix stored in the global <span class="tt"><a class="el" href="memory_8h.html#a757b7a2e4ec11980491df9fa20d94d2b" title="Global memory structure holding active configuration loaded from flash.">memory</a></span> structure. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="memory_8h.html#a3126659901c9cd3da49efc0420fa609f" title="Resistive touch calibration coordinates and display dimensions.">touch</a>, ResistiveTouch::setCalibrationData </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000003">Todo</a></b></dt><dd>none </dd></dl>
+<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000003">Bug</a></b></dt><dd>none </dd></dl>
 
 </div>
 </div>

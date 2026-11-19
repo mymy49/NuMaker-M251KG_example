@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['dependencies_0',['Toolchain &amp;amp; Dependencies',['../index.html#autotoc_md8',1,'']]],
-  ['deprecated_20list_1',['Deprecated List',['../deprecated.html',1,'']]],
-  ['development_20environment_20specifications_2',['Development Environment &amp;amp; Specifications',['../index.html#autotoc_md5',1,'']]],
-  ['documentation_20api_20reference_3',['Documentation &amp;amp; API Reference',['../index.html#autotoc_md20',1,'']]]
+  ['6_20getting_20started_20build_20instructions_0',['6. Getting Started &amp;amp; Build Instructions',['../index.html#autotoc_md16',1,'']]]
 ];

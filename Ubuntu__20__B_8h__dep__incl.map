@@ -1,6 +1,6 @@
 <map id="SampleCode/2.8inch TFT Touch Shield Rev2.1/app/font/Ubuntu_20_B.h" name="SampleCode/2.8inch TFT Touch Shield Rev2.1/app/font/Ubuntu_20_B.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="444,5,627,67"/>
-<area shape="rect" id="Node000002" href="$Ubuntu__20__B_8cpp.html" title=" " alt="" coords="5,115,202,177"/>
+<area shape="rect" id="Node000001" title="Header file for the Ubuntu 20pt Bold bitmap font (Font_Ubuntu_20_B)." alt="" coords="444,5,627,67"/>
+<area shape="rect" id="Node000002" href="$Ubuntu__20__B_8cpp.html" title="Glyph bitmap tables and CodeFont instance definition for Ubuntu 20pt Bold (Font_Ubuntu_20_B)." alt="" coords="5,115,202,177"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="428,65,215,118,203,121,201,116,214,112,430,60"/>
 <area shape="rect" id="Node000003" href="$page__drawing_8cpp.html" title="Free&#45;hand drawing page application with color palette and low&#45;pass filtering." alt="" coords="226,115,421,177"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="465,74,384,117,382,112,460,75"/>

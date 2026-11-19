@@ -97,7 +97,28 @@ Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Provides control routines for the on-board user LED. </p>
-</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
+<p>Encapsulates hardware-specific GPIO configuration and active-low output control for the red status indicator LED on the NuMaker-M251KG development board.</p>
+<p>Example usage: </p><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;yss.h&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="led_8h.html">dev/led.h</a>&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> <a class="code hl_function" href="CRC_2app_2src_2main_8cpp.html#a840291bc02cba5474a4cb46a9b9566fe">main</a>(<span class="keywordtype">void</span>)</div>
+<div class="line">{</div>
+<div class="line">    initializeYss();</div>
+<div class="line">    <a class="code hl_function" href="#a139e01c0554b39b6f74628e43913e087">Led::initialize</a>();</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">while</span> (1)</div>
+<div class="line">    {</div>
+<div class="line">        <a class="code hl_function" href="#ac9ac694776b0e7b184999425669eaa89">Led::red</a>(<span class="keyword">true</span>);</div>
+<div class="line">        thread::delay(500);</div>
+<div class="line">        <a class="code hl_function" href="#ac9ac694776b0e7b184999425669eaa89">Led::red</a>(<span class="keyword">false</span>);</div>
+<div class="line">        thread::delay(500);</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+<div class="ttc" id="aCRC_2app_2src_2main_8cpp_html_a840291bc02cba5474a4cb46a9b9566fe"><div class="ttname"><a href="CRC_2app_2src_2main_8cpp.html#a840291bc02cba5474a4cb46a9b9566fe">main</a></div><div class="ttdeci">int main(void)</div><div class="ttdef"><b>Definition</b> main.cpp:31</div></div>
+<div class="ttc" id="aled_8h_html"><div class="ttname"><a href="led_8h.html">led.h</a></div><div class="ttdoc">Header file for on-board LED control functions on the NuMaker-M251KG evaluation board.</div></div>
+<div class="ttc" id="anamespaceLed_html_a139e01c0554b39b6f74628e43913e087"><div class="ttname"><a href="#a139e01c0554b39b6f74628e43913e087">Led::initialize</a></div><div class="ttdeci">void initialize(void)</div><div class="ttdoc">Initializes the GPIO pin for the on-board red LED.</div><div class="ttdef"><b>Definition</b> dev_led.cpp:30</div></div>
+<div class="ttc" id="anamespaceLed_html_ac9ac694776b0e7b184999425669eaa89"><div class="ttname"><a href="#ac9ac694776b0e7b184999425669eaa89">Led::red</a></div><div class="ttdeci">void red(bool on)</div><div class="ttdoc">Sets the on-board red LED output state.</div><div class="ttdef"><b>Definition</b> dev_led.cpp:48</div></div>
+</div><!-- fragment --> </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
 <a id="a139e01c0554b39b6f74628e43913e087" name="a139e01c0554b39b6f74628e43913e087"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a139e01c0554b39b6f74628e43913e087">&#9670;&#160;</a></span>initialize()</h2>
 
@@ -114,9 +135,9 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Initializes the GPIO pin for the on-board red LED. </p>
-<p>Configures GPIO port B pin 14 as output mode to control the on-board red LED. Initializes the LED to an inactive (turned off) state by calling red(false). </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="#ac9ac694776b0e7b184999425669eaa89" title="Sets the on-board red LED output state.">Led::red</a>, gpioB </dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">Todo</a></b></dt><dd>none </dd></dl>
-<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000001">Bug</a></b></dt><dd>none </dd></dl>
+<p>Configures GPIO port B pin 14 as push-pull output mode to drive the on-board red LED. Immediately initializes the LED to an inactive (turned off) state by calling red(false) so the LED does not glitch on startup. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="#ac9ac694776b0e7b184999425669eaa89" title="Sets the on-board red LED output state.">Led::red</a>, gpioB, Gpio::setAsOutput </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000005">Todo</a></b></dt><dd>none </dd></dl>
+<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000005">Bug</a></b></dt><dd>none </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">none</td><td></td></tr>
@@ -128,9 +149,9 @@ Functions</h2></td></tr>
 <dl class="section date"><dt>Date</dt><dd>2026-11-18 </dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>none </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>Configures PB14 as an output pin and turns off the LED. </dd></dl>
-<dl class="section pre"><dt>Precondition</dt><dd>GPIO peripheral clocks must be properly configured. </dd></dl>
-<dl class="section post"><dt>Postcondition</dt><dd>The PB14 pin is configured as push-pull output and set to OFF. </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000001">Deprecated</a></b></dt><dd>none </dd></dl>
+<dl class="section pre"><dt>Precondition</dt><dd>GPIO peripheral clocks must be properly configured via initializeYss(). </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>The PB14 pin is configured as push-pull output and set to the OFF state (HIGH). </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000005">Deprecated</a></b></dt><dd>none </dd></dl>
 
 </div>
 </div>
@@ -150,9 +171,9 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Sets the on-board red LED output state. </p>
-<p>Controls the logic level of GPIO port B pin 14. Since the on-board red LED circuit is configured as active-low, driving the pin LOW illuminates the LED, and HIGH turns it off. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="#a139e01c0554b39b6f74628e43913e087" title="Initializes the GPIO pin for the on-board red LED.">Led::initialize</a>, gpioB </dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000002">Todo</a></b></dt><dd>none </dd></dl>
-<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000002">Bug</a></b></dt><dd>none </dd></dl>
+<p>Controls the logic level of GPIO port B pin 14. Since the on-board red LED circuit is wired in an active-low configuration (anode tied to VCC through a current-limiting resistor, cathode connected to PB14), driving the pin LOW illuminates the LED, and driving it HIGH turns it off. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="#a139e01c0554b39b6f74628e43913e087" title="Initializes the GPIO pin for the on-board red LED.">Led::initialize</a>, gpioB, Gpio::setOutput </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000006">Todo</a></b></dt><dd>none </dd></dl>
+<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000006">Bug</a></b></dt><dd>none </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">on</td><td>Boolean flag to set LED state (true: turn ON, false: turn OFF). </td></tr>
@@ -163,10 +184,10 @@ Functions</h2></td></tr>
 <dl class="section author"><dt>Author</dt><dd>Yoon-Ki Hong </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2026-11-18 </dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>none </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>The on-board LED is wired in an active-low circuit. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The on-board LED is wired in an active-low circuit (LOW = ON, HIGH = OFF). </dd></dl>
 <dl class="section pre"><dt>Precondition</dt><dd><a class="el" href="#a139e01c0554b39b6f74628e43913e087" title="Initializes the GPIO pin for the on-board red LED.">Led::initialize()</a> must be called prior to invoking this function. </dd></dl>
-<dl class="section post"><dt>Postcondition</dt><dd>The state of PB14 is updated according to the on parameter. </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000002">Deprecated</a></b></dt><dd>none </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>The logic level of PB14 is updated according to the on parameter. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000006">Deprecated</a></b></dt><dd>none </dd></dl>
 
 </div>
 </div>

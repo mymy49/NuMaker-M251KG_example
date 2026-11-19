@@ -1,5 +1,5 @@
 <map id="SampleCode/2.8inch TFT Touch Shield Rev2.1/app/inc/page.h" name="SampleCode/2.8inch TFT Touch Shield Rev2.1/app/inc/page.h">
-<area shape="rect" id="Node000001" title="GUI page task declarations and identifiers for 2.8&#45;inch TFT Touch Shield demo." alt="" coords="323,5,505,67"/>
+<area shape="rect" id="Node000001" title="GUI page task declarations, touch callbacks, and identifiers for 2.8&#45;inch TFT Touch Shield demo." alt="" coords="323,5,505,67"/>
 <area shape="rect" id="Node000002" href="$2_88inch_01TFT_01Touch_01Shield_01Rev2_81_2app_2src_2main_8cpp.html" title="Main entry point for the 2.8&#45;inch TFT Touch Shield demonstration application." alt="" coords="5,115,188,177"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="308,73,186,117,185,112,313,72"/>
 <area shape="rect" id="Node000003" href="$page__drawing_8cpp.html" title="Free&#45;hand drawing page application with color palette and low&#45;pass filtering." alt="" coords="211,115,406,177"/>

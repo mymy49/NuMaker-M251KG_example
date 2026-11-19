@@ -1,5 +1,16 @@
 <map id="SampleCode/2.8inch TFT Touch Shield Rev2.1/app/inc/page.h" name="SampleCode/2.8inch TFT Touch Shield Rev2.1/app/inc/page.h">
-<area shape="rect" id="Node000001" title="GUI page task declarations and identifiers for 2.8&#45;inch TFT Touch Shield demo." alt="" coords="5,5,188,67"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="61,115,132,143"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="98,65,99,100,94,98,95,69"/>
+<area shape="rect" id="Node000001" title="GUI page task declarations, touch callbacks, and identifiers for 2.8&#45;inch TFT Touch Shield demo." alt="" coords="125,5,308,67"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,208,76,235"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="189,69,65,198,61,195,185,66"/>
+<area shape="rect" id="Node000003" href="$2_88inch_01TFT_01Touch_01Shield_01Rev2_81_2app_2inc_2bsp_8h.html" title="Board Support Package header for NuMaker&#45;M251KG and 2.8&#45;inch TFT Touch Shield." alt="" coords="267,115,323,143"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="243,65,277,103,271,103,242,70"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="264,137,185,159,136,174,88,193,73,201,70,197,86,188,134,169,184,154,269,135"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="99,191,294,252"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="283,142,242,182,239,178,279,144"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="318,208,470,235"/>
+<area shape="poly" id="edge5_Node000003_Node000005" title=" " alt="" coords="310,141,371,197,366,197,308,146"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="494,208,638,235"/>
+<area shape="poly" id="edge6_Node000003_Node000006" title=" " alt="" coords="324,137,483,188,517,202,512,202,481,193,323,142"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="661,208,862,235"/>
+<area shape="poly" id="edge7_Node000003_Node000007" title=" " alt="" coords="324,132,465,153,650,188,704,203,698,203,649,193,464,159,324,137"/>
 </map>

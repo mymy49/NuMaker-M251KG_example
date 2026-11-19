@@ -116,6 +116,8 @@ Classes</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a64abad4afd1169050b2dfdc1287dbe8e" id="r_a64abad4afd1169050b2dfdc1287dbe8e"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structmemory__t.html">memory_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a64abad4afd1169050b2dfdc1287dbe8e">__attribute__</a> ((packed))</td></tr>
+<tr class="memitem:a3f5f38847da00c89e2932577c310004b" id="r_a3f5f38847da00c89e2932577c310004b"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3f5f38847da00c89e2932577c310004b">calculateCrc32</a> ()</td></tr>
+<tr class="memdesc:a3f5f38847da00c89e2932577c310004b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the CRC32 checksum of the active memory configuration structure.  <br /></td></tr>
 <tr class="memitem:ab058849f3170edfd9919126b64bbc9fe" id="r_ab058849f3170edfd9919126b64bbc9fe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab058849f3170edfd9919126b64bbc9fe">initializeMemory</a> ()</td></tr>
 <tr class="memdesc:ab058849f3170edfd9919126b64bbc9fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes non-volatile memory and verifies data integrity.  <br /></td></tr>
 <tr class="memitem:a9df5da6d1b7386012c519be40bd58bcf" id="r_a9df5da6d1b7386012c519be40bd58bcf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9df5da6d1b7386012c519be40bd58bcf">updateMemory</a> ()</td></tr>
@@ -136,7 +138,7 @@ Variables</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Non-volatile memory management and touch calibration data storage. </p>
-<dl class="section author"><dt>Author</dt><dd>Yoon-Ki Hong </dd></dl>
+<p>Declares the persistent configuration structure (<span class="tt"><a class="el" href="structmemory__t.html" title="Persistent configuration data structure stored in internal flash memory.">memory_t</a></span>) and flash storage management routines used to load, verify, apply, and save system parameters protected by a hardware CRC32 checksum. </p><dl class="section author"><dt>Author</dt><dd>Yoon-Ki Hong </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2026-11-18 </dd></dl>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
 <a id="a64abad4afd1169050b2dfdc1287dbe8e" name="a64abad4afd1169050b2dfdc1287dbe8e"></a>
@@ -153,6 +155,42 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3f5f38847da00c89e2932577c310004b" name="a3f5f38847da00c89e2932577c310004b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f5f38847da00c89e2932577c310004b">&#9670;&#160;</a></span>calculateCrc32()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t calculateCrc32 </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calculates the CRC32 checksum of the active memory configuration structure. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">none</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Computed 32-bit CRC checksum value over <span class="tt"><a class="el" href="structmemory__t.html" title="Persistent configuration data structure stored in internal flash memory.">memory_t</a></span> (excluding the trailing <span class="tt"><a class="el" href="#a7ba6d986496f16e7c9bb92ea0265914d" title="CRC32 checksum for validating data integrity in flash memory.">crc32</a></span> field). </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Yoon-Ki Hong </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2026-11-18 </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>The hardware CRC peripheral must be initialized in CRC32 mode before calling this function. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Resets the hardware CRC seed prior to computing the checksum over <span class="tt">sizeof(memory_t) - 4</span> bytes. </dd></dl>
+<dl class="section pre"><dt>Precondition</dt><dd>Hardware CRC peripheral clock and configuration must be enabled. </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>Hardware CRC engine contains the computed checksum for the current <span class="tt"><a class="el" href="#a757b7a2e4ec11980491df9fa20d94d2b" title="Global memory structure holding active configuration loaded from flash.">memory</a></span> contents. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000001">Deprecated</a></b></dt><dd>none </dd></dl>
+<p>Resets the hardware CRC peripheral engine to its configured seed value and calculates the 32-bit checksum over the <span class="tt"><a class="el" href="structmemory__t.html" title="Persistent configuration data structure stored in internal flash memory.">memory_t</a></span> structure excluding the trailing 4-byte <span class="tt"><a class="el" href="#a7ba6d986496f16e7c9bb92ea0265914d" title="CRC32 checksum for validating data integrity in flash memory.">crc32</a></span> member field itself. </p><dl class="section see"><dt>See also</dt><dd>crc, Crc::resetChecksum, Crc::calculate </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000002">Todo</a></b></dt><dd>none </dd></dl>
+<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000002">Bug</a></b></dt><dd>none </dd></dl>
 
 </div>
 </div>
@@ -185,10 +223,10 @@ Variables</h2></td></tr>
 <dl class="section note"><dt>Note</dt><dd>Reads configuration from flash page 511. </dd></dl>
 <dl class="section pre"><dt>Precondition</dt><dd>Flash and CRC hardware peripherals must be initialized. </dd></dl>
 <dl class="section post"><dt>Postcondition</dt><dd>The global memory variable is initialized and touch parameters are applied. </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000003">Deprecated</a></b></dt><dd>none </dd></dl>
-<p>Reads the stored <a class="el" href="structmemory__t.html" title="Persistent configuration data structure stored in internal flash memory.">memory_t</a> structure from the last sector of internal flash memory (page index 511). Verifies data integrity by comparing the stored CRC32 against the calculated checksum. If the checksum mismatches or the data is corrupted, it resets touch parameters to their default values and immediately writes them back to flash. Finally, calls <a class="el" href="memory_8cpp.html#a9df5da6d1b7386012c519be40bd58bcf" title="Updates hardware peripherals with active configuration from memory.">updateMemory()</a> to propagate parameters to active drivers. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="memory_8cpp.html#a3f5f38847da00c89e2932577c310004b" title="Internal helper to calculate CRC32 checksum of the memory structure.">calculateCrc32</a>, <a class="el" href="memory_8cpp.html#a9df5da6d1b7386012c519be40bd58bcf" title="Updates hardware peripherals with active configuration from memory.">updateMemory</a>, <a class="el" href="memory_8cpp.html#a44ef0e50f06b14420170d92cb204cd0c" title="Saves the current memory structure to flash memory with calculated CRC32.">saveMemory</a>, flash </dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000003">Todo</a></b></dt><dd>none </dd></dl>
-<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000003">Bug</a></b></dt><dd>none </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000002">Deprecated</a></b></dt><dd>none </dd></dl>
+<p>Reads the stored <span class="tt"><a class="el" href="structmemory__t.html" title="Persistent configuration data structure stored in internal flash memory.">memory_t</a></span> structure from the last sector of internal flash memory (page index 511). Verifies data integrity by comparing the stored CRC32 against the newly calculated checksum. If the checksum mismatches or the flash page is unprogrammed, it resets touch calibration parameters to their default uncalibrated boundaries and immediately writes them back to flash. Finally, calls <span class="tt"><a class="el" href="memory_8cpp.html#a9df5da6d1b7386012c519be40bd58bcf" title="Updates hardware peripherals with active configuration from memory.">updateMemory()</a></span> to propagate the loaded parameters to active hardware drivers. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="memory_8cpp.html#a3f5f38847da00c89e2932577c310004b" title="Calculates the CRC32 checksum of the active memory configuration structure.">calculateCrc32</a>, <a class="el" href="memory_8cpp.html#a9df5da6d1b7386012c519be40bd58bcf" title="Updates hardware peripherals with active configuration from memory.">updateMemory</a>, <a class="el" href="memory_8cpp.html#a44ef0e50f06b14420170d92cb204cd0c" title="Saves the current memory structure to flash memory with calculated CRC32.">saveMemory</a>, flash </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">Todo</a></b></dt><dd>none </dd></dl>
+<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000001">Bug</a></b></dt><dd>none </dd></dl>
 
 </div>
 </div>
@@ -221,10 +259,10 @@ Variables</h2></td></tr>
 <dl class="section note"><dt>Note</dt><dd>Calculates CRC32 over <a class="el" href="structmemory__t.html" title="Persistent configuration data structure stored in internal flash memory.">memory_t</a> (excluding the crc32 field) and writes the page. </dd></dl>
 <dl class="section pre"><dt>Precondition</dt><dd>Flash controller must be operational. </dd></dl>
 <dl class="section post"><dt>Postcondition</dt><dd>Flash page 511 contains the updated <a class="el" href="structmemory__t.html" title="Persistent configuration data structure stored in internal flash memory.">memory_t</a> structure and valid CRC. </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000005">Deprecated</a></b></dt><dd>none </dd></dl>
-<p>Computes a fresh CRC32 value over the configuration structure, stores it in memory.crc32, erases flash page 511, and programs the updated data words into internal flash memory. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="memory_8cpp.html#a3f5f38847da00c89e2932577c310004b" title="Internal helper to calculate CRC32 checksum of the memory structure.">calculateCrc32</a>, flash </dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000006">Todo</a></b></dt><dd>none </dd></dl>
-<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000006">Bug</a></b></dt><dd>none </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000004">Deprecated</a></b></dt><dd>none </dd></dl>
+<p>Computes a fresh CRC32 value over the configuration payload, stores it in <span class="tt">memory.crc32</span>, erases flash page 511, and programs the updated data words into internal flash memory in 32-bit word units. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="memory_8cpp.html#a3f5f38847da00c89e2932577c310004b" title="Calculates the CRC32 checksum of the active memory configuration structure.">calculateCrc32</a>, flash, Flash::erasePage, Flash::program </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000004">Todo</a></b></dt><dd>none </dd></dl>
+<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000004">Bug</a></b></dt><dd>none </dd></dl>
 
 </div>
 </div>
@@ -257,10 +295,10 @@ Variables</h2></td></tr>
 <dl class="section note"><dt>Note</dt><dd>Applies touch calibration parameters to the touch controller instance if available. </dd></dl>
 <dl class="section pre"><dt>Precondition</dt><dd><a class="el" href="memory_8cpp.html#ab058849f3170edfd9919126b64bbc9fe" title="Initializes non-volatile memory and verifies data integrity.">initializeMemory()</a> should be called first. </dd></dl>
 <dl class="section post"><dt>Postcondition</dt><dd>Touch controller calibration data is updated. </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000004">Deprecated</a></b></dt><dd>none </dd></dl>
-<p>Checks whether the 2.8-inch TFT touch shield is enabled, and if so, updates the <a class="elRef" href="https://mymy49.github.io/XPT2046/classXPT2046.html">XPT2046</a> resistive touch controller driver with the calibration matrix stored in the global memory structure. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="#a3126659901c9cd3da49efc0420fa609f" title="Resistive touch calibration coordinates and display dimensions.">touch</a>, ResistiveTouch::setCalibrationData </dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000005">Todo</a></b></dt><dd>none </dd></dl>
-<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000005">Bug</a></b></dt><dd>none </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000003">Deprecated</a></b></dt><dd>none </dd></dl>
+<p>Checks whether the 2.8-inch TFT touch shield module is enabled at compile time, and if so, updates the <a class="elRef" href="https://mymy49.github.io/XPT2046/classXPT2046.html">XPT2046</a> resistive touch controller driver with the calibration matrix stored in the global <span class="tt"><a class="el" href="#a757b7a2e4ec11980491df9fa20d94d2b" title="Global memory structure holding active configuration loaded from flash.">memory</a></span> structure. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="#a3126659901c9cd3da49efc0420fa609f" title="Resistive touch calibration coordinates and display dimensions.">touch</a>, ResistiveTouch::setCalibrationData </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000003">Todo</a></b></dt><dd>none </dd></dl>
+<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000003">Bug</a></b></dt><dd>none </dd></dl>
 
 </div>
 </div>
@@ -302,6 +340,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Global memory structure holding active configuration loaded from flash. </p>
+<p>Aligned on a 4-byte boundary in RAM to support 32-bit word programming into internal APROM flash. </p>
 
 </div>
 </div>
@@ -318,7 +357,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Resistive touch calibration coordinates and display dimensions. </p>
-<p>Resistive touch controller instance (<a class="elRef" href="https://mymy49.github.io/XPT2046/classXPT2046.html">XPT2046</a>). </p>
+<p>Resistive touch controller driver instance (<a class="elRef" href="https://mymy49.github.io/XPT2046/classXPT2046.html">XPT2046</a> over SPI0). </p>
 
 </div>
 </div>

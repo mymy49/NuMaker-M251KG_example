@@ -90,13 +90,14 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>GUI page task declarations and identifiers for 2.8-inch TFT Touch Shield demo.  
+<p>GUI page task declarations, touch callbacks, and identifiers for 2.8-inch TFT Touch Shield demo.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &lt;<a class="el" href="2_88inch_01TFT_01Touch_01Shield_01Rev2_81_2app_2inc_2bsp_8h_source.html">bsp.h</a>&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for page.h:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="page_8h__incl.svg" width="194" height="148"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="page_8h__incl.svg" width="100%" height="493"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
@@ -112,27 +113,943 @@ Functions</h2></td></tr>
 <tr class="memdesc:a5be447647b04a21ece84259a54b4576c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Task routine displaying board logo and system startup information.  <br /></td></tr>
 <tr class="memitem:ade98ee68594fa03cdb3e459ca41d3894" id="r_ade98ee68594fa03cdb3e459ca41d3894"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ade98ee68594fa03cdb3e459ca41d3894">pageDisplayMain</a> (void *param)</td></tr>
 <tr class="memdesc:ade98ee68594fa03cdb3e459ca41d3894"><td class="mdescLeft">&#160;</td><td class="mdescRight">Task routine for the main application menu page.  <br /></td></tr>
+<tr class="memitem:af4eb7bf94beea557f628e4672279e15b" id="r_af4eb7bf94beea557f628e4672279e15b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af4eb7bf94beea557f628e4672279e15b">callback_drawing</a> (PointerDevice::event_t event)</td></tr>
+<tr class="memdesc:af4eb7bf94beea557f628e4672279e15b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Touch callback triggered when the Drawing application icon on the main menu is pressed.  <br /></td></tr>
 <tr class="memitem:a410abf956a2269f46aa2aa7df46e489e" id="r_a410abf956a2269f46aa2aa7df46e489e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a410abf956a2269f46aa2aa7df46e489e">pageDisplayTouchCalibration</a> (void *param)</td></tr>
 <tr class="memdesc:a410abf956a2269f46aa2aa7df46e489e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Task routine for 2-point resistive touch calibration.  <br /></td></tr>
+<tr class="memitem:a06da6f7f42a3744d98f06f42a9c594d0" id="r_a06da6f7f42a3744d98f06f42a9c594d0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a06da6f7f42a3744d98f06f42a9c594d0">callback_calibrate</a> (PointerDevice::event_t event)</td></tr>
+<tr class="memdesc:a06da6f7f42a3744d98f06f42a9c594d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Touch event callback used during the 2-point resistive touch calibration sequence.  <br /></td></tr>
 <tr class="memitem:a6510fc965099a78973f8adec05a64a7e" id="r_a6510fc965099a78973f8adec05a64a7e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6510fc965099a78973f8adec05a64a7e">pageDisplayDrawing</a> (void *param)</td></tr>
 <tr class="memdesc:a6510fc965099a78973f8adec05a64a7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Task routine for the interactive drawing canvas.  <br /></td></tr>
+<tr class="memitem:a9c3db132e70f16e32425e01a680b35fc" id="r_a9c3db132e70f16e32425e01a680b35fc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9c3db132e70f16e32425e01a680b35fc">drawPaletteTop</a> (Area area, Color bdColor, Color color)</td></tr>
+<tr class="memdesc:a9c3db132e70f16e32425e01a680b35fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws a top-row palette swatch button on the LCD.  <br /></td></tr>
+<tr class="memitem:a94eeae95f9da018090855429f50d700a" id="r_a94eeae95f9da018090855429f50d700a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a94eeae95f9da018090855429f50d700a">drawPaletteBot</a> (Area area, Color bdColor, Color color)</td></tr>
+<tr class="memdesc:a94eeae95f9da018090855429f50d700a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws a bottom-row palette swatch button on the LCD.  <br /></td></tr>
+<tr class="memitem:a09fb388339e6fb7923f67e8a943ef115" id="r_a09fb388339e6fb7923f67e8a943ef115"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a09fb388339e6fb7923f67e8a943ef115">drawPalette</a> (uint32_t index, Color bdColor, Color color)</td></tr>
+<tr class="memdesc:a09fb388339e6fb7923f67e8a943ef115"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws a palette swatch button by index (0 to 13) with the given border and fill colors.  <br /></td></tr>
+<tr class="memitem:a5ab3c81394c730b904509b89a2171919" id="r_a5ab3c81394c730b904509b89a2171919"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5ab3c81394c730b904509b89a2171919">initializePalette</a> ()</td></tr>
+<tr class="memdesc:a5ab3c81394c730b904509b89a2171919"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the 14 color palette button areas and draws them at the bottom of the screen.  <br /></td></tr>
+<tr class="memitem:ad353c606b3884be0129bfcbbd5e2da9d" id="r_ad353c606b3884be0129bfcbbd5e2da9d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad353c606b3884be0129bfcbbd5e2da9d">callback_Palette0</a> (PointerDevice::event_t event)</td></tr>
+<tr class="memdesc:ad353c606b3884be0129bfcbbd5e2da9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Touch callback selecting palette index 0 (Black: <span class="tt">#000000</span>).  <br /></td></tr>
+<tr class="memitem:aee80a2227f41a2b9440b439e765da7bc" id="r_aee80a2227f41a2b9440b439e765da7bc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aee80a2227f41a2b9440b439e765da7bc">callback_Palette1</a> (PointerDevice::event_t event)</td></tr>
+<tr class="memdesc:aee80a2227f41a2b9440b439e765da7bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Touch callback selecting palette index 1 (White: <span class="tt">#FFFFFF</span>).  <br /></td></tr>
+<tr class="memitem:a8846d41790001b04d2b7ee63c393f01e" id="r_a8846d41790001b04d2b7ee63c393f01e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8846d41790001b04d2b7ee63c393f01e">callback_Palette2</a> (PointerDevice::event_t event)</td></tr>
+<tr class="memdesc:a8846d41790001b04d2b7ee63c393f01e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Touch callback selecting palette index 2 (Red: <span class="tt">#FF0000</span>).  <br /></td></tr>
+<tr class="memitem:ac64bd177e39e3d979d06114e3de4cf51" id="r_ac64bd177e39e3d979d06114e3de4cf51"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac64bd177e39e3d979d06114e3de4cf51">callback_Palette3</a> (PointerDevice::event_t event)</td></tr>
+<tr class="memdesc:ac64bd177e39e3d979d06114e3de4cf51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Touch callback selecting palette index 3 (Green: <span class="tt">#00FF00</span>).  <br /></td></tr>
+<tr class="memitem:a65332794d1aff45107d4f5c9bb4badc4" id="r_a65332794d1aff45107d4f5c9bb4badc4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a65332794d1aff45107d4f5c9bb4badc4">callback_Palette4</a> (PointerDevice::event_t event)</td></tr>
+<tr class="memdesc:a65332794d1aff45107d4f5c9bb4badc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Touch callback selecting palette index 4 (Blue: <span class="tt">#0000FF</span>).  <br /></td></tr>
+<tr class="memitem:a9143420e54eebeb9d8ff82032cb6c0b1" id="r_a9143420e54eebeb9d8ff82032cb6c0b1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9143420e54eebeb9d8ff82032cb6c0b1">callback_Palette5</a> (PointerDevice::event_t event)</td></tr>
+<tr class="memdesc:a9143420e54eebeb9d8ff82032cb6c0b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Touch callback selecting palette index 5 (Yellow: <span class="tt">#FFFF00</span>).  <br /></td></tr>
+<tr class="memitem:a02ce423350f040d8e8a8a2edae5241cb" id="r_a02ce423350f040d8e8a8a2edae5241cb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a02ce423350f040d8e8a8a2edae5241cb">callback_Palette6</a> (PointerDevice::event_t event)</td></tr>
+<tr class="memdesc:a02ce423350f040d8e8a8a2edae5241cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Touch callback selecting palette index 6 (Magenta: <span class="tt">#FF00FF</span>).  <br /></td></tr>
+<tr class="memitem:ab4da0193f3f8b3b04dc759bd80d53d46" id="r_ab4da0193f3f8b3b04dc759bd80d53d46"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab4da0193f3f8b3b04dc759bd80d53d46">callback_Palette7</a> (PointerDevice::event_t event)</td></tr>
+<tr class="memdesc:ab4da0193f3f8b3b04dc759bd80d53d46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Touch callback selecting palette index 7 (Cyan: <span class="tt">#00FFFF</span>).  <br /></td></tr>
+<tr class="memitem:a32a7818615482545cfad6d783c8c3f2c" id="r_a32a7818615482545cfad6d783c8c3f2c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a32a7818615482545cfad6d783c8c3f2c">callback_Palette8</a> (PointerDevice::event_t event)</td></tr>
+<tr class="memdesc:a32a7818615482545cfad6d783c8c3f2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Touch callback selecting palette index 8 (Orange: <span class="tt">#FF5500</span>).  <br /></td></tr>
+<tr class="memitem:adb2d8aef2794b90b2938de2761df2349" id="r_adb2d8aef2794b90b2938de2761df2349"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adb2d8aef2794b90b2938de2761df2349">callback_Palette9</a> (PointerDevice::event_t event)</td></tr>
+<tr class="memdesc:adb2d8aef2794b90b2938de2761df2349"><td class="mdescLeft">&#160;</td><td class="mdescRight">Touch callback selecting palette index 9 (Purple: <span class="tt">#800080</span>).  <br /></td></tr>
+<tr class="memitem:a6665e00616a1f7264597ddb2b1a4726b" id="r_a6665e00616a1f7264597ddb2b1a4726b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6665e00616a1f7264597ddb2b1a4726b">callback_Palette10</a> (PointerDevice::event_t event)</td></tr>
+<tr class="memdesc:a6665e00616a1f7264597ddb2b1a4726b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Touch callback selecting palette index 10 (Pink: <span class="tt">#FFC0CB</span>).  <br /></td></tr>
+<tr class="memitem:a562851779661ed0635cc6fafb1ce2f9a" id="r_a562851779661ed0635cc6fafb1ce2f9a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a562851779661ed0635cc6fafb1ce2f9a">callback_Palette11</a> (PointerDevice::event_t event)</td></tr>
+<tr class="memdesc:a562851779661ed0635cc6fafb1ce2f9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Touch callback selecting palette index 11 (Gold: <span class="tt">#FFD700</span>).  <br /></td></tr>
+<tr class="memitem:a9458574508347228f1cdd6e22b15dc19" id="r_a9458574508347228f1cdd6e22b15dc19"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9458574508347228f1cdd6e22b15dc19">callback_Palette12</a> (PointerDevice::event_t event)</td></tr>
+<tr class="memdesc:a9458574508347228f1cdd6e22b15dc19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Touch callback selecting palette index 12 (Silver: <span class="tt">#C0C0C0</span>).  <br /></td></tr>
+<tr class="memitem:a7565ffb90fb8b12fba9829ee147cef39" id="r_a7565ffb90fb8b12fba9829ee147cef39"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7565ffb90fb8b12fba9829ee147cef39">callback_Palette13</a> (PointerDevice::event_t event)</td></tr>
+<tr class="memdesc:a7565ffb90fb8b12fba9829ee147cef39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Touch callback selecting palette index 13 (Navy: <span class="tt">#000080</span>).  <br /></td></tr>
+<tr class="memitem:a6348eef65a8fe53d156955bce1b3312c" id="r_a6348eef65a8fe53d156955bce1b3312c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6348eef65a8fe53d156955bce1b3312c">callback_Palette14</a> (PointerDevice::event_t event)</td></tr>
+<tr class="memdesc:a6348eef65a8fe53d156955bce1b3312c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Touch callback selecting palette index 14 if defined.  <br /></td></tr>
+<tr class="memitem:a74647e5d9c4cfb9b23a43048df03ca0f" id="r_a74647e5d9c4cfb9b23a43048df03ca0f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a74647e5d9c4cfb9b23a43048df03ca0f">callback_draw</a> (PointerDevice::event_t event)</td></tr>
+<tr class="memdesc:a74647e5d9c4cfb9b23a43048df03ca0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Touch callback handling free-hand drawing strokes on the canvas area.  <br /></td></tr>
+<tr class="memitem:a6064089216319c1707b26d2b4b52aea3" id="r_a6064089216319c1707b26d2b4b52aea3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6064089216319c1707b26d2b4b52aea3">callback_exit</a> (PointerDevice::event_t event)</td></tr>
+<tr class="memdesc:a6064089216319c1707b26d2b4b52aea3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Touch callback for the Exit ("X") button on the drawing page.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:a62a84b6d368261ab83bf716f5b51bb7b" id="r_a62a84b6d368261ab83bf716f5b51bb7b"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a62a84b6d368261ab83bf716f5b51bb7b">pageDisplayLogoId</a></td></tr>
-<tr class="memdesc:a62a84b6d368261ab83bf716f5b51bb7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Task ID for the logo display page.  <br /></td></tr>
+<tr class="memdesc:a62a84b6d368261ab83bf716f5b51bb7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Task ID for the logo display page registered in <span class="tt"><a class="el" href="2_88inch_01TFT_01Touch_01Shield_01Rev2_81_2app_2inc_2bsp_8h.html#a9e01130487771e916af4b44cf153ff6d" title="Task manager instance for handling GUI page task registration and page transitions.">page</a></span> TaskManager.  <br /></td></tr>
 <tr class="memitem:a3317a98a1d04b3395bf790d9800e63a8" id="r_a3317a98a1d04b3395bf790d9800e63a8"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3317a98a1d04b3395bf790d9800e63a8">pageDisplayMainId</a></td></tr>
-<tr class="memdesc:a3317a98a1d04b3395bf790d9800e63a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Task ID for the main menu page.  <br /></td></tr>
+<tr class="memdesc:a3317a98a1d04b3395bf790d9800e63a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Task ID for the main menu page registered in <span class="tt"><a class="el" href="2_88inch_01TFT_01Touch_01Shield_01Rev2_81_2app_2inc_2bsp_8h.html#a9e01130487771e916af4b44cf153ff6d" title="Task manager instance for handling GUI page task registration and page transitions.">page</a></span> TaskManager.  <br /></td></tr>
 <tr class="memitem:a7b552dbb3210e560cba95dd19e396c0e" id="r_a7b552dbb3210e560cba95dd19e396c0e"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7b552dbb3210e560cba95dd19e396c0e">pageDisplayTouchCalibrationId</a></td></tr>
-<tr class="memdesc:a7b552dbb3210e560cba95dd19e396c0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Task ID for the touch calibration page.  <br /></td></tr>
+<tr class="memdesc:a7b552dbb3210e560cba95dd19e396c0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Task ID for the touch calibration page registered in <span class="tt"><a class="el" href="2_88inch_01TFT_01Touch_01Shield_01Rev2_81_2app_2inc_2bsp_8h.html#a9e01130487771e916af4b44cf153ff6d" title="Task manager instance for handling GUI page task registration and page transitions.">page</a></span> TaskManager.  <br /></td></tr>
 <tr class="memitem:affcf02eb2123cb59d7f666968362e32f" id="r_affcf02eb2123cb59d7f666968362e32f"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#affcf02eb2123cb59d7f666968362e32f">pageDisplayDrawingId</a></td></tr>
-<tr class="memdesc:affcf02eb2123cb59d7f666968362e32f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Task ID for the free-hand drawing application page.  <br /></td></tr>
+<tr class="memdesc:affcf02eb2123cb59d7f666968362e32f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Task ID for the free-hand drawing application page registered in <span class="tt"><a class="el" href="2_88inch_01TFT_01Touch_01Shield_01Rev2_81_2app_2inc_2bsp_8h.html#a9e01130487771e916af4b44cf153ff6d" title="Task manager instance for handling GUI page task registration and page transitions.">page</a></span> TaskManager.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>GUI page task declarations and identifiers for 2.8-inch TFT Touch Shield demo. </p>
-<dl class="section author"><dt>Author</dt><dd>Yoon-Ki Hong </dd></dl>
+<div class="textblock"><p>GUI page task declarations, touch callbacks, and identifiers for 2.8-inch TFT Touch Shield demo. </p>
+<p>Declares task IDs, entry functions, palette helpers, and touch event callbacks for the logo splash screen, main menu launcher, 2-point resistive touch calibration screen, and interactive free-hand drawing canvas. </p><dl class="section author"><dt>Author</dt><dd>Yoon-Ki Hong </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2026-11-18 </dd></dl>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
+<a id="a06da6f7f42a3744d98f06f42a9c594d0" name="a06da6f7f42a3744d98f06f42a9c594d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06da6f7f42a3744d98f06f42a9c594d0">&#9670;&#160;</a></span>callback_calibrate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void callback_calibrate </td>
+          <td>(</td>
+          <td class="paramtype">PointerDevice::event_t</td>          <td class="paramname"><span class="paramname"><em>event</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Touch event callback used during the 2-point resistive touch calibration sequence. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">event</td><td>Pointer device touch event containing touch state (<span class="tt">EVENT_TOUCH_DOWN</span>, <span class="tt">EVENT_TOUCH_DRAG</span>, <span class="tt">EVENT_TOUCH_UP</span>) and coordinates. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>none </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Yoon-Ki Hong </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2026-11-18 </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Feeds raw uncalibrated ADC values from the <a class="elRef" href="https://mymy49.github.io/XPT2046/classXPT2046.html">XPT2046</a> driver into moving-average low-pass filters. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Registered across the full 240x320 screen area while <span class="tt"><a class="el" href="page__touchCalibration_8cpp.html#a33ab1f0af668f15c9c464065efbecc38" title="Task routine for 2-point resistive touch calibration.">pageDisplayTouchCalibration</a></span> is active. </dd></dl>
+<dl class="section pre"><dt>Precondition</dt><dd><span class="tt"><a class="el" href="memory_8h.html#a3126659901c9cd3da49efc0420fa609f" title="Resistive touch calibration coordinates and display dimensions.">touch</a></span> driver must be initialized and active. </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>Calibration flags and filtered X/Y ADC readings (<span class="tt">gLpfX</span>, <span class="tt"><a class="el" href="page__touchCalibration_8cpp.html#a2145d921f20d5401b56fa92f66d129ff">gLpfY</a></span>) are updated. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000022">Deprecated</a></b></dt><dd>none </dd></dl>
+<p>Handles touch events during calibration:</p><ul>
+<li><span class="tt">EVENT_TOUCH_DOWN</span>: asserts <span class="tt"><a class="el" href="page__touchCalibration_8cpp.html#aa9e770360b61b47418415d121bb572b4" title="Volatile synchronization flags shared between callback_calibrate and pageDisplayTouchCalibration.">gPushFlag</a></span>, clears <span class="tt"><a class="el" href="page__touchCalibration_8cpp.html#a05aa9c3df02397317e41d2fa91c2ed11">gUpFlag</a></span>, and sets <span class="tt"><a class="el" href="page__touchCalibration_8cpp.html#a12f2b78c509eafb869348737a5c5b34f">gFirstContactFlag</a></span> to re-seed filters.</li>
+<li><span class="tt">EVENT_TOUCH_DRAG</span>: when <span class="tt"><a class="el" href="page__touchCalibration_8cpp.html#a27b50db43e608d6690f87a43e2a57250">gCalibratingFlag</a></span> is active, seeds or updates <span class="tt">gLpfX</span> and <span class="tt"><a class="el" href="page__touchCalibration_8cpp.html#a2145d921f20d5401b56fa92f66d129ff">gLpfY</a></span> with the raw uncalibrated X/Y ADC readings from <span class="tt">touch.getLastConvertedAdcX()</span> / <span class="tt">getLastConvertedAdcY()</span>.</li>
+<li><span class="tt">EVENT_TOUCH_UP</span>: asserts <span class="tt"><a class="el" href="page__touchCalibration_8cpp.html#a05aa9c3df02397317e41d2fa91c2ed11">gUpFlag</a></span> to signal stylus release to the calibration state machine. <dl class="section see"><dt>See also</dt><dd><a class="el" href="memory_8h.html#a3126659901c9cd3da49efc0420fa609f" title="Resistive touch calibration coordinates and display dimensions.">touch</a>, gLpfX, <a class="el" href="page__touchCalibration_8cpp.html#a2145d921f20d5401b56fa92f66d129ff">gLpfY</a>, XPT2046::getLastConvertedAdcX, XPT2046::getLastConvertedAdcY </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000050">Todo</a></b></dt><dd>none </dd></dl>
+<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000050">Bug</a></b></dt><dd>none </dd></dl>
+</li>
+</ul>
+
+</div>
+</div>
+<a id="a74647e5d9c4cfb9b23a43048df03ca0f" name="a74647e5d9c4cfb9b23a43048df03ca0f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74647e5d9c4cfb9b23a43048df03ca0f">&#9670;&#160;</a></span>callback_draw()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void callback_draw </td>
+          <td>(</td>
+          <td class="paramtype">PointerDevice::event_t</td>          <td class="paramname"><span class="paramname"><em>event</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Touch callback handling free-hand drawing strokes on the canvas area. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">event</td><td>Touch event containing current touch state and screen coordinates. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>none </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Yoon-Ki Hong </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2026-11-18 </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Acquires <span class="tt">lcd.lock()</span> while drawing line segments onto the display. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Applies a low-pass filter (<span class="tt"><a class="elRef" href="https://mymy49.github.io/Lpf/classLpf.html">Lpf</a></span>) to X and Y drag coordinates to smooth resistive touch jitter. </dd></dl>
+<dl class="section pre"><dt>Precondition</dt><dd><span class="tt"><a class="el" href="2_88inch_01TFT_01Touch_01Shield_01Rev2_81_2app_2inc_2bsp_8h.html#a6a30c52f5c6f01f7db95cb30da870c9f" title="Global display driver instance for the 2.8-inch TFT Touch Shield (ST7789V over SPI0).">lcd</a></span> must be initialized and <span class="tt"><a class="el" href="page__drawing_8cpp.html#a74647e5d9c4cfb9b23a43048df03ca0f" title="Touch callback handling free-hand drawing strokes on the canvas area.">callback_draw</a></span> registered to the canvas area in <span class="tt"><a class="el" href="2_88inch_01TFT_01Touch_01Shield_01Rev2_81_2app_2inc_2bsp_8h.html#a657871180a22662ec0bb1d89ff92357a" title="Touch event dispatcher for routing touch press, drag, and release events to registered hit areas.">dispatcher</a></span>. </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>A smoothed line segment in the active palette color is rendered on the LCD canvas. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000043">Deprecated</a></b></dt><dd>none </dd></dl>
+<p>Handles touch down and drag events on the drawing canvas:</p><ul>
+<li>On <span class="tt">EVENT_TOUCH_DOWN</span>: records the starting coordinate in <span class="tt">lastEvent</span> and seeds the X/Y low-pass filters.</li>
+<li>On <span class="tt">EVENT_TOUCH_DRAG</span>: filters the incoming raw touch coordinates through <span class="tt">gLpfX</span> and <span class="tt"><a class="el" href="page__drawing_8cpp.html#a75b03ebaf4669ff9bb2a7c9ab9045516">gLpfY</a></span>, clamps coordinates within <span class="tt">[0..239, 0..319]</span>, draws a line segment from <span class="tt">lastEvent</span> to the new filtered point using the active palette color, and updates <span class="tt">lastEvent</span>. <dl class="section see"><dt>See also</dt><dd>gLpfX, <a class="el" href="page__drawing_8cpp.html#a75b03ebaf4669ff9bb2a7c9ab9045516">gLpfY</a>, gPalette, <a class="el" href="page__drawing_8cpp.html#aeb2160c1d7b1c3810a206082f4b22720" title="Index of the currently selected color swatch in gPalette (0 to 13).">gLastSelectedPalette</a>, <a class="elRef" href="https://mymy49.github.io/Lpf/classLpf.html#a233e97c39369db3581a6969eec968c3a">Lpf::calculate</a> </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000026">Todo</a></b></dt><dd>none </dd></dl>
+<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000026">Bug</a></b></dt><dd>none </dd></dl>
+</li>
+</ul>
+
+</div>
+</div>
+<a id="af4eb7bf94beea557f628e4672279e15b" name="af4eb7bf94beea557f628e4672279e15b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4eb7bf94beea557f628e4672279e15b">&#9670;&#160;</a></span>callback_drawing()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void callback_drawing </td>
+          <td>(</td>
+          <td class="paramtype">PointerDevice::event_t</td>          <td class="paramname"><span class="paramname"><em>event</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Touch callback triggered when the Drawing application icon on the main menu is pressed. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">event</td><td>Touch event structure from <span class="tt">TouchEventDispatcher</span>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>none </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Yoon-Ki Hong </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2026-11-18 </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>none </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Transitions the active task in <span class="tt"><a class="el" href="2_88inch_01TFT_01Touch_01Shield_01Rev2_81_2app_2inc_2bsp_8h.html#a9e01130487771e916af4b44cf153ff6d" title="Task manager instance for handling GUI page task registration and page transitions.">page</a></span> TaskManager to <span class="tt"><a class="el" href="#affcf02eb2123cb59d7f666968362e32f" title="Task ID for the free-hand drawing application page registered in page TaskManager.">pageDisplayDrawingId</a></span> on <span class="tt">EVENT_TOUCH_DOWN</span>. </dd></dl>
+<dl class="section pre"><dt>Precondition</dt><dd><span class="tt"><a class="el" href="#affcf02eb2123cb59d7f666968362e32f" title="Task ID for the free-hand drawing application page registered in page TaskManager.">pageDisplayDrawingId</a></span> must be registered in <span class="tt"><a class="el" href="2_88inch_01TFT_01Touch_01Shield_01Rev2_81_2app_2inc_2bsp_8h.html#a9e01130487771e916af4b44cf153ff6d" title="Task manager instance for handling GUI page task registration and page transitions.">page</a></span> TaskManager. </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>The drawing application page is launched. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000020">Deprecated</a></b></dt><dd>none </dd></dl>
+<p>Callback triggered when the drawing application icon (region <span class="tt">{20, 20, 90, 90}</span>) is pressed. On <span class="tt">PointerDevice::EVENT_TOUCH_DOWN</span>, transitions the active page in <span class="tt"><a class="el" href="2_88inch_01TFT_01Touch_01Shield_01Rev2_81_2app_2inc_2bsp_8h.html#a9e01130487771e916af4b44cf153ff6d" title="Task manager instance for handling GUI page task registration and page transitions.">page</a></span> TaskManager to <span class="tt"><a class="el" href="#affcf02eb2123cb59d7f666968362e32f" title="Task ID for the free-hand drawing application page registered in page TaskManager.">pageDisplayDrawingId</a></span>. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="2_88inch_01TFT_01Touch_01Shield_01Rev2_81_2app_2inc_2bsp_8h.html#a9e01130487771e916af4b44cf153ff6d" title="Task manager instance for handling GUI page task registration and page transitions.">page</a>, <a class="el" href="#affcf02eb2123cb59d7f666968362e32f" title="Task ID for the free-hand drawing application page registered in page TaskManager.">pageDisplayDrawingId</a>, TaskManager::play </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000048">Todo</a></b></dt><dd>none </dd></dl>
+<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000048">Bug</a></b></dt><dd>none </dd></dl>
+
+</div>
+</div>
+<a id="a6064089216319c1707b26d2b4b52aea3" name="a6064089216319c1707b26d2b4b52aea3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6064089216319c1707b26d2b4b52aea3">&#9670;&#160;</a></span>callback_exit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void callback_exit </td>
+          <td>(</td>
+          <td class="paramtype">PointerDevice::event_t</td>          <td class="paramname"><span class="paramname"><em>event</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Touch callback for the Exit ("X") button on the drawing page. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">event</td><td>Touch event structure from <span class="tt">TouchEventDispatcher</span>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>none </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Yoon-Ki Hong </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2026-11-18 </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>none </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Switches the active task back to <span class="tt"><a class="el" href="#a3317a98a1d04b3395bf790d9800e63a8" title="Task ID for the main menu page registered in page TaskManager.">pageDisplayMainId</a></span> on <span class="tt">EVENT_TOUCH_DOWN</span>. </dd></dl>
+<dl class="section pre"><dt>Precondition</dt><dd><span class="tt"><a class="el" href="#a3317a98a1d04b3395bf790d9800e63a8" title="Task ID for the main menu page registered in page TaskManager.">pageDisplayMainId</a></span> must be registered in <span class="tt"><a class="el" href="2_88inch_01TFT_01Touch_01Shield_01Rev2_81_2app_2inc_2bsp_8h.html#a9e01130487771e916af4b44cf153ff6d" title="Task manager instance for handling GUI page task registration and page transitions.">page</a></span> TaskManager. </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>Active GUI page transitions from the drawing canvas back to the main menu. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000044">Deprecated</a></b></dt><dd>none </dd></dl>
+<p>Callback invoked when the Exit ("X") button is touched. Switches the current GUI task back to the main menu page (<span class="tt"><a class="el" href="#a3317a98a1d04b3395bf790d9800e63a8" title="Task ID for the main menu page registered in page TaskManager.">pageDisplayMainId</a></span>). </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="2_88inch_01TFT_01Touch_01Shield_01Rev2_81_2app_2inc_2bsp_8h.html#a9e01130487771e916af4b44cf153ff6d" title="Task manager instance for handling GUI page task registration and page transitions.">page</a>, <a class="el" href="#a3317a98a1d04b3395bf790d9800e63a8" title="Task ID for the main menu page registered in page TaskManager.">pageDisplayMainId</a>, TaskManager::play </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000042">Todo</a></b></dt><dd>none </dd></dl>
+<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000042">Bug</a></b></dt><dd>none </dd></dl>
+
+</div>
+</div>
+<a id="ad353c606b3884be0129bfcbbd5e2da9d" name="ad353c606b3884be0129bfcbbd5e2da9d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad353c606b3884be0129bfcbbd5e2da9d">&#9670;&#160;</a></span>callback_Palette0()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void callback_Palette0 </td>
+          <td>(</td>
+          <td class="paramtype">PointerDevice::event_t</td>          <td class="paramname"><span class="paramname"><em>event</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Touch callback selecting palette index 0 (Black: <span class="tt">#000000</span>). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">event</td><td>Touch event structure from <span class="tt">TouchEventDispatcher</span>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>none </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Yoon-Ki Hong </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2026-11-18 </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>none </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Updates active palette selection on <span class="tt">EVENT_TOUCH_DOWN</span>. </dd></dl>
+<dl class="section pre"><dt>Precondition</dt><dd><span class="tt"><a class="el" href="page__drawing_8cpp.html#a5ab3c81394c730b904509b89a2171919" title="Initializes the 14 color palette button areas and draws them at the bottom of the screen.">initializePalette()</a></span> must be called first. </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd><span class="tt"><a class="el" href="page__drawing_8cpp.html#aeb2160c1d7b1c3810a206082f4b22720" title="Index of the currently selected color swatch in gPalette (0 to 13).">gLastSelectedPalette</a></span> is set to 0 and button borders are updated. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000028">Deprecated</a></b></dt><dd>none </dd></dl>
+<p>Selects palette color 0 (Black) and updates the palette button border highlights. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="page__drawing_8cpp.html#a09fb388339e6fb7923f67e8a943ef115" title="Draws a palette swatch button by index (0 to 13) with the given border and fill colors.">drawPalette</a>, <a class="el" href="page__drawing_8cpp.html#aeb2160c1d7b1c3810a206082f4b22720" title="Index of the currently selected color swatch in gPalette (0 to 13).">gLastSelectedPalette</a>, gPalette </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000027">Todo</a></b></dt><dd>none </dd></dl>
+<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000027">Bug</a></b></dt><dd>none </dd></dl>
+
+</div>
+</div>
+<a id="aee80a2227f41a2b9440b439e765da7bc" name="aee80a2227f41a2b9440b439e765da7bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee80a2227f41a2b9440b439e765da7bc">&#9670;&#160;</a></span>callback_Palette1()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void callback_Palette1 </td>
+          <td>(</td>
+          <td class="paramtype">PointerDevice::event_t</td>          <td class="paramname"><span class="paramname"><em>event</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Touch callback selecting palette index 1 (White: <span class="tt">#FFFFFF</span>). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">event</td><td>Touch event structure from <span class="tt">TouchEventDispatcher</span>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>none </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Yoon-Ki Hong </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2026-11-18 </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>none </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Updates active palette selection on <span class="tt">EVENT_TOUCH_DOWN</span>. </dd></dl>
+<dl class="section pre"><dt>Precondition</dt><dd><span class="tt"><a class="el" href="page__drawing_8cpp.html#a5ab3c81394c730b904509b89a2171919" title="Initializes the 14 color palette button areas and draws them at the bottom of the screen.">initializePalette()</a></span> must be called first. </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd><span class="tt"><a class="el" href="page__drawing_8cpp.html#aeb2160c1d7b1c3810a206082f4b22720" title="Index of the currently selected color swatch in gPalette (0 to 13).">gLastSelectedPalette</a></span> is set to 1 and button borders are updated. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000029">Deprecated</a></b></dt><dd>none </dd></dl>
+<p>Selects palette color 1 (White) and updates the palette button border highlights. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="page__drawing_8cpp.html#a09fb388339e6fb7923f67e8a943ef115" title="Draws a palette swatch button by index (0 to 13) with the given border and fill colors.">drawPalette</a>, <a class="el" href="page__drawing_8cpp.html#aeb2160c1d7b1c3810a206082f4b22720" title="Index of the currently selected color swatch in gPalette (0 to 13).">gLastSelectedPalette</a>, gPalette </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000028">Todo</a></b></dt><dd>none </dd></dl>
+<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000028">Bug</a></b></dt><dd>none </dd></dl>
+
+</div>
+</div>
+<a id="a6665e00616a1f7264597ddb2b1a4726b" name="a6665e00616a1f7264597ddb2b1a4726b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6665e00616a1f7264597ddb2b1a4726b">&#9670;&#160;</a></span>callback_Palette10()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void callback_Palette10 </td>
+          <td>(</td>
+          <td class="paramtype">PointerDevice::event_t</td>          <td class="paramname"><span class="paramname"><em>event</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Touch callback selecting palette index 10 (Pink: <span class="tt">#FFC0CB</span>). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">event</td><td>Touch event structure from <span class="tt">TouchEventDispatcher</span>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>none </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Yoon-Ki Hong </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2026-11-18 </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>none </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Updates active palette selection on <span class="tt">EVENT_TOUCH_DOWN</span>. </dd></dl>
+<dl class="section pre"><dt>Precondition</dt><dd><span class="tt"><a class="el" href="page__drawing_8cpp.html#a5ab3c81394c730b904509b89a2171919" title="Initializes the 14 color palette button areas and draws them at the bottom of the screen.">initializePalette()</a></span> must be called first. </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd><span class="tt"><a class="el" href="page__drawing_8cpp.html#aeb2160c1d7b1c3810a206082f4b22720" title="Index of the currently selected color swatch in gPalette (0 to 13).">gLastSelectedPalette</a></span> is set to 10 and button borders are updated. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000038">Deprecated</a></b></dt><dd>none </dd></dl>
+<p>Selects palette color 10 (Pink) and updates the palette button border highlights. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="page__drawing_8cpp.html#a09fb388339e6fb7923f67e8a943ef115" title="Draws a palette swatch button by index (0 to 13) with the given border and fill colors.">drawPalette</a>, <a class="el" href="page__drawing_8cpp.html#aeb2160c1d7b1c3810a206082f4b22720" title="Index of the currently selected color swatch in gPalette (0 to 13).">gLastSelectedPalette</a>, gPalette </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000037">Todo</a></b></dt><dd>none </dd></dl>
+<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000037">Bug</a></b></dt><dd>none </dd></dl>
+
+</div>
+</div>
+<a id="a562851779661ed0635cc6fafb1ce2f9a" name="a562851779661ed0635cc6fafb1ce2f9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a562851779661ed0635cc6fafb1ce2f9a">&#9670;&#160;</a></span>callback_Palette11()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void callback_Palette11 </td>
+          <td>(</td>
+          <td class="paramtype">PointerDevice::event_t</td>          <td class="paramname"><span class="paramname"><em>event</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Touch callback selecting palette index 11 (Gold: <span class="tt">#FFD700</span>). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">event</td><td>Touch event structure from <span class="tt">TouchEventDispatcher</span>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>none </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Yoon-Ki Hong </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2026-11-18 </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>none </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Updates active palette selection on <span class="tt">EVENT_TOUCH_DOWN</span>. </dd></dl>
+<dl class="section pre"><dt>Precondition</dt><dd><span class="tt"><a class="el" href="page__drawing_8cpp.html#a5ab3c81394c730b904509b89a2171919" title="Initializes the 14 color palette button areas and draws them at the bottom of the screen.">initializePalette()</a></span> must be called first. </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd><span class="tt"><a class="el" href="page__drawing_8cpp.html#aeb2160c1d7b1c3810a206082f4b22720" title="Index of the currently selected color swatch in gPalette (0 to 13).">gLastSelectedPalette</a></span> is set to 11 and button borders are updated. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000039">Deprecated</a></b></dt><dd>none </dd></dl>
+<p>Selects palette color 11 (Gold) and updates the palette button border highlights. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="page__drawing_8cpp.html#a09fb388339e6fb7923f67e8a943ef115" title="Draws a palette swatch button by index (0 to 13) with the given border and fill colors.">drawPalette</a>, <a class="el" href="page__drawing_8cpp.html#aeb2160c1d7b1c3810a206082f4b22720" title="Index of the currently selected color swatch in gPalette (0 to 13).">gLastSelectedPalette</a>, gPalette </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000038">Todo</a></b></dt><dd>none </dd></dl>
+<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000038">Bug</a></b></dt><dd>none </dd></dl>
+
+</div>
+</div>
+<a id="a9458574508347228f1cdd6e22b15dc19" name="a9458574508347228f1cdd6e22b15dc19"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9458574508347228f1cdd6e22b15dc19">&#9670;&#160;</a></span>callback_Palette12()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void callback_Palette12 </td>
+          <td>(</td>
+          <td class="paramtype">PointerDevice::event_t</td>          <td class="paramname"><span class="paramname"><em>event</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Touch callback selecting palette index 12 (Silver: <span class="tt">#C0C0C0</span>). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">event</td><td>Touch event structure from <span class="tt">TouchEventDispatcher</span>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>none </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Yoon-Ki Hong </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2026-11-18 </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>none </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Updates active palette selection on <span class="tt">EVENT_TOUCH_DOWN</span>. </dd></dl>
+<dl class="section pre"><dt>Precondition</dt><dd><span class="tt"><a class="el" href="page__drawing_8cpp.html#a5ab3c81394c730b904509b89a2171919" title="Initializes the 14 color palette button areas and draws them at the bottom of the screen.">initializePalette()</a></span> must be called first. </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd><span class="tt"><a class="el" href="page__drawing_8cpp.html#aeb2160c1d7b1c3810a206082f4b22720" title="Index of the currently selected color swatch in gPalette (0 to 13).">gLastSelectedPalette</a></span> is set to 12 and button borders are updated. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000040">Deprecated</a></b></dt><dd>none </dd></dl>
+<p>Selects palette color 12 (Silver) and updates the palette button border highlights. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="page__drawing_8cpp.html#a09fb388339e6fb7923f67e8a943ef115" title="Draws a palette swatch button by index (0 to 13) with the given border and fill colors.">drawPalette</a>, <a class="el" href="page__drawing_8cpp.html#aeb2160c1d7b1c3810a206082f4b22720" title="Index of the currently selected color swatch in gPalette (0 to 13).">gLastSelectedPalette</a>, gPalette </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000039">Todo</a></b></dt><dd>none </dd></dl>
+<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000039">Bug</a></b></dt><dd>none </dd></dl>
+
+</div>
+</div>
+<a id="a7565ffb90fb8b12fba9829ee147cef39" name="a7565ffb90fb8b12fba9829ee147cef39"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7565ffb90fb8b12fba9829ee147cef39">&#9670;&#160;</a></span>callback_Palette13()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void callback_Palette13 </td>
+          <td>(</td>
+          <td class="paramtype">PointerDevice::event_t</td>          <td class="paramname"><span class="paramname"><em>event</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Touch callback selecting palette index 13 (Navy: <span class="tt">#000080</span>). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">event</td><td>Touch event structure from <span class="tt">TouchEventDispatcher</span>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>none </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Yoon-Ki Hong </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2026-11-18 </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>none </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Updates active palette selection on <span class="tt">EVENT_TOUCH_DOWN</span>. </dd></dl>
+<dl class="section pre"><dt>Precondition</dt><dd><span class="tt"><a class="el" href="page__drawing_8cpp.html#a5ab3c81394c730b904509b89a2171919" title="Initializes the 14 color palette button areas and draws them at the bottom of the screen.">initializePalette()</a></span> must be called first. </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd><span class="tt"><a class="el" href="page__drawing_8cpp.html#aeb2160c1d7b1c3810a206082f4b22720" title="Index of the currently selected color swatch in gPalette (0 to 13).">gLastSelectedPalette</a></span> is set to 13 and button borders are updated. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000041">Deprecated</a></b></dt><dd>none </dd></dl>
+<p>Selects palette color 13 (Navy) and updates the palette button border highlights. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="page__drawing_8cpp.html#a09fb388339e6fb7923f67e8a943ef115" title="Draws a palette swatch button by index (0 to 13) with the given border and fill colors.">drawPalette</a>, <a class="el" href="page__drawing_8cpp.html#aeb2160c1d7b1c3810a206082f4b22720" title="Index of the currently selected color swatch in gPalette (0 to 13).">gLastSelectedPalette</a>, gPalette </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000040">Todo</a></b></dt><dd>none </dd></dl>
+<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000040">Bug</a></b></dt><dd>none </dd></dl>
+
+</div>
+</div>
+<a id="a6348eef65a8fe53d156955bce1b3312c" name="a6348eef65a8fe53d156955bce1b3312c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6348eef65a8fe53d156955bce1b3312c">&#9670;&#160;</a></span>callback_Palette14()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void callback_Palette14 </td>
+          <td>(</td>
+          <td class="paramtype">PointerDevice::event_t</td>          <td class="paramname"><span class="paramname"><em>event</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Touch callback selecting palette index 14 if defined. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">event</td><td>Touch event structure from <span class="tt">TouchEventDispatcher</span>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>none </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Yoon-Ki Hong </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2026-11-18 </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Index 14 is outside the default 14-color palette array (<span class="tt">0..13</span>). </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Reserved callback for an optional 15th palette slot. </dd></dl>
+<dl class="section pre"><dt>Precondition</dt><dd><span class="tt"><a class="el" href="page__drawing_8cpp.html#a5ab3c81394c730b904509b89a2171919" title="Initializes the 14 color palette button areas and draws them at the bottom of the screen.">initializePalette()</a></span> must be called first. </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd><span class="tt"><a class="el" href="page__drawing_8cpp.html#aeb2160c1d7b1c3810a206082f4b22720" title="Index of the currently selected color swatch in gPalette (0 to 13).">gLastSelectedPalette</a></span> is set to 14. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000042">Deprecated</a></b></dt><dd>none </dd></dl>
+<p>Selects palette color 14 if defined and updates the palette button border highlights. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="page__drawing_8cpp.html#a09fb388339e6fb7923f67e8a943ef115" title="Draws a palette swatch button by index (0 to 13) with the given border and fill colors.">drawPalette</a>, <a class="el" href="page__drawing_8cpp.html#aeb2160c1d7b1c3810a206082f4b22720" title="Index of the currently selected color swatch in gPalette (0 to 13).">gLastSelectedPalette</a>, gPalette </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000041">Todo</a></b></dt><dd>none </dd></dl>
+<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000041">Bug</a></b></dt><dd>none </dd></dl>
+
+</div>
+</div>
+<a id="a8846d41790001b04d2b7ee63c393f01e" name="a8846d41790001b04d2b7ee63c393f01e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8846d41790001b04d2b7ee63c393f01e">&#9670;&#160;</a></span>callback_Palette2()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void callback_Palette2 </td>
+          <td>(</td>
+          <td class="paramtype">PointerDevice::event_t</td>          <td class="paramname"><span class="paramname"><em>event</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Touch callback selecting palette index 2 (Red: <span class="tt">#FF0000</span>). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">event</td><td>Touch event structure from <span class="tt">TouchEventDispatcher</span>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>none </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Yoon-Ki Hong </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2026-11-18 </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>none </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Updates active palette selection on <span class="tt">EVENT_TOUCH_DOWN</span>. </dd></dl>
+<dl class="section pre"><dt>Precondition</dt><dd><span class="tt"><a class="el" href="page__drawing_8cpp.html#a5ab3c81394c730b904509b89a2171919" title="Initializes the 14 color palette button areas and draws them at the bottom of the screen.">initializePalette()</a></span> must be called first. </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd><span class="tt"><a class="el" href="page__drawing_8cpp.html#aeb2160c1d7b1c3810a206082f4b22720" title="Index of the currently selected color swatch in gPalette (0 to 13).">gLastSelectedPalette</a></span> is set to 2 and button borders are updated. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000030">Deprecated</a></b></dt><dd>none </dd></dl>
+<p>Selects palette color 2 (Red) and updates the palette button border highlights. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="page__drawing_8cpp.html#a09fb388339e6fb7923f67e8a943ef115" title="Draws a palette swatch button by index (0 to 13) with the given border and fill colors.">drawPalette</a>, <a class="el" href="page__drawing_8cpp.html#aeb2160c1d7b1c3810a206082f4b22720" title="Index of the currently selected color swatch in gPalette (0 to 13).">gLastSelectedPalette</a>, gPalette </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000029">Todo</a></b></dt><dd>none </dd></dl>
+<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000029">Bug</a></b></dt><dd>none </dd></dl>
+
+</div>
+</div>
+<a id="ac64bd177e39e3d979d06114e3de4cf51" name="ac64bd177e39e3d979d06114e3de4cf51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac64bd177e39e3d979d06114e3de4cf51">&#9670;&#160;</a></span>callback_Palette3()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void callback_Palette3 </td>
+          <td>(</td>
+          <td class="paramtype">PointerDevice::event_t</td>          <td class="paramname"><span class="paramname"><em>event</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Touch callback selecting palette index 3 (Green: <span class="tt">#00FF00</span>). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">event</td><td>Touch event structure from <span class="tt">TouchEventDispatcher</span>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>none </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Yoon-Ki Hong </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2026-11-18 </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>none </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Updates active palette selection on <span class="tt">EVENT_TOUCH_DOWN</span>. </dd></dl>
+<dl class="section pre"><dt>Precondition</dt><dd><span class="tt"><a class="el" href="page__drawing_8cpp.html#a5ab3c81394c730b904509b89a2171919" title="Initializes the 14 color palette button areas and draws them at the bottom of the screen.">initializePalette()</a></span> must be called first. </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd><span class="tt"><a class="el" href="page__drawing_8cpp.html#aeb2160c1d7b1c3810a206082f4b22720" title="Index of the currently selected color swatch in gPalette (0 to 13).">gLastSelectedPalette</a></span> is set to 3 and button borders are updated. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000031">Deprecated</a></b></dt><dd>none </dd></dl>
+<p>Selects palette color 3 (Green) and updates the palette button border highlights. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="page__drawing_8cpp.html#a09fb388339e6fb7923f67e8a943ef115" title="Draws a palette swatch button by index (0 to 13) with the given border and fill colors.">drawPalette</a>, <a class="el" href="page__drawing_8cpp.html#aeb2160c1d7b1c3810a206082f4b22720" title="Index of the currently selected color swatch in gPalette (0 to 13).">gLastSelectedPalette</a>, gPalette </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000030">Todo</a></b></dt><dd>none </dd></dl>
+<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000030">Bug</a></b></dt><dd>none </dd></dl>
+
+</div>
+</div>
+<a id="a65332794d1aff45107d4f5c9bb4badc4" name="a65332794d1aff45107d4f5c9bb4badc4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65332794d1aff45107d4f5c9bb4badc4">&#9670;&#160;</a></span>callback_Palette4()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void callback_Palette4 </td>
+          <td>(</td>
+          <td class="paramtype">PointerDevice::event_t</td>          <td class="paramname"><span class="paramname"><em>event</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Touch callback selecting palette index 4 (Blue: <span class="tt">#0000FF</span>). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">event</td><td>Touch event structure from <span class="tt">TouchEventDispatcher</span>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>none </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Yoon-Ki Hong </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2026-11-18 </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>none </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Updates active palette selection on <span class="tt">EVENT_TOUCH_DOWN</span>. </dd></dl>
+<dl class="section pre"><dt>Precondition</dt><dd><span class="tt"><a class="el" href="page__drawing_8cpp.html#a5ab3c81394c730b904509b89a2171919" title="Initializes the 14 color palette button areas and draws them at the bottom of the screen.">initializePalette()</a></span> must be called first. </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd><span class="tt"><a class="el" href="page__drawing_8cpp.html#aeb2160c1d7b1c3810a206082f4b22720" title="Index of the currently selected color swatch in gPalette (0 to 13).">gLastSelectedPalette</a></span> is set to 4 and button borders are updated. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000032">Deprecated</a></b></dt><dd>none </dd></dl>
+<p>Selects palette color 4 (Blue) and updates the palette button border highlights. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="page__drawing_8cpp.html#a09fb388339e6fb7923f67e8a943ef115" title="Draws a palette swatch button by index (0 to 13) with the given border and fill colors.">drawPalette</a>, <a class="el" href="page__drawing_8cpp.html#aeb2160c1d7b1c3810a206082f4b22720" title="Index of the currently selected color swatch in gPalette (0 to 13).">gLastSelectedPalette</a>, gPalette </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000031">Todo</a></b></dt><dd>none </dd></dl>
+<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000031">Bug</a></b></dt><dd>none </dd></dl>
+
+</div>
+</div>
+<a id="a9143420e54eebeb9d8ff82032cb6c0b1" name="a9143420e54eebeb9d8ff82032cb6c0b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9143420e54eebeb9d8ff82032cb6c0b1">&#9670;&#160;</a></span>callback_Palette5()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void callback_Palette5 </td>
+          <td>(</td>
+          <td class="paramtype">PointerDevice::event_t</td>          <td class="paramname"><span class="paramname"><em>event</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Touch callback selecting palette index 5 (Yellow: <span class="tt">#FFFF00</span>). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">event</td><td>Touch event structure from <span class="tt">TouchEventDispatcher</span>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>none </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Yoon-Ki Hong </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2026-11-18 </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>none </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Updates active palette selection on <span class="tt">EVENT_TOUCH_DOWN</span>. </dd></dl>
+<dl class="section pre"><dt>Precondition</dt><dd><span class="tt"><a class="el" href="page__drawing_8cpp.html#a5ab3c81394c730b904509b89a2171919" title="Initializes the 14 color palette button areas and draws them at the bottom of the screen.">initializePalette()</a></span> must be called first. </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd><span class="tt"><a class="el" href="page__drawing_8cpp.html#aeb2160c1d7b1c3810a206082f4b22720" title="Index of the currently selected color swatch in gPalette (0 to 13).">gLastSelectedPalette</a></span> is set to 5 and button borders are updated. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000033">Deprecated</a></b></dt><dd>none </dd></dl>
+<p>Selects palette color 5 (Yellow) and updates the palette button border highlights. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="page__drawing_8cpp.html#a09fb388339e6fb7923f67e8a943ef115" title="Draws a palette swatch button by index (0 to 13) with the given border and fill colors.">drawPalette</a>, <a class="el" href="page__drawing_8cpp.html#aeb2160c1d7b1c3810a206082f4b22720" title="Index of the currently selected color swatch in gPalette (0 to 13).">gLastSelectedPalette</a>, gPalette </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000032">Todo</a></b></dt><dd>none </dd></dl>
+<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000032">Bug</a></b></dt><dd>none </dd></dl>
+
+</div>
+</div>
+<a id="a02ce423350f040d8e8a8a2edae5241cb" name="a02ce423350f040d8e8a8a2edae5241cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02ce423350f040d8e8a8a2edae5241cb">&#9670;&#160;</a></span>callback_Palette6()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void callback_Palette6 </td>
+          <td>(</td>
+          <td class="paramtype">PointerDevice::event_t</td>          <td class="paramname"><span class="paramname"><em>event</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Touch callback selecting palette index 6 (Magenta: <span class="tt">#FF00FF</span>). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">event</td><td>Touch event structure from <span class="tt">TouchEventDispatcher</span>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>none </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Yoon-Ki Hong </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2026-11-18 </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>none </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Updates active palette selection on <span class="tt">EVENT_TOUCH_DOWN</span>. </dd></dl>
+<dl class="section pre"><dt>Precondition</dt><dd><span class="tt"><a class="el" href="page__drawing_8cpp.html#a5ab3c81394c730b904509b89a2171919" title="Initializes the 14 color palette button areas and draws them at the bottom of the screen.">initializePalette()</a></span> must be called first. </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd><span class="tt"><a class="el" href="page__drawing_8cpp.html#aeb2160c1d7b1c3810a206082f4b22720" title="Index of the currently selected color swatch in gPalette (0 to 13).">gLastSelectedPalette</a></span> is set to 6 and button borders are updated. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000034">Deprecated</a></b></dt><dd>none </dd></dl>
+<p>Selects palette color 6 (Magenta) and updates the palette button border highlights. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="page__drawing_8cpp.html#a09fb388339e6fb7923f67e8a943ef115" title="Draws a palette swatch button by index (0 to 13) with the given border and fill colors.">drawPalette</a>, <a class="el" href="page__drawing_8cpp.html#aeb2160c1d7b1c3810a206082f4b22720" title="Index of the currently selected color swatch in gPalette (0 to 13).">gLastSelectedPalette</a>, gPalette </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000033">Todo</a></b></dt><dd>none </dd></dl>
+<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000033">Bug</a></b></dt><dd>none </dd></dl>
+
+</div>
+</div>
+<a id="ab4da0193f3f8b3b04dc759bd80d53d46" name="ab4da0193f3f8b3b04dc759bd80d53d46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4da0193f3f8b3b04dc759bd80d53d46">&#9670;&#160;</a></span>callback_Palette7()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void callback_Palette7 </td>
+          <td>(</td>
+          <td class="paramtype">PointerDevice::event_t</td>          <td class="paramname"><span class="paramname"><em>event</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Touch callback selecting palette index 7 (Cyan: <span class="tt">#00FFFF</span>). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">event</td><td>Touch event structure from <span class="tt">TouchEventDispatcher</span>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>none </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Yoon-Ki Hong </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2026-11-18 </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>none </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Updates active palette selection on <span class="tt">EVENT_TOUCH_DOWN</span>. </dd></dl>
+<dl class="section pre"><dt>Precondition</dt><dd><span class="tt"><a class="el" href="page__drawing_8cpp.html#a5ab3c81394c730b904509b89a2171919" title="Initializes the 14 color palette button areas and draws them at the bottom of the screen.">initializePalette()</a></span> must be called first. </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd><span class="tt"><a class="el" href="page__drawing_8cpp.html#aeb2160c1d7b1c3810a206082f4b22720" title="Index of the currently selected color swatch in gPalette (0 to 13).">gLastSelectedPalette</a></span> is set to 7 and button borders are updated. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000035">Deprecated</a></b></dt><dd>none </dd></dl>
+<p>Selects palette color 7 (Cyan) and updates the palette button border highlights. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="page__drawing_8cpp.html#a09fb388339e6fb7923f67e8a943ef115" title="Draws a palette swatch button by index (0 to 13) with the given border and fill colors.">drawPalette</a>, <a class="el" href="page__drawing_8cpp.html#aeb2160c1d7b1c3810a206082f4b22720" title="Index of the currently selected color swatch in gPalette (0 to 13).">gLastSelectedPalette</a>, gPalette </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000034">Todo</a></b></dt><dd>none </dd></dl>
+<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000034">Bug</a></b></dt><dd>none </dd></dl>
+
+</div>
+</div>
+<a id="a32a7818615482545cfad6d783c8c3f2c" name="a32a7818615482545cfad6d783c8c3f2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32a7818615482545cfad6d783c8c3f2c">&#9670;&#160;</a></span>callback_Palette8()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void callback_Palette8 </td>
+          <td>(</td>
+          <td class="paramtype">PointerDevice::event_t</td>          <td class="paramname"><span class="paramname"><em>event</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Touch callback selecting palette index 8 (Orange: <span class="tt">#FF5500</span>). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">event</td><td>Touch event structure from <span class="tt">TouchEventDispatcher</span>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>none </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Yoon-Ki Hong </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2026-11-18 </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>none </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Updates active palette selection on <span class="tt">EVENT_TOUCH_DOWN</span>. </dd></dl>
+<dl class="section pre"><dt>Precondition</dt><dd><span class="tt"><a class="el" href="page__drawing_8cpp.html#a5ab3c81394c730b904509b89a2171919" title="Initializes the 14 color palette button areas and draws them at the bottom of the screen.">initializePalette()</a></span> must be called first. </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd><span class="tt"><a class="el" href="page__drawing_8cpp.html#aeb2160c1d7b1c3810a206082f4b22720" title="Index of the currently selected color swatch in gPalette (0 to 13).">gLastSelectedPalette</a></span> is set to 8 and button borders are updated. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000036">Deprecated</a></b></dt><dd>none </dd></dl>
+<p>Selects palette color 8 (Orange) and updates the palette button border highlights. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="page__drawing_8cpp.html#a09fb388339e6fb7923f67e8a943ef115" title="Draws a palette swatch button by index (0 to 13) with the given border and fill colors.">drawPalette</a>, <a class="el" href="page__drawing_8cpp.html#aeb2160c1d7b1c3810a206082f4b22720" title="Index of the currently selected color swatch in gPalette (0 to 13).">gLastSelectedPalette</a>, gPalette </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000035">Todo</a></b></dt><dd>none </dd></dl>
+<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000035">Bug</a></b></dt><dd>none </dd></dl>
+
+</div>
+</div>
+<a id="adb2d8aef2794b90b2938de2761df2349" name="adb2d8aef2794b90b2938de2761df2349"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb2d8aef2794b90b2938de2761df2349">&#9670;&#160;</a></span>callback_Palette9()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void callback_Palette9 </td>
+          <td>(</td>
+          <td class="paramtype">PointerDevice::event_t</td>          <td class="paramname"><span class="paramname"><em>event</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Touch callback selecting palette index 9 (Purple: <span class="tt">#800080</span>). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">event</td><td>Touch event structure from <span class="tt">TouchEventDispatcher</span>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>none </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Yoon-Ki Hong </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2026-11-18 </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>none </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Updates active palette selection on <span class="tt">EVENT_TOUCH_DOWN</span>. </dd></dl>
+<dl class="section pre"><dt>Precondition</dt><dd><span class="tt"><a class="el" href="page__drawing_8cpp.html#a5ab3c81394c730b904509b89a2171919" title="Initializes the 14 color palette button areas and draws them at the bottom of the screen.">initializePalette()</a></span> must be called first. </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd><span class="tt"><a class="el" href="page__drawing_8cpp.html#aeb2160c1d7b1c3810a206082f4b22720" title="Index of the currently selected color swatch in gPalette (0 to 13).">gLastSelectedPalette</a></span> is set to 9 and button borders are updated. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000037">Deprecated</a></b></dt><dd>none </dd></dl>
+<p>Selects palette color 9 (Purple) and updates the palette button border highlights. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="page__drawing_8cpp.html#a09fb388339e6fb7923f67e8a943ef115" title="Draws a palette swatch button by index (0 to 13) with the given border and fill colors.">drawPalette</a>, <a class="el" href="page__drawing_8cpp.html#aeb2160c1d7b1c3810a206082f4b22720" title="Index of the currently selected color swatch in gPalette (0 to 13).">gLastSelectedPalette</a>, gPalette </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000036">Todo</a></b></dt><dd>none </dd></dl>
+<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000036">Bug</a></b></dt><dd>none </dd></dl>
+
+</div>
+</div>
+<a id="a09fb388339e6fb7923f67e8a943ef115" name="a09fb388339e6fb7923f67e8a943ef115"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09fb388339e6fb7923f67e8a943ef115">&#9670;&#160;</a></span>drawPalette()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void drawPalette </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>index</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Color</td>          <td class="paramname"><span class="paramname"><em>bdColor</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Color</td>          <td class="paramname"><span class="paramname"><em>color</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Draws a palette swatch button by index (0 to 13) with the given border and fill colors. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>Palette index (0..6 for top row, 7..13 for bottom row). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">bdColor</td><td>Outer border color indicating normal or selected state. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">color</td><td>Inner swatch fill color. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>none </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Yoon-Ki Hong </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2026-11-18 </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Indices outside 0..13 are ignored. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Delegates rendering to <span class="tt"><a class="el" href="page__drawing_8cpp.html#a9c3db132e70f16e32425e01a680b35fc" title="Draws a top-row palette swatch button on the LCD.">drawPaletteTop()</a></span> or <span class="tt"><a class="el" href="page__drawing_8cpp.html#a94eeae95f9da018090855429f50d700a" title="Draws a bottom-row palette swatch button on the LCD.">drawPaletteBot()</a></span>. </dd></dl>
+<dl class="section pre"><dt>Precondition</dt><dd><span class="tt"><a class="el" href="page__drawing_8cpp.html#a5ab3c81394c730b904509b89a2171919" title="Initializes the 14 color palette button areas and draws them at the bottom of the screen.">initializePalette()</a></span> must have been called to populate <span class="tt">gPaletteArea</span>. </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>The target palette button on the LCD is redrawn. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000026">Deprecated</a></b></dt><dd>none </dd></dl>
+<p>Renders a palette button at the given index with specified border and fill color. Dispatches drawing to <span class="tt"><a class="el" href="page__drawing_8cpp.html#a9c3db132e70f16e32425e01a680b35fc" title="Draws a top-row palette swatch button on the LCD.">drawPaletteTop()</a></span> for indices 0..6 or <span class="tt"><a class="el" href="page__drawing_8cpp.html#a94eeae95f9da018090855429f50d700a" title="Draws a bottom-row palette swatch button on the LCD.">drawPaletteBot()</a></span> for indices 7..13. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="page__drawing_8cpp.html#a9c3db132e70f16e32425e01a680b35fc" title="Draws a top-row palette swatch button on the LCD.">drawPaletteTop</a>, <a class="el" href="page__drawing_8cpp.html#a94eeae95f9da018090855429f50d700a" title="Draws a bottom-row palette swatch button on the LCD.">drawPaletteBot</a>, gPaletteArea </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000046">Todo</a></b></dt><dd>none </dd></dl>
+<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000046">Bug</a></b></dt><dd>none </dd></dl>
+
+</div>
+</div>
+<a id="a94eeae95f9da018090855429f50d700a" name="a94eeae95f9da018090855429f50d700a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94eeae95f9da018090855429f50d700a">&#9670;&#160;</a></span>drawPaletteBot()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void drawPaletteBot </td>
+          <td>(</td>
+          <td class="paramtype">Area</td>          <td class="paramname"><span class="paramname"><em>area</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Color</td>          <td class="paramname"><span class="paramname"><em>bdColor</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Color</td>          <td class="paramname"><span class="paramname"><em>color</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Draws a bottom-row palette swatch button on the LCD. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">area</td><td>Screen area bounding box for the palette button. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">bdColor</td><td>Outer border color indicating normal or selected state. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">color</td><td>Inner swatch fill color. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>none </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Yoon-Ki Hong </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2026-11-18 </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Caller must hold <span class="tt">lcd.lock()</span> or ensure single-threaded LCD access. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Renders a 26x14 inner color rectangle offset by (2, 2) within a 30x20 button area. </dd></dl>
+<dl class="section pre"><dt>Precondition</dt><dd><span class="tt"><a class="el" href="2_88inch_01TFT_01Touch_01Shield_01Rev2_81_2app_2inc_2bsp_8h.html#aff564f4c14df2d3e83b2d0ef5ebf4287" title="Global RGB565 little-endian graphic frame buffer used for partial rendering operations.">brush</a></span> and <span class="tt"><a class="el" href="2_88inch_01TFT_01Touch_01Shield_01Rev2_81_2app_2inc_2bsp_8h.html#a6a30c52f5c6f01f7db95cb30da870c9f" title="Global display driver instance for the 2.8-inch TFT Touch Shield (ST7789V over SPI0).">lcd</a></span> must be initialized. </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>The specified bottom-row palette swatch is drawn on the display. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000025">Deprecated</a></b></dt><dd>none </dd></dl>
+<p>Draws a bottom-row palette swatch button with outer border color <span class="tt">bdColor</span> and inner fill <span class="tt">color</span>. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="2_88inch_01TFT_01Touch_01Shield_01Rev2_81_2app_2inc_2bsp_8h.html#aff564f4c14df2d3e83b2d0ef5ebf4287" title="Global RGB565 little-endian graphic frame buffer used for partial rendering operations.">brush</a>, <a class="el" href="2_88inch_01TFT_01Touch_01Shield_01Rev2_81_2app_2inc_2bsp_8h.html#a6a30c52f5c6f01f7db95cb30da870c9f" title="Global display driver instance for the 2.8-inch TFT Touch Shield (ST7789V over SPI0).">lcd</a>, <a class="el" href="page__drawing_8cpp.html#a09fb388339e6fb7923f67e8a943ef115" title="Draws a palette swatch button by index (0 to 13) with the given border and fill colors.">drawPalette</a> </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000045">Todo</a></b></dt><dd>none </dd></dl>
+<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000045">Bug</a></b></dt><dd>none </dd></dl>
+
+</div>
+</div>
+<a id="a9c3db132e70f16e32425e01a680b35fc" name="a9c3db132e70f16e32425e01a680b35fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c3db132e70f16e32425e01a680b35fc">&#9670;&#160;</a></span>drawPaletteTop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void drawPaletteTop </td>
+          <td>(</td>
+          <td class="paramtype">Area</td>          <td class="paramname"><span class="paramname"><em>area</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Color</td>          <td class="paramname"><span class="paramname"><em>bdColor</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Color</td>          <td class="paramname"><span class="paramname"><em>color</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Draws a top-row palette swatch button on the LCD. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">area</td><td>Screen area bounding box for the palette button. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">bdColor</td><td>Outer border color indicating normal or selected state. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">color</td><td>Inner swatch fill color. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>none </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Yoon-Ki Hong </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2026-11-18 </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Caller must hold <span class="tt">lcd.lock()</span> or ensure single-threaded LCD access. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Renders a 26x14 inner color rectangle offset by (2, 4) within a 30x20 button area. </dd></dl>
+<dl class="section pre"><dt>Precondition</dt><dd><span class="tt"><a class="el" href="2_88inch_01TFT_01Touch_01Shield_01Rev2_81_2app_2inc_2bsp_8h.html#aff564f4c14df2d3e83b2d0ef5ebf4287" title="Global RGB565 little-endian graphic frame buffer used for partial rendering operations.">brush</a></span> and <span class="tt"><a class="el" href="2_88inch_01TFT_01Touch_01Shield_01Rev2_81_2app_2inc_2bsp_8h.html#a6a30c52f5c6f01f7db95cb30da870c9f" title="Global display driver instance for the 2.8-inch TFT Touch Shield (ST7789V over SPI0).">lcd</a></span> must be initialized. </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>The specified top-row palette swatch is drawn on the display. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000024">Deprecated</a></b></dt><dd>none </dd></dl>
+<p>Draws a top-row palette swatch button with outer border color <span class="tt">bdColor</span> and inner fill <span class="tt">color</span>. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="2_88inch_01TFT_01Touch_01Shield_01Rev2_81_2app_2inc_2bsp_8h.html#aff564f4c14df2d3e83b2d0ef5ebf4287" title="Global RGB565 little-endian graphic frame buffer used for partial rendering operations.">brush</a>, <a class="el" href="2_88inch_01TFT_01Touch_01Shield_01Rev2_81_2app_2inc_2bsp_8h.html#a6a30c52f5c6f01f7db95cb30da870c9f" title="Global display driver instance for the 2.8-inch TFT Touch Shield (ST7789V over SPI0).">lcd</a>, <a class="el" href="page__drawing_8cpp.html#a09fb388339e6fb7923f67e8a943ef115" title="Draws a palette swatch button by index (0 to 13) with the given border and fill colors.">drawPalette</a> </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000044">Todo</a></b></dt><dd>none </dd></dl>
+<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000044">Bug</a></b></dt><dd>none </dd></dl>
+
+</div>
+</div>
+<a id="a5ab3c81394c730b904509b89a2171919" name="a5ab3c81394c730b904509b89a2171919"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ab3c81394c730b904509b89a2171919">&#9670;&#160;</a></span>initializePalette()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void initializePalette </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initializes the 14 color palette button areas and draws them at the bottom of the screen. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">none</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>none </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Yoon-Ki Hong </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2026-11-18 </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Must be called while holding <span class="tt">lcd.lock()</span> during drawing page initialization. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Creates two rows of seven 30x20 color buttons at the bottom-left of the 240x320 screen. </dd></dl>
+<dl class="section pre"><dt>Precondition</dt><dd><span class="tt"><a class="el" href="2_88inch_01TFT_01Touch_01Shield_01Rev2_81_2app_2inc_2bsp_8h.html#a6a30c52f5c6f01f7db95cb30da870c9f" title="Global display driver instance for the 2.8-inch TFT Touch Shield (ST7789V over SPI0).">lcd</a></span> and <span class="tt"><a class="el" href="2_88inch_01TFT_01Touch_01Shield_01Rev2_81_2app_2inc_2bsp_8h.html#aff564f4c14df2d3e83b2d0ef5ebf4287" title="Global RGB565 little-endian graphic frame buffer used for partial rendering operations.">brush</a></span> must be initialized. </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd><span class="tt">gPaletteArea[0..13]</span> are populated and rendered on the display. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000027">Deprecated</a></b></dt><dd>none </dd></dl>
+<p>Calculates screen positions for two rows of 7 palette buttons (30x20 pixels each) at the bottom of the 240x320 screen, saves their hit areas in <span class="tt">gPaletteArea</span>, and renders the initial color swatches on the LCD. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="page__drawing_8cpp.html#a9c3db132e70f16e32425e01a680b35fc" title="Draws a top-row palette swatch button on the LCD.">drawPaletteTop</a>, <a class="el" href="page__drawing_8cpp.html#a94eeae95f9da018090855429f50d700a" title="Draws a bottom-row palette swatch button on the LCD.">drawPaletteBot</a>, gPaletteArea, gPalette </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000043">Todo</a></b></dt><dd>none </dd></dl>
+<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000043">Bug</a></b></dt><dd>none </dd></dl>
+
+</div>
+</div>
 <a id="a6510fc965099a78973f8adec05a64a7e" name="a6510fc965099a78973f8adec05a64a7e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6510fc965099a78973f8adec05a64a7e">&#9670;&#160;</a></span>pageDisplayDrawing()</h2>
 
@@ -162,15 +1079,15 @@ Variables</h2></td></tr>
 <dl class="section note"><dt>Note</dt><dd>Offers 14 palette colors, low-pass filtered brush strokes, and an exit button. </dd></dl>
 <dl class="section pre"><dt>Precondition</dt><dd>LCD, touch controller, and dispatcher must be operational. </dd></dl>
 <dl class="section post"><dt>Postcondition</dt><dd>Interactive canvas and palette dispatcher entries are active. </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000010">Deprecated</a></b></dt><dd>none </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000023">Deprecated</a></b></dt><dd>none </dd></dl>
 <p>Initializes drawing canvas GUI components:</p><ol type="1">
-<li>Clears LCD screen with white background.</li>
-<li>Initializes palette buttons and sets default color to black (palette index 0).</li>
-<li>Renders the exit ("X") button at the right of the palette toolbar.</li>
-<li>Registers touch listeners for drawing region, palette buttons, and exit button.</li>
-<li>Enters an infinite thread yield loop waiting for touch events. <dl class="section see"><dt>See also</dt><dd><a class="el" href="page__drawing_8cpp.html#a5ab3c81394c730b904509b89a2171919">initializePalette</a>, <a class="el" href="page__drawing_8cpp.html#a74647e5d9c4cfb9b23a43048df03ca0f">callback_draw</a>, <a class="el" href="page__drawing_8cpp.html#a6064089216319c1707b26d2b4b52aea3">callback_exit</a>, <a class="el" href="2_88inch_01TFT_01Touch_01Shield_01Rev2_81_2app_2inc_2bsp_8h.html#a657871180a22662ec0bb1d89ff92357a" title="Touch event dispatcher for routing touch press, drag, and release events.">dispatcher</a> </dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000009">Todo</a></b></dt><dd>none </dd></dl>
-<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000009">Bug</a></b></dt><dd>none </dd></dl>
+<li>Acquires the LCD lock and clears the screen with a white background.</li>
+<li>Initializes the 14 palette buttons via <span class="tt"><a class="el" href="page__drawing_8cpp.html#a5ab3c81394c730b904509b89a2171919" title="Initializes the 14 color palette button areas and draws them at the bottom of the screen.">initializePalette()</a></span> and selects black (index 0) as default.</li>
+<li>Renders the 30x40 Exit ("X") button to the right of the palette toolbar.</li>
+<li>Registers touch hit-box listeners for all 14 palette buttons, the drawing canvas region, and the exit button.</li>
+<li>Enters an infinite thread yield loop while touch callbacks handle user input. <dl class="section see"><dt>See also</dt><dd><a class="el" href="page__drawing_8cpp.html#a5ab3c81394c730b904509b89a2171919" title="Initializes the 14 color palette button areas and draws them at the bottom of the screen.">initializePalette</a>, <a class="el" href="page__drawing_8cpp.html#a74647e5d9c4cfb9b23a43048df03ca0f" title="Touch callback handling free-hand drawing strokes on the canvas area.">callback_draw</a>, <a class="el" href="page__drawing_8cpp.html#a6064089216319c1707b26d2b4b52aea3" title="Touch callback for the Exit (&quot;X&quot;) button on the drawing page.">callback_exit</a>, <a class="el" href="2_88inch_01TFT_01Touch_01Shield_01Rev2_81_2app_2inc_2bsp_8h.html#a657871180a22662ec0bb1d89ff92357a" title="Touch event dispatcher for routing touch press, drag, and release events to registered hit areas.">dispatcher</a> </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000025">Todo</a></b></dt><dd>none </dd></dl>
+<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000025">Bug</a></b></dt><dd>none </dd></dl>
 </li>
 </ol>
 
@@ -205,13 +1122,15 @@ Variables</h2></td></tr>
 <dl class="section note"><dt>Note</dt><dd>Displays Nuvoton logo, board name, and blink animation. </dd></dl>
 <dl class="section pre"><dt>Precondition</dt><dd>LCD display must be initialized. </dd></dl>
 <dl class="section post"><dt>Postcondition</dt><dd>Page graphics are rendered and blinking loop runs until task switch. </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000007">Deprecated</a></b></dt><dd>none </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000018">Deprecated</a></b></dt><dd>none </dd></dl>
 <p>Renders the startup splash page on the 2.8-inch TFT LCD:</p><ol type="1">
-<li>Draws the Nuvoton corporate bitmap logo at coordinate (20, 30).</li>
-<li>Displays title texts "NuMaker-M251KG V1.1", "with", "2.8inch TFT Touch Shield", and "Powered by yss OS" with Ubuntu 14 Bold font.</li>
-<li>Enters a blinking loop toggling the "Example" banner every 250 milliseconds. <dl class="section see"><dt>See also</dt><dd><a class="el" href="2_88inch_01TFT_01Touch_01Shield_01Rev2_81_2app_2inc_2bsp_8h.html#a6a30c52f5c6f01f7db95cb30da870c9f" title="Global display driver instance for the 2.8-inch TFT Touch Shield.">lcd</a>, <a class="el" href="2_88inch_01TFT_01Touch_01Shield_01Rev2_81_2app_2inc_2bsp_8h.html#aff564f4c14df2d3e83b2d0ef5ebf4287" title="Global graphic buffer used for rendering operations.">brush</a>, <a class="el" href="NuvotonLogo_8cpp.html#ae2fdb2c1bf0064dbf0e430828fffd13e">NuvotonLogo</a>, <a class="el" href="Ubuntu__14__B_8h.html#a17b08c5209c8ea37f53308f2d3f61d4e">Font_Ubuntu_14_B</a>, <a class="el" href="Ubuntu__20__B_8h.html#a1346b5be7648731a61bbd950a9ae0621">Font_Ubuntu_20_B</a> </dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000031">Todo</a></b></dt><dd>none </dd></dl>
-<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000031">Bug</a></b></dt><dd>none </dd></dl>
+<li>Acquires the LCD mutex lock (<span class="tt">lcd.lock()</span>).</li>
+<li>Draws the Nuvoton corporate bitmap logo (<span class="tt"><a class="el" href="NuvotonLogo_8cpp.html#ae2fdb2c1bf0064dbf0e430828fffd13e" title="Bitmap descriptor structure for the 200x25 RGB565 Nuvoton corporate logo.">NuvotonLogo</a></span>) at coordinate (20, 30).</li>
+<li>Displays centered title strings <span class="tt">"NuMaker-M251KG V1.1"</span>, <span class="tt">"with"</span>, <span class="tt">"2.8inch TFT Touch Shield"</span>, and <span class="tt">"Powered by yss OS"</span> using <span class="tt"><a class="el" href="Ubuntu__14__B_8h.html#a17b08c5209c8ea37f53308f2d3f61d4e" title="Global CodeFont instance for Ubuntu 14pt Bold (code size: 5.08 kB).">Font_Ubuntu_14_B</a></span>.</li>
+<li>Draws <span class="tt">"Example"</span> using <span class="tt"><a class="el" href="Ubuntu__20__B_8h.html#a1346b5be7648731a61bbd950a9ae0621" title="Global CodeFont instance for Ubuntu 20pt Bold (code size: 8.91 kB).">Font_Ubuntu_20_B</a></span> at (20, 200) and releases the LCD lock.</li>
+<li>Enters an infinite animation loop toggling the <span class="tt">"Example"</span> banner every 250 milliseconds. <dl class="section see"><dt>See also</dt><dd><a class="el" href="2_88inch_01TFT_01Touch_01Shield_01Rev2_81_2app_2inc_2bsp_8h.html#a6a30c52f5c6f01f7db95cb30da870c9f" title="Global display driver instance for the 2.8-inch TFT Touch Shield (ST7789V over SPI0).">lcd</a>, <a class="el" href="2_88inch_01TFT_01Touch_01Shield_01Rev2_81_2app_2inc_2bsp_8h.html#aff564f4c14df2d3e83b2d0ef5ebf4287" title="Global RGB565 little-endian graphic frame buffer used for partial rendering operations.">brush</a>, <a class="el" href="NuvotonLogo_8cpp.html#ae2fdb2c1bf0064dbf0e430828fffd13e" title="Bitmap descriptor structure for the 200x25 RGB565 Nuvoton corporate logo.">NuvotonLogo</a>, <a class="el" href="Ubuntu__14__B_8h.html#a17b08c5209c8ea37f53308f2d3f61d4e" title="Global CodeFont instance for Ubuntu 14pt Bold (code size: 5.08 kB).">Font_Ubuntu_14_B</a>, <a class="el" href="Ubuntu__20__B_8h.html#a1346b5be7648731a61bbd950a9ae0621" title="Global CodeFont instance for Ubuntu 20pt Bold (code size: 8.91 kB).">Font_Ubuntu_20_B</a> </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000047">Todo</a></b></dt><dd>none </dd></dl>
+<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000047">Bug</a></b></dt><dd>none </dd></dl>
 </li>
 </ol>
 
@@ -246,14 +1165,14 @@ Variables</h2></td></tr>
 <dl class="section note"><dt>Note</dt><dd>Shows launcher icon for the drawing application. </dd></dl>
 <dl class="section pre"><dt>Precondition</dt><dd>LCD display and touch dispatcher must be initialized. </dd></dl>
 <dl class="section post"><dt>Postcondition</dt><dd>Button event handlers are registered to dispatcher. </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000008">Deprecated</a></b></dt><dd>none </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000019">Deprecated</a></b></dt><dd>none </dd></dl>
 <p>Renders the main launcher dashboard:</p><ol type="1">
-<li>Fills the screen with black background.</li>
-<li>Draws the drawing application icon bitmap at (20, 20).</li>
-<li>Registers a touch boundary of {20, 20, 90, 90} with callback_drawing.</li>
-<li>Enters an infinite yield loop waiting for user touch interaction. <dl class="section see"><dt>See also</dt><dd><a class="el" href="2_88inch_01TFT_01Touch_01Shield_01Rev2_81_2app_2inc_2bsp_8h.html#a6a30c52f5c6f01f7db95cb30da870c9f" title="Global display driver instance for the 2.8-inch TFT Touch Shield.">lcd</a>, <a class="el" href="drawing_8cpp.html#ab72245d1a74d378f18dd3a58abe14e3b">drawing</a>, <a class="el" href="2_88inch_01TFT_01Touch_01Shield_01Rev2_81_2app_2inc_2bsp_8h.html#a657871180a22662ec0bb1d89ff92357a" title="Touch event dispatcher for routing touch press, drag, and release events.">dispatcher</a>, callback_drawing </dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000033">Todo</a></b></dt><dd>none </dd></dl>
-<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000033">Bug</a></b></dt><dd>none </dd></dl>
+<li>Acquires the LCD mutex lock and fills the 240x320 screen with a solid black background.</li>
+<li>Draws the 90x90 drawing application icon bitmap (<span class="tt"><a class="el" href="drawing_8cpp.html#ab72245d1a74d378f18dd3a58abe14e3b" title="Bitmap descriptor structure for the 90x90 RGB565 Drawing application launcher icon.">drawing</a></span>) at coordinate (20, 20).</li>
+<li>Clears any previous touch regions and registers the <span class="tt">{20, 20, 90, 90}</span> bounding box with <span class="tt"><a class="el" href="page__main_8cpp.html#af4eb7bf94beea557f628e4672279e15b" title="Touch callback triggered when the Drawing application icon on the main menu is pressed.">callback_drawing</a></span> in <span class="tt"><a class="el" href="2_88inch_01TFT_01Touch_01Shield_01Rev2_81_2app_2inc_2bsp_8h.html#a657871180a22662ec0bb1d89ff92357a" title="Touch event dispatcher for routing touch press, drag, and release events to registered hit areas.">dispatcher</a></span>.</li>
+<li>Enters an infinite yield loop waiting for user touch interaction. <dl class="section see"><dt>See also</dt><dd><a class="el" href="2_88inch_01TFT_01Touch_01Shield_01Rev2_81_2app_2inc_2bsp_8h.html#a6a30c52f5c6f01f7db95cb30da870c9f" title="Global display driver instance for the 2.8-inch TFT Touch Shield (ST7789V over SPI0).">lcd</a>, <a class="el" href="drawing_8cpp.html#ab72245d1a74d378f18dd3a58abe14e3b" title="Bitmap descriptor structure for the 90x90 RGB565 Drawing application launcher icon.">drawing</a>, <a class="el" href="2_88inch_01TFT_01Touch_01Shield_01Rev2_81_2app_2inc_2bsp_8h.html#a657871180a22662ec0bb1d89ff92357a" title="Touch event dispatcher for routing touch press, drag, and release events to registered hit areas.">dispatcher</a>, <a class="el" href="page__main_8cpp.html#af4eb7bf94beea557f628e4672279e15b" title="Touch callback triggered when the Drawing application icon on the main menu is pressed.">callback_drawing</a> </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000049">Todo</a></b></dt><dd>none </dd></dl>
+<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000049">Bug</a></b></dt><dd>none </dd></dl>
 </li>
 </ol>
 
@@ -288,15 +1207,15 @@ Variables</h2></td></tr>
 <dl class="section note"><dt>Note</dt><dd>Calibrates top-left and bottom-right touch coordinates, then saves to flash memory. </dd></dl>
 <dl class="section pre"><dt>Precondition</dt><dd>LCD and <a class="elRef" href="https://mymy49.github.io/XPT2046/classXPT2046.html">XPT2046</a> touch driver must be initialized. </dd></dl>
 <dl class="section post"><dt>Postcondition</dt><dd>Calibration matrix is persisted to flash and active driver is updated. </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000009">Deprecated</a></b></dt><dd>none </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000021">Deprecated</a></b></dt><dd>none </dd></dl>
 <p>Runs the interactive 2-point touch screen calibration state machine:</p><ol type="1">
 <li>Prompts user to press the top-left red target point until the progress bar reaches 100%.</li>
 <li>Records the filtered ADC values for top-left (P1).</li>
 <li>Prompts user to press the bottom-right red target point until completion.</li>
 <li>Records the filtered ADC values for bottom-right (P2).</li>
-<li>Saves calibration matrix into flash memory via <a class="el" href="memory_8cpp.html#a44ef0e50f06b14420170d92cb204cd0c" title="Saves the current memory structure to flash memory with calculated CRC32.">saveMemory()</a>, updates runtime driver, and transitions to the main page. <dl class="section see"><dt>See also</dt><dd><a class="el" href="page__touchCalibration_8cpp.html#a06da6f7f42a3744d98f06f42a9c594d0">callback_calibrate</a>, <a class="el" href="memory_8cpp.html#a44ef0e50f06b14420170d92cb204cd0c" title="Saves the current memory structure to flash memory with calculated CRC32.">saveMemory</a>, <a class="el" href="memory_8cpp.html#a9df5da6d1b7386012c519be40bd58bcf" title="Updates hardware peripherals with active configuration from memory.">updateMemory</a>, <a class="el" href="#a3317a98a1d04b3395bf790d9800e63a8" title="Task ID for the main menu page.">pageDisplayMainId</a> </dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000035">Todo</a></b></dt><dd>none </dd></dl>
-<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000035">Bug</a></b></dt><dd>none </dd></dl>
+<li>Saves calibration matrix into flash memory via <a class="el" href="memory_8cpp.html#a44ef0e50f06b14420170d92cb204cd0c" title="Saves the current memory structure to flash memory with calculated CRC32.">saveMemory()</a>, updates runtime driver, and transitions to the main page. <dl class="section see"><dt>See also</dt><dd><a class="el" href="page__touchCalibration_8cpp.html#a06da6f7f42a3744d98f06f42a9c594d0" title="Touch event callback used during the 2-point resistive touch calibration sequence.">callback_calibrate</a>, <a class="el" href="memory_8cpp.html#a44ef0e50f06b14420170d92cb204cd0c" title="Saves the current memory structure to flash memory with calculated CRC32.">saveMemory</a>, <a class="el" href="memory_8cpp.html#a9df5da6d1b7386012c519be40bd58bcf" title="Updates hardware peripherals with active configuration from memory.">updateMemory</a>, <a class="el" href="#a3317a98a1d04b3395bf790d9800e63a8" title="Task ID for the main menu page registered in page TaskManager.">pageDisplayMainId</a> </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000051">Todo</a></b></dt><dd>none </dd></dl>
+<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000051">Bug</a></b></dt><dd>none </dd></dl>
 </li>
 </ol>
 
@@ -323,7 +1242,8 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Task ID for the free-hand drawing application page. </p>
+<p>Task ID for the free-hand drawing application page registered in <span class="tt"><a class="el" href="2_88inch_01TFT_01Touch_01Shield_01Rev2_81_2app_2inc_2bsp_8h.html#a9e01130487771e916af4b44cf153ff6d" title="Task manager instance for handling GUI page task registration and page transitions.">page</a></span> TaskManager. </p>
+<p>Task ID for the free-hand drawing application page registered in <span class="tt"><a class="el" href="2_88inch_01TFT_01Touch_01Shield_01Rev2_81_2app_2inc_2bsp_8h.html#a9e01130487771e916af4b44cf153ff6d" title="Task manager instance for handling GUI page task registration and page transitions.">page</a></span> TaskManager. </p>
 
 </div>
 </div>
@@ -347,7 +1267,8 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Task ID for the logo display page. </p>
+<p>Task ID for the logo display page registered in <span class="tt"><a class="el" href="2_88inch_01TFT_01Touch_01Shield_01Rev2_81_2app_2inc_2bsp_8h.html#a9e01130487771e916af4b44cf153ff6d" title="Task manager instance for handling GUI page task registration and page transitions.">page</a></span> TaskManager. </p>
+<p>Task ID for the logo display page registered in <span class="tt"><a class="el" href="2_88inch_01TFT_01Touch_01Shield_01Rev2_81_2app_2inc_2bsp_8h.html#a9e01130487771e916af4b44cf153ff6d" title="Task manager instance for handling GUI page task registration and page transitions.">page</a></span> TaskManager. </p>
 
 </div>
 </div>
@@ -371,7 +1292,8 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Task ID for the main menu page. </p>
+<p>Task ID for the main menu page registered in <span class="tt"><a class="el" href="2_88inch_01TFT_01Touch_01Shield_01Rev2_81_2app_2inc_2bsp_8h.html#a9e01130487771e916af4b44cf153ff6d" title="Task manager instance for handling GUI page task registration and page transitions.">page</a></span> TaskManager. </p>
+<p>Task ID for the main menu page registered in <span class="tt"><a class="el" href="2_88inch_01TFT_01Touch_01Shield_01Rev2_81_2app_2inc_2bsp_8h.html#a9e01130487771e916af4b44cf153ff6d" title="Task manager instance for handling GUI page task registration and page transitions.">page</a></span> TaskManager. </p>
 
 </div>
 </div>
@@ -395,7 +1317,8 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Task ID for the touch calibration page. </p>
+<p>Task ID for the touch calibration page registered in <span class="tt"><a class="el" href="2_88inch_01TFT_01Touch_01Shield_01Rev2_81_2app_2inc_2bsp_8h.html#a9e01130487771e916af4b44cf153ff6d" title="Task manager instance for handling GUI page task registration and page transitions.">page</a></span> TaskManager. </p>
+<p>Task ID for the touch calibration page registered in <span class="tt"><a class="el" href="2_88inch_01TFT_01Touch_01Shield_01Rev2_81_2app_2inc_2bsp_8h.html#a9e01130487771e916af4b44cf153ff6d" title="Task manager instance for handling GUI page task registration and page transitions.">page</a></span> TaskManager. </p>
 
 </div>
 </div>

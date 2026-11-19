@@ -100,7 +100,7 @@ $(function() {
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for main.cpp:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="2_88inch_01TFT_01Touch_01Shield_01Rev2_81_2app_2src_2main_8cpp__incl.svg" width="638" height="224"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="2_88inch_01TFT_01Touch_01Shield_01Rev2_81_2app_2src_2main_8cpp__incl.svg" width="100%" height="550"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
@@ -109,7 +109,7 @@ Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Main entry point for the 2.8-inch TFT Touch Shield demonstration application. </p>
-<dl class="section author"><dt>Author</dt><dd>Yoon-Ki Hong </dd></dl>
+<p>Coordinates system initialization, non-volatile touch calibration loading from flash, and GUI page task scheduling via the yss OS <span class="tt">TaskManager</span>. </p><dl class="section author"><dt>Author</dt><dd>Yoon-Ki Hong </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2026-11-18 </dd></dl>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
 <a id="a840291bc02cba5474a4cb46a9b9566fe" name="a840291bc02cba5474a4cb46a9b9566fe"></a>
@@ -126,9 +126,9 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Initializes the yss OS kernel, target board hardware peripherals, and non-volatile flash memory. Registers the page tasks into the TaskManager (logo, main menu, touch calibration, drawing app). First presents the startup logo for 5 seconds. If touch calibration data exists, advances directly to the main menu page; otherwise, launches the calibration sequence. The main thread then yields execution in an infinite loop. </p><dl class="section see"><dt>See also</dt><dd>initializeYss, <a class="el" href="2_88inch_01TFT_01Touch_01Shield_01Rev2_81_2app_2inc_2bsp_8h.html#a558343e35b6f62622ff72de7868723d1" title="Initializes all on-board hardware peripherals for the 2.8-inch TFT Touch Shield.">initializeBoard</a>, <a class="el" href="memory_8cpp.html#ab058849f3170edfd9919126b64bbc9fe" title="Initializes non-volatile memory and verifies data integrity.">initializeMemory</a>, <a class="el" href="2_88inch_01TFT_01Touch_01Shield_01Rev2_81_2app_2inc_2bsp_8h.html#a9e01130487771e916af4b44cf153ff6d" title="Task manager for handling page transitions and GUI tasks.">page</a> </dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000008">Todo</a></b></dt><dd>none </dd></dl>
-<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000008">Bug</a></b></dt><dd>none </dd></dl>
+<p>Initializes the yss OS kernel, target board hardware peripherals, and non-volatile flash memory. Registers the 4 GUI page tasks into the <span class="tt"><a class="el" href="2_88inch_01TFT_01Touch_01Shield_01Rev2_81_2app_2inc_2bsp_8h.html#a9e01130487771e916af4b44cf153ff6d" title="Task manager instance for handling GUI page task registration and page transitions.">page</a></span> TaskManager (logo, main menu, touch calibration, drawing app). First presents the startup logo splash screen for 5 seconds. If valid touch calibration data exists in flash (<span class="tt">memory.touchInitFlag == true</span>), advances directly to the main menu page; otherwise, launches the 2-point touch calibration page. The main thread then yields execution in an infinite loop. </p><dl class="section see"><dt>See also</dt><dd>initializeYss, <a class="el" href="CRC_2app_2inc_2bsp_8h.html#a558343e35b6f62622ff72de7868723d1" title="Initializes on-board peripherals and hardware CRC engine.">initializeBoard</a>, <a class="el" href="memory_8cpp.html#ab058849f3170edfd9919126b64bbc9fe" title="Initializes non-volatile memory and verifies data integrity.">initializeMemory</a>, <a class="el" href="2_88inch_01TFT_01Touch_01Shield_01Rev2_81_2app_2inc_2bsp_8h.html#a9e01130487771e916af4b44cf153ff6d" title="Task manager instance for handling GUI page task registration and page transitions.">page</a>, TaskManager::add, TaskManager::play </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000024">Todo</a></b></dt><dd>none </dd></dl>
+<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000024">Bug</a></b></dt><dd>none </dd></dl>
 
 </div>
 </div>

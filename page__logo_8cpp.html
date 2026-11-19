@@ -110,11 +110,11 @@ Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:a62a84b6d368261ab83bf716f5b51bb7b" id="r_a62a84b6d368261ab83bf716f5b51bb7b"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a62a84b6d368261ab83bf716f5b51bb7b">pageDisplayLogoId</a></td></tr>
-<tr class="memdesc:a62a84b6d368261ab83bf716f5b51bb7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Task ID for the logo display page.  <br /></td></tr>
+<tr class="memdesc:a62a84b6d368261ab83bf716f5b51bb7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registered task identifier for the startup logo splash screen.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Startup splash screen displaying Nuvoton logo and system information. </p>
-<dl class="section author"><dt>Author</dt><dd>Yoon-Ki Hong </dd></dl>
+<p>Renders the Nuvoton corporate logo bitmap, evaluation board title, shield description, and a blinking "Example" banner using the <span class="tt">FrameBufferRgb565LE</span> scratchpad brush. </p><dl class="section author"><dt>Author</dt><dd>Yoon-Ki Hong </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2026-11-18 </dd></dl>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
 <a id="ac26066b04c81bf82c414e15c33a351d6" name="ac26066b04c81bf82c414e15c33a351d6"></a>
@@ -134,11 +134,13 @@ Variables</h2></td></tr>
 
 <p>Task routine displaying board logo and system startup information. </p>
 <p>Renders the startup splash page on the 2.8-inch TFT LCD:</p><ol type="1">
-<li>Draws the Nuvoton corporate bitmap logo at coordinate (20, 30).</li>
-<li>Displays title texts "NuMaker-M251KG V1.1", "with", "2.8inch TFT Touch Shield", and "Powered by yss OS" with Ubuntu 14 Bold font.</li>
-<li>Enters a blinking loop toggling the "Example" banner every 250 milliseconds. <dl class="section see"><dt>See also</dt><dd><a class="el" href="2_88inch_01TFT_01Touch_01Shield_01Rev2_81_2app_2inc_2bsp_8h.html#a6a30c52f5c6f01f7db95cb30da870c9f" title="Global display driver instance for the 2.8-inch TFT Touch Shield.">lcd</a>, <a class="el" href="2_88inch_01TFT_01Touch_01Shield_01Rev2_81_2app_2inc_2bsp_8h.html#aff564f4c14df2d3e83b2d0ef5ebf4287" title="Global graphic buffer used for rendering operations.">brush</a>, <a class="el" href="NuvotonLogo_8cpp.html#ae2fdb2c1bf0064dbf0e430828fffd13e">NuvotonLogo</a>, <a class="el" href="Ubuntu__14__B_8h.html#a17b08c5209c8ea37f53308f2d3f61d4e">Font_Ubuntu_14_B</a>, <a class="el" href="Ubuntu__20__B_8h.html#a1346b5be7648731a61bbd950a9ae0621">Font_Ubuntu_20_B</a> </dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000031">Todo</a></b></dt><dd>none </dd></dl>
-<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000031">Bug</a></b></dt><dd>none </dd></dl>
+<li>Acquires the LCD mutex lock (<span class="tt">lcd.lock()</span>).</li>
+<li>Draws the Nuvoton corporate bitmap logo (<span class="tt"><a class="el" href="NuvotonLogo_8cpp.html#ae2fdb2c1bf0064dbf0e430828fffd13e" title="Bitmap descriptor structure for the 200x25 RGB565 Nuvoton corporate logo.">NuvotonLogo</a></span>) at coordinate (20, 30).</li>
+<li>Displays centered title strings <span class="tt">"NuMaker-M251KG V1.1"</span>, <span class="tt">"with"</span>, <span class="tt">"2.8inch TFT Touch Shield"</span>, and <span class="tt">"Powered by yss OS"</span> using <span class="tt"><a class="el" href="Ubuntu__14__B_8h.html#a17b08c5209c8ea37f53308f2d3f61d4e" title="Global CodeFont instance for Ubuntu 14pt Bold (code size: 5.08 kB).">Font_Ubuntu_14_B</a></span>.</li>
+<li>Draws <span class="tt">"Example"</span> using <span class="tt"><a class="el" href="Ubuntu__20__B_8h.html#a1346b5be7648731a61bbd950a9ae0621" title="Global CodeFont instance for Ubuntu 20pt Bold (code size: 8.91 kB).">Font_Ubuntu_20_B</a></span> at (20, 200) and releases the LCD lock.</li>
+<li>Enters an infinite animation loop toggling the <span class="tt">"Example"</span> banner every 250 milliseconds. <dl class="section see"><dt>See also</dt><dd><a class="el" href="2_88inch_01TFT_01Touch_01Shield_01Rev2_81_2app_2inc_2bsp_8h.html#a6a30c52f5c6f01f7db95cb30da870c9f" title="Global display driver instance for the 2.8-inch TFT Touch Shield (ST7789V over SPI0).">lcd</a>, <a class="el" href="2_88inch_01TFT_01Touch_01Shield_01Rev2_81_2app_2inc_2bsp_8h.html#aff564f4c14df2d3e83b2d0ef5ebf4287" title="Global RGB565 little-endian graphic frame buffer used for partial rendering operations.">brush</a>, <a class="el" href="NuvotonLogo_8cpp.html#ae2fdb2c1bf0064dbf0e430828fffd13e" title="Bitmap descriptor structure for the 200x25 RGB565 Nuvoton corporate logo.">NuvotonLogo</a>, <a class="el" href="Ubuntu__14__B_8h.html#a17b08c5209c8ea37f53308f2d3f61d4e" title="Global CodeFont instance for Ubuntu 14pt Bold (code size: 5.08 kB).">Font_Ubuntu_14_B</a>, <a class="el" href="Ubuntu__20__B_8h.html#a1346b5be7648731a61bbd950a9ae0621" title="Global CodeFont instance for Ubuntu 20pt Bold (code size: 8.91 kB).">Font_Ubuntu_20_B</a> </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000047">Todo</a></b></dt><dd>none </dd></dl>
+<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000047">Bug</a></b></dt><dd>none </dd></dl>
 </li>
 </ol>
 
@@ -157,7 +159,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Task ID for the logo display page. </p>
+<p>Registered task identifier for the startup logo splash screen. </p>
+<p>Task ID for the logo display page registered in <span class="tt"><a class="el" href="2_88inch_01TFT_01Touch_01Shield_01Rev2_81_2app_2inc_2bsp_8h.html#a9e01130487771e916af4b44cf153ff6d" title="Task manager instance for handling GUI page task registration and page transitions.">page</a></span> TaskManager. </p>
 
 </div>
 </div>

@@ -2,11 +2,11 @@
 <area shape="rect" id="Node000001" title="Startup splash screen displaying Nuvoton logo and system information." alt="" coords="170,5,353,67"/>
 <area shape="rect" id="Node000002" title=" " alt="" coords="5,115,62,143"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="185,70,77,113,75,108,186,65"/>
-<area shape="rect" id="Node000003" href="$NuvotonLogo_8h.html" title=" " alt="" coords="86,115,250,143"/>
+<area shape="rect" id="Node000003" href="$NuvotonLogo_8h.html" title="Bitmap resource header for the Nuvoton corporate logo." alt="" coords="86,115,250,143"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="233,66,194,106,191,102,228,69"/>
-<area shape="rect" id="Node000005" href="$Ubuntu__14__B_8h.html" title=" " alt="" coords="274,115,436,143"/>
+<area shape="rect" id="Node000005" href="$Ubuntu__14__B_8h.html" title="Header file for the Ubuntu 14pt Bold bitmap font (Font_Ubuntu_14_B)." alt="" coords="274,115,436,143"/>
 <area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="293,65,333,104,328,104,292,70"/>
-<area shape="rect" id="Node000007" href="$Ubuntu__20__B_8h.html" title=" " alt="" coords="460,115,621,143"/>
+<area shape="rect" id="Node000007" href="$Ubuntu__20__B_8h.html" title="Header file for the Ubuntu 20pt Bold bitmap font (Font_Ubuntu_20_B)." alt="" coords="460,115,621,143"/>
 <area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="353,64,488,109,483,110,353,70"/>
 <area shape="rect" id="Node000004" title=" " alt="" coords="101,191,235,218"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="170,141,171,176,166,174,166,145"/>

@@ -40,7 +40,7 @@
 <!-- Node3 -->
 <g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:href="NuvotonLogo_8h.html" target="_top" xlink:title=" ">
+<g id="a_Node000003"><a xlink:href="NuvotonLogo_8h.html" target="_top" xlink:title="Bitmap resource header for the Nuvoton corporate logo.">
 <polygon fill="white" stroke="#666666" points="183.75,-77.5 60.5,-77.5 60.5,-56.75 183.75,-56.75 183.75,-77.5"/>
 <text xml:space="preserve" text-anchor="middle" x="122.12" y="-64" font-family="Helvetica,sans-Serif" font-size="10.00">../bmp/NuvotonLogo.h</text>
 </a>
@@ -58,7 +58,7 @@
 <!-- Node5 -->
 <g id="Node000005" class="node">
 <title>Node5</title>
-<g id="a_Node000005"><a xlink:href="Ubuntu__14__B_8h.html" target="_top" xlink:title=" ">
+<g id="a_Node000005"><a xlink:href="Ubuntu__14__B_8h.html" target="_top" xlink:title="Header file for the Ubuntu 14pt Bold bitmap font (Font_Ubuntu_14_B).">
 <polygon fill="white" stroke="#666666" points="322.62,-77.5 201.62,-77.5 201.62,-56.75 322.62,-56.75 322.62,-77.5"/>
 <text xml:space="preserve" text-anchor="middle" x="262.12" y="-64" font-family="Helvetica,sans-Serif" font-size="10.00">../font/Ubuntu_14_B.h</text>
 </a>
@@ -76,7 +76,7 @@
 <!-- Node7 -->
 <g id="Node000007" class="node">
 <title>Node7</title>
-<g id="a_Node000007"><a xlink:href="Ubuntu__20__B_8h.html" target="_top" xlink:title=" ">
+<g id="a_Node000007"><a xlink:href="Ubuntu__20__B_8h.html" target="_top" xlink:title="Header file for the Ubuntu 20pt Bold bitmap font (Font_Ubuntu_20_B).">
 <polygon fill="white" stroke="#666666" points="461.62,-77.5 340.62,-77.5 340.62,-56.75 461.62,-56.75 461.62,-77.5"/>
 <text xml:space="preserve" text-anchor="middle" x="401.12" y="-64" font-family="Helvetica,sans-Serif" font-size="10.00">../font/Ubuntu_20_B.h</text>
 </a>

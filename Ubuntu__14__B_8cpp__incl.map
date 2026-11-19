@@ -1,6 +1,6 @@
 <map id="SampleCode/2.8inch TFT Touch Shield Rev2.1/app/font/Ubuntu_14_B.cpp" name="SampleCode/2.8inch TFT Touch Shield Rev2.1/app/font/Ubuntu_14_B.cpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,202,67"/>
-<area shape="rect" id="Node000002" href="$Ubuntu__14__B_8h.html" title=" " alt="" coords="44,115,163,143"/>
+<area shape="rect" id="Node000001" title="Glyph bitmap tables and CodeFont instance definition for Ubuntu 14pt Bold (Font_Ubuntu_14_B)." alt="" coords="5,5,202,67"/>
+<area shape="rect" id="Node000002" href="$Ubuntu__14__B_8h.html" title="Header file for the Ubuntu 14pt Bold bitmap font (Font_Ubuntu_14_B)." alt="" coords="44,115,163,143"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="105,65,106,100,101,99,102,70"/>
 <area shape="rect" id="Node000003" title=" " alt="" coords="56,191,151,218"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="105,141,106,176,101,174,102,145"/>

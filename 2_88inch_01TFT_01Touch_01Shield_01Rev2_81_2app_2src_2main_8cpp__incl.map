@@ -1,20 +1,31 @@
 <map id="SampleCode/2.8inch TFT Touch Shield Rev2.1/app/src/main.cpp" name="SampleCode/2.8inch TFT Touch Shield Rev2.1/app/src/main.cpp">
-<area shape="rect" id="Node000001" title="Main entry point for the 2.8&#45;inch TFT Touch Shield demonstration application." alt="" coords="176,5,359,67"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,115,61,143"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="189,70,76,114,74,109,190,65"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="85,115,141,143"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="214,69,150,109,147,105,218,66"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="165,115,264,143"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="252,66,232,103,228,100,248,69"/>
-<area shape="rect" id="Node000005" href="$page_8h.html" title="GUI page task declarations and identifiers for 2.8&#45;inch TFT Touch Shield demo." alt="" coords="288,115,354,143"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="286,65,308,102,303,101,284,70"/>
-<area shape="rect" id="Node000007" title=" " alt="" coords="378,115,488,143"/>
-<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="323,65,399,107,393,108,322,70"/>
-<area shape="rect" id="Node000008" href="$memory_8h.html" title="Non&#45;volatile memory management and touch calibration data storage." alt="" coords="511,115,598,143"/>
-<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="359,64,501,109,495,110,359,69"/>
-<area shape="rect" id="Node000006" title=" " alt="" coords="335,191,406,218"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="331,141,356,178,351,177,329,146"/>
-<area shape="poly" id="edge8_Node000008_Node000006" title=" " alt="" coords="524,143,418,187,416,182,519,144"/>
-<area shape="rect" id="Node000009" title=" " alt="" coords="477,191,632,218"/>
-<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="556,141,556,177,552,173,552,145"/>
+<area shape="rect" id="Node000001" title="Main entry point for the 2.8&#45;inch TFT Touch Shield demonstration application." alt="" coords="522,5,704,67"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="351,115,406,143"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="533,69,422,114,420,109,537,66"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="430,115,487,143"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="564,66,495,109,493,105,559,69"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="510,115,610,143"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="597,66,577,103,574,99,593,69"/>
+<area shape="rect" id="Node000005" href="$page_8h.html" title="GUI page task declarations, touch callbacks, and identifiers for 2.8&#45;inch TFT Touch Shield demo." alt="" coords="634,115,699,143"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="632,65,654,102,648,101,630,70"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="724,115,833,143"/>
+<area shape="poly" id="edge12_Node000001_Node000012" title=" " alt="" coords="669,65,744,107,739,107,668,70"/>
+<area shape="rect" id="Node000013" href="$memory_8h.html" title="Non&#45;volatile memory management and touch calibration data storage." alt="" coords="857,115,943,143"/>
+<area shape="poly" id="edge13_Node000001_Node000013" title=" " alt="" coords="705,64,846,110,841,110,704,69"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="793,283,863,311"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="680,141,807,272,802,272,678,146"/>
+<area shape="rect" id="Node000007" href="$2_88inch_01TFT_01Touch_01Shield_01Rev2_81_2app_2inc_2bsp_8h.html" title="Board Support Package header for NuMaker&#45;M251KG and 2.8&#45;inch TFT Touch Shield." alt="" coords="542,191,599,218"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="652,142,601,183,598,179,647,144"/>
+<area shape="poly" id="edge7_Node000007_Node000006" title=" " alt="" coords="599,209,683,229,733,245,782,264,800,275,794,274,780,269,731,250,682,234,599,214"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="5,266,200,328"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="539,210,405,233,216,268,215,263,405,228,545,209"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="224,283,376,311"/>
+<area shape="poly" id="edge9_Node000007_Node000009" title=" " alt="" coords="545,215,389,269,354,280,353,275,387,264,539,216"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="400,283,544,311"/>
+<area shape="poly" id="edge10_Node000007_Node000010" title=" " alt="" coords="559,218,499,275,496,270,554,220"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="567,283,768,311"/>
+<area shape="poly" id="edge11_Node000007_Node000011" title=" " alt="" coords="585,216,645,273,640,272,583,221"/>
+<area shape="poly" id="edge14_Node000013_Node000006" title=" " alt="" coords="890,142,872,166,856,192,842,231,833,270,829,266,836,230,851,190,867,163,885,144"/>
+<area shape="rect" id="Node000014" title=" " alt="" coords="865,191,1020,218"/>
+<area shape="poly" id="edge15_Node000013_Node000014" title=" " alt="" coords="909,141,930,178,925,176,906,146"/>
 </map>

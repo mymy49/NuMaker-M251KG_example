@@ -1,0 +1,13 @@
+<map id="SampleCode/2.8inch TFT Touch Shield Rev2.1/app/inc/bsp.h" name="SampleCode/2.8inch TFT Touch Shield Rev2.1/app/inc/bsp.h">
+<area shape="rect" id="Node000001" title="Board Support Package header for NuMaker&#45;M251KG and 2.8&#45;inch TFT Touch Shield." alt="" coords="323,5,505,67"/>
+<area shape="rect" id="Node000002" href="$page_8h.html" title="GUI page task declarations, touch callbacks, and identifiers for 2.8&#45;inch TFT Touch Shield demo." alt="" coords="323,115,505,177"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="415,80,416,116,412,113,412,85"/>
+<area shape="rect" id="Node000003" href="$2_88inch_01TFT_01Touch_01Shield_01Rev2_81_2app_2src_2main_8cpp.html" title="Main entry point for the 2.8&#45;inch TFT Touch Shield demonstration application." alt="" coords="5,225,188,286"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="308,183,186,227,185,222,313,181"/>
+<area shape="rect" id="Node000004" href="$page__drawing_8cpp.html" title="Free&#45;hand drawing page application with color palette and low&#45;pass filtering." alt="" coords="211,225,406,286"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="376,187,339,226,337,222,371,189"/>
+<area shape="rect" id="Node000005" href="$page__main_8cpp.html" title="Main application launcher page implementation." alt="" coords="429,225,612,286"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="455,185,493,225,488,224,453,190"/>
+<area shape="rect" id="Node000006" href="$page__touchCalibration_8cpp.html" title="Resistive touch screen 2&#45;point calibration routine with flash persistence." alt="" coords="636,225,885,286"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="520,177,666,224,660,224,520,183"/>
+</map>

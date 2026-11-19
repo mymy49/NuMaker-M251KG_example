@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['_5f_5fattribute_5f_5f_0',['__attribute__',['../memory_8cpp.html#a8a8243a64dbd4549c74e5c858ea96dfe',1,'__attribute__((aligned(4))):&#160;memory.cpp'],['../memory_8h.html#a64abad4afd1169050b2dfdc1287dbe8e',1,'__attribute__((packed)):&#160;memory.h']]]
+  ['3_20development_20environment_20specifications_0',['3. Development Environment &amp;amp; Specifications',['../index.html#autotoc_md8',1,'']]],
+  ['3_20dual_20channel_20analog_20data_20acquisition_20eadc_1',['3. Dual-Channel Analog Data Acquisition (EADC)',['../index.html#autotoc_md24',1,'']]]
 ];
